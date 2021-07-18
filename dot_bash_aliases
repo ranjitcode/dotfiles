@@ -14,12 +14,12 @@ alias yt="youtube-dl"
 alias ua-drop-caches='sudo paccache -rk3; yay -Sc --aur --noconfirm'
 alias update-all='yay -Syyu --noconfirm && brew update && brew upgrade && asdf plugin update --all && omz update && code_update_extensions'
 alias rate-and-update='export TMPFILE="$(mktemp)"; \
-	sudo true; \
-	rate-mirrors --max-delay=21600 | tee -a $TMPFILE \
-	  && sudo mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist-backup \
-	  && sudo mv $TMPFILE /etc/pacman.d/mirrorlist \
-	  && ua-drop-caches \ && update-all'
-
+    sudo true; \
+    rate-mirrors --save=$TMPFILE arch --max-delay=21600 \
+      && sudo mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist-backup \
+      && sudo mv $TMPFILE /etc/pacman.d/mirrorlist \
+      && ua-drop-caches \
+      && yay -Syyu --noconfirm && update-all';
 alias uuid="uuidgen -r | xclip -selection clipboard"
 
 
@@ -38,6 +38,7 @@ sssh(){
   # try to connect every 0.5 secs (modulo timeouts)
   while true; do command ssh "$@"; [ $? -ne 255 ] && break || sleep 0.5; done
 }
+
 
 code_update_extensions(){
 for ext in `code --list-extensions`
@@ -154,4 +155,3 @@ fo() {
     [ "$key" = ctrl-o ] && open "$file" || ${EDITOR:-vim} "$file"
   fi
 }
-
