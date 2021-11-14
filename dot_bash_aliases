@@ -22,15 +22,21 @@ alias rate-and-update='export TMPFILE="$(mktemp)"; \
       && yay -Syyu --noconfirm && update-all';
 alias uuid="uuidgen -r | xclip -selection clipboard"
 
-
 # Redis
 alias start-redis="docker run --name some-redis -p 6379:6379 -d redis:alpine"
 alias flush-redis="redis-cli FLUSHALL"
 
+# ls 
 
-# List all files colorized in long format
-alias ls="exa"
-alias ll="exa --long"
+TREE_IGNORE="cache|log|logs|node_modules|vendor"
+
+alias ls="exa --group-directories-first"
+alias la="ls -a"
+alias ll="ls --git -l"
+alias lt="ls --tree -D -L 2 -I ${TREE_IGNORE}"
+alias ltt="ls --tree -D -L 3 -I ${TREE_IGNORE}"
+alias lttt="ls --tree -D -L 4 -I ${TREE_IGNORE}"
+alias ltttt="ls --tree -D -L 5 -I ${TREE_IGNORE}"
 
 alias cat="bat"
 
@@ -52,6 +58,15 @@ ffmpeg_convert(){
   do ffmpeg -n  -i "$i" -vcodec libx264 -v warning -hide_banner -stats -crf 28 -preset faster -tune film "cc${i}"; 
   done
 }
+
+convert_dir_vids(){
+Green=$'\e[1;32m';
+Blue=$'\e[1;34m';
+echo "$Blue Started converting videos in dir";
+for d in ./*/ ; do (echo "$Green Current directory: $d \n" && cd "$d" && ffmpeg_convert && rm $(ls -I "cc*" )); done
+echo "finished converting all videos in directory";
+}
+
 
 zsh_fix_history(){
 cd ~

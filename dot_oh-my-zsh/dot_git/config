@@ -18,4 +18,6 @@
 	remote = origin
 	merge = refs/heads/master
 [oh-my-zsh]
-	lastVersion = 4e6c20212019bae1ee6d89ebfea46aa418d9d25c
+	lastVersion = 1448d234d6d9c25f64a48b16379b34db28a36898
+[rebase]
+	autoStash = true

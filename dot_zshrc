@@ -3,6 +3,8 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/rubin/.oh-my-zsh"
+export GOROOT="/home/rubin/.asdf/installs/golang/1.16.4/go"
+export PATH=$GOROOT/bin:$PATH
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -84,6 +86,7 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/.asdf/asdf.sh
 export LC_CTYPE=en_US.UTF-8
 
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -100,6 +103,8 @@ export LC_CTYPE=en_US.UTF-8
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
+
+export QT_AUTO_SCREEN_SCALE_FACTOR=0
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
