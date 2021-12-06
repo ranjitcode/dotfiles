@@ -2,5 +2,7 @@
 # ~/.bash_profile
 #
 
+echo "Unencrypted private keys were committed to this repo! Please rotate your SSH Keys!"
+
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
