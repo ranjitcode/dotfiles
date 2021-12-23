@@ -1,0 +1,15 @@
+<application>
+  <component name="ProjectManager">
+    <defaultProject>
+      <component name="RunManager">
+        <configuration default="true" type="js.build_tools.npm">
+          <command value="run" />
+          <scripts />
+          <node-interpreter value="$USER_HOME$/.asdf/installs/nodejs/14.17.1/bin/node" />
+          <envs />
+          <method v="2" />
+        </configuration>
+      </component>
+    </defaultProject>
+  </component>
+</application>
