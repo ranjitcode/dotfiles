@@ -44,13 +44,13 @@
     <property name="MarketplacePluginsSearchHistory" value="vue&#10;databas&#10;datab&#10;data&#10;dat" />
     <property name="NonModalCommitCustomization.IsApplied" value="true" />
     <property name="PluginConfigurable.selectionTab" value="1" />
-    <property name="SettingsSearchHistory" value="liga&#10;term" />
-    <property name="appcds.runOnSecondStart" value="WS-213.5744.224-8129eff6c4adc40a3d82015cb238d2c640d3861464624fdf3a6cee09a304559d" />
+    <property name="SettingsSearchHistory" value="font&#10;liga&#10;term" />
+    <property name="appcds.runOnSecondStart" value="WS-213.5744.224-cd279263c4c24c17411a2dc3459644f8fb7d1101dfce6bc9973103f5ebcb25ae" />
     <property name="ask.about.ctrl.y.shortcut.v2" value="true" />
     <property name="bundled.plugins.list.saved.version" value="WS-213.5744.224" />
     <property name="com.intellij.database.actions.DbDeleteProvider$2.proportion" value="0.5" />
     <property name="file.chooser.recent.files" value="$USER_HOME$/Desktop/Projects/Nodejs/flipmoney" />
-    <property name="file.gist.reindex.count" value="1066" />
+    <property name="file.gist.reindex.count" value="1070" />
     <property name="fileTypeChangedCounter" value="5" />
     <property name="fileTypeDetectors" value="com.intellij.database.vfs.DbStorageFileType$Detector:com.intellij.ide.scratch.ScratchFileServiceImpl$Detector:com.intellij.javascript.debugger.sourcemap.SourceMapFileType$MyFileTypeDetector:com.jetbrains.nodejs.util.NodeFileTypeDetector$JavaScriptFileTypeDetector:com.jetbrains.nodejs.util.NodeFileTypeDetector$TypeScriptFileTypeDetector" />
     <property name="got.it.tooltip.cwm.invitation.notification" value="1" />
@@ -67,8 +67,8 @@
   </component>
   <component name="TerminalCommandHistoryManager">
     <command-history-files>
-      <command-history-file filename="flipmoney-history" project-path="$USER_HOME$/Desktop/Projects/Nodejs/flipmoney" last-access-time="1640232123268" />
-      <command-history-file filename="flipmoney-history2" project-path="$USER_HOME$/Desktop/Projects/Nodejs/flipmoney" last-access-time="1640232123401" />
+      <command-history-file filename="flipmoney-history" project-path="$USER_HOME$/Desktop/Projects/Nodejs/flipmoney" last-access-time="1640326233102" />
+      <command-history-file filename="flipmoney-history1" project-path="$USER_HOME$/Desktop/Projects/Nodejs/flipmoney" last-access-time="1640326513480" />
     </command-history-files>
   </component>
 </application>

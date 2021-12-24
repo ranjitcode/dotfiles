@@ -15,7 +15,7 @@
           <ShortCut>'Ctrl+C' or 'Ctrl+Insert'</ShortCut>
           <Description>Copy</Description>
           <Count>4</Count>
-          <Hit>518</Hit>
+          <Hit>541</Hit>
         </Item>
       </Statistic>
       <Statistic Action="Delete Row">
@@ -63,7 +63,7 @@
           <IdeaActionID>GotoDeclaration</IdeaActionID>
           <ShortCut>'Ctrl+B'</ShortCut>
           <Description>Go to Declaration or Usages</Description>
-          <Count>621</Count>
+          <Count>637</Count>
           <Hit>2</Hit>
         </Item>
       </Statistic>
@@ -89,7 +89,7 @@
           <ShortCut>'Ctrl+V' or 'Shift+Insert'</ShortCut>
           <Description>Paste</Description>
           <Count>2</Count>
-          <Hit>774</Hit>
+          <Hit>808</Hit>
         </Item>
       </Statistic>
       <Statistic Action="Project">
@@ -137,7 +137,7 @@
           <IdeaActionID>ActivateRunToolWindow</IdeaActionID>
           <ShortCut>'Alt+4'</ShortCut>
           <Description>Run</Description>
-          <Count>72</Count>
+          <Count>73</Count>
         </Item>
       </Statistic>
       <Statistic Action="SQL Generator…">
@@ -153,7 +153,7 @@
           <IdeaActionID>ShowSettings</IdeaActionID>
           <ShortCut>'Ctrl+Alt+S'</ShortCut>
           <Description>Settings...</Description>
-          <Count>15</Count>
+          <Count>16</Count>
         </Item>
       </Statistic>
       <Statistic Action="Stop 'admin'">
@@ -193,7 +193,7 @@
           <IdeaActionID>ActivateTerminalToolWindow</IdeaActionID>
           <ShortCut>'Alt+F12'</ShortCut>
           <Description>Terminal</Description>
-          <Count>90</Count>
+          <Count>92</Count>
         </Item>
       </Statistic>
       <Statistic Action="Toggle Line Breakpoint">
@@ -209,7 +209,7 @@
           <IdeaActionID>Git.Log.Branches.Change.Branch.Filter</IdeaActionID>
           <ShortCut>'Enter'</ShortCut>
           <Description>Update Branch Filter in Log</Description>
-          <Count>1</Count>
+          <Count>2</Count>
         </Item>
       </Statistic>
     </option>

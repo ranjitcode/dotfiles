@@ -21,8 +21,7 @@
     <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:dev" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="HEAD_NODE" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
@@ -56,82 +55,45 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="-1">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/onboarding/src/views/onboarding/MerchantOnboard/terms/index.vue">
+        <entry file="file://$PROJECT_DIR$/client/src/router.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-9">
-              <caret line="313" column="20" selection-start-line="313" selection-start-column="7" selection-end-line="313" selection-end-column="20" />
+            <state relative-caret-position="160">
+              <caret line="442" column="74" selection-start-line="442" selection-start-column="74" selection-end-line="442" selection-end-column="74" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/views/pages/partners/pages/paymentRequestTemplate/TemplateForm.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="96">
+              <caret line="223" column="15" selection-start-line="223" selection-start-column="15" selection-end-line="223" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/views/pages/partners/pages/paymentRequestTemplate/PaymentOption.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="146">
+              <caret line="637" column="2" selection-start-line="637" selection-start-column="2" selection-end-line="652" selection-end-column="6" />
               <folding>
-                <element signature="n#style#0;n#feather-icon#0;n#router-link#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#0;n#vs-row#0;n#vs-collapse-item#0;n#vs-collapse#0;n#div#0;n#vx-card#0;n#form#0;n#vs-row#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#ul#0;n#div#1;n#div#1;n#div#0;n#vs-row#0;n#vs-collapse-item#0;n#vs-collapse#0;n#div#0;n#vx-card#0;n#form#0;n#vs-row#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#vs-row#0;n#vs-collapse-item#0;n#vs-collapse#0;n#div#0;n#vx-card#1;n#form#0;n#vs-row#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#0;n#vs-row#0;n#vs-collapse-item#0;n#vs-collapse#0;n#div#0;n#vx-card#2;n#form#0;n#vs-row#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#ul#0;n#div#1;n#div#1;n#div#0;n#vs-row#0;n#vs-collapse-item#0;n#vs-collapse#0;n#div#0;n#vx-card#2;n#form#0;n#vs-row#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#vs-col#0;n#vs-row#0;n#vs-collapse-item#0;n#vs-collapse#0;n#div#0;n#vx-card#2;n#form#0;n#vs-row#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#vs-row#0;n#template#0;n#vs-collapse-item#0;n#vs-collapse#0;n#vx-card#0;n#template#0;n#!!top" />
+                <element signature="e#19923#20375#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/onboarding/src/router.js">
+        <entry file="file://$PROJECT_DIR$/admin/src/views/pages/admin/partners/PayLaterProduct.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="97" column="35" lean-forward="true" selection-start-line="97" selection-start-column="35" selection-end-line="97" selection-end-column="35" />
+            <state relative-caret-position="288">
+              <caret line="168" column="28" lean-forward="true" selection-start-line="168" selection-start-column="28" selection-end-line="168" selection-end-column="28" />
               <folding>
-                <element signature="e#922#944#0" expanded="true" />
-                <element signature="e#1020#1054#0" expanded="true" />
+                <element signature="n#style#0;n#vs-th#0;n#template#0;n#vs-table#0;n#vs-row#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#vs-collapse-item#0;n#vs-collapse#0;n#vx-card#7;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#vs-th#1;n#template#0;n#vs-table#0;n#vs-row#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#vs-collapse-item#0;n#vs-collapse#0;n#vx-card#7;n#div#0;n#template#0;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/onboarding/src/views/onboarding/LegalsView.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-9">
-              <caret line="75" column="10" selection-start-line="75" selection-start-column="10" selection-end-line="75" selection-end-column="10" />
-              <folding>
-                <element signature="n#style#0;n#vs-col#0;n#vs-row#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#vs-col#1;n#vs-row#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="e#650#714#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/onboarding/src/store/paymentplans/modulePaymentPlansActions.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-10">
-              <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/repositories/legalRepository.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-10">
-              <caret line="63" column="37" selection-start-line="63" selection-start-column="37" selection-end-line="63" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/models/legal.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-10">
-              <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/routes/api/v1/history/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="5" column="26" selection-end-line="23" />
             </state>
           </provider>
         </entry>
@@ -141,6 +103,9 @@
   <component name="FileTypeUsageLocalSummary">
     <fileType name="DBN-SQL">
       <summary usageCount="1" lastUsed="1638594792651" />
+    </fileType>
+    <fileType name="DIFF">
+      <summary usageCount="2" lastUsed="1640327329805" />
     </fileType>
     <fileType name="Database Element">
       <summary usageCount="48" lastUsed="1639383357576" />
@@ -152,7 +117,7 @@
       <summary usageCount="2" lastUsed="1639046147484" />
     </fileType>
     <fileType name="JavaScript">
-      <summary usageCount="348" lastUsed="1640237396399" />
+      <summary usageCount="354" lastUsed="1640341732691" />
     </fileType>
     <fileType name="PLAIN_TEXT">
       <summary usageCount="24" lastUsed="1640173198561" />
@@ -167,15 +132,11 @@
       <summary usageCount="2" lastUsed="1640193849256" />
     </fileType>
     <fileType name="Vue.js">
-      <summary usageCount="387" lastUsed="1640236430264" />
+      <summary usageCount="394" lastUsed="1640342136303" />
     </fileType>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>paymentLegals</find>
-      <find>term</find>
-      <find>textBalck</find>
-      <find>togg</find>
       <find>email-te</find>
       <find>terms/</find>
       <find>sendMail</find>
@@ -202,6 +163,10 @@
       <find>terms</find>
       <find>payNowTermsDetail</find>
       <find>v-htm</find>
+      <find>submission</find>
+      <find>onboardDetail</find>
+      <find>new request</find>
+      <find>active</find>
     </findStrings>
     <replaceStrings>
       <replace>&lt;span class=&quot;required-text&quot;&gt;</replace>
@@ -245,17 +210,16 @@
       <dir>$PROJECT_DIR$/admin/src/views/pages/admin/email-templates</dir>
       <dir>$PROJECT_DIR$/server/utils</dir>
       <dir>$PROJECT_DIR$/onboarding/src/store/onboardModule</dir>
-      <dir>$PROJECT_DIR$/onboarding/src</dir>
       <dir>$PROJECT_DIR$/client/src/layouts/guest-components</dir>
       <dir>$PROJECT_DIR$/onboarding/src/views/onboarding/MerchantOnboard/terms</dir>
       <dir>$PROJECT_DIR$/admin/src/views/pages/admin/legals</dir>
       <dir>$PROJECT_DIR$/admin/src/views/pages/admin</dir>
       <dir>$PROJECT_DIR$/onboarding/src/views/onboarding</dir>
+      <dir>$PROJECT_DIR$/onboarding/src</dir>
     </dirStrings>
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/client/src/views/pages/partners/pages/paymentRequests/components/productFieldsInPR.vue" />
       <option value="$PROJECT_DIR$/admin/src/views/components/CustomField.vue" />
       <option value="$PROJECT_DIR$/client/src/views/pages/partners/widgets/PaymentRequest/PaymentRequestWidgets.vue" />
       <option value="$PROJECT_DIR$/server/models/history.js" />
@@ -277,7 +241,6 @@
       <option value="$PROJECT_DIR$/client/src/views/guest/newPayment.vue" />
       <option value="$PROJECT_DIR$/client/src/views/settings/merchant/settingsList.js" />
       <option value="$PROJECT_DIR$/admin/src/router.js" />
-      <option value="$PROJECT_DIR$/admin/src/views/pages/admin/partners/PayLaterProduct.vue" />
       <option value="$PROJECT_DIR$/onboarding/src/views/onboarding/MerchantOnboard/businessInformation/BeneficiaryOwner.vue" />
       <option value="$PROJECT_DIR$/onboarding/src/views/onboarding/MerchantOnboard/product/ProductSelection.vue" />
       <option value="$PROJECT_DIR$/onboarding/src/views/onboarding/MerchantOnboard/index.vue" />
@@ -303,9 +266,11 @@
       <option value="$PROJECT_DIR$/onboarding/src/store/legals/moduleLegalAction.js" />
       <option value="$PROJECT_DIR$/server/routes/api/v1/legals/index.js" />
       <option value="$PROJECT_DIR$/server/repositories/legalRepository.js" />
-      <option value="$PROJECT_DIR$/onboarding/src/router.js" />
       <option value="$PROJECT_DIR$/onboarding/src/views/onboarding/MerchantOnboard/terms/index.vue" />
       <option value="$PROJECT_DIR$/onboarding/src/views/onboarding/LegalsView.vue" />
+      <option value="$PROJECT_DIR$/onboarding/src/router.js" />
+      <option value="$PROJECT_DIR$/onboarding/src/views/onboarding/review/Submission.vue" />
+      <option value="$PROJECT_DIR$/admin/src/views/pages/admin/partners/PayLaterProduct.vue" />
     </changedPaths>
   </component>
   <component name="IgnoredFileRootStore">
@@ -328,11 +293,6 @@
             <path>
               <item name="flipmoney" type="b2602c69:ProjectViewProjectNode" />
               <item name="flipmoney" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="flipmoney" type="b2602c69:ProjectViewProjectNode" />
-              <item name="flipmoney" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -340,21 +300,6 @@
               <item name="flipmoney" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="flipmoney" type="b2602c69:ProjectViewProjectNode" />
-              <item name="flipmoney" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="flipmoney" type="b2602c69:ProjectViewProjectNode" />
-              <item name="flipmoney" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
-              <item name="guest" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="flipmoney" type="b2602c69:ProjectViewProjectNode" />
@@ -366,58 +311,19 @@
             <path>
               <item name="flipmoney" type="b2602c69:ProjectViewProjectNode" />
               <item name="flipmoney" type="462c0819:PsiDirectoryNode" />
-              <item name="onboarding" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="flipmoney" type="b2602c69:ProjectViewProjectNode" />
-              <item name="flipmoney" type="462c0819:PsiDirectoryNode" />
-              <item name="onboarding" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="flipmoney" type="b2602c69:ProjectViewProjectNode" />
-              <item name="flipmoney" type="462c0819:PsiDirectoryNode" />
-              <item name="onboarding" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="flipmoney" type="b2602c69:ProjectViewProjectNode" />
-              <item name="flipmoney" type="462c0819:PsiDirectoryNode" />
-              <item name="onboarding" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
-              <item name="customer-components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="flipmoney" type="b2602c69:ProjectViewProjectNode" />
-              <item name="flipmoney" type="462c0819:PsiDirectoryNode" />
-              <item name="onboarding" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
-              <item name="portal" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="flipmoney" type="b2602c69:ProjectViewProjectNode" />
-              <item name="flipmoney" type="462c0819:PsiDirectoryNode" />
-              <item name="onboarding" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="store" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="flipmoney" type="b2602c69:ProjectViewProjectNode" />
-              <item name="flipmoney" type="462c0819:PsiDirectoryNode" />
-              <item name="onboarding" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="flipmoney" type="b2602c69:ProjectViewProjectNode" />
               <item name="flipmoney" type="462c0819:PsiDirectoryNode" />
-              <item name="onboarding" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="onboarding" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="partners" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="flipmoney" type="b2602c69:ProjectViewProjectNode" />
@@ -469,13 +375,16 @@
   </component>
   <component name="TerminalArrangementManager">
     <option name="myTabStates">
-      <TerminalTabState tabName="Local" currentWorkingDirectory="$PROJECT_DIR$" commandHistoryFileName="flipmoney-history" />
+      <TerminalTabState tabName="Local" currentWorkingDirectory="$PROJECT_DIR$/onboarding" commandHistoryFileName="flipmoney-history" />
+      <TerminalTabState tabName="Local (2)" currentWorkingDirectory="$PROJECT_DIR$" commandHistoryFileName="flipmoney-history1" />
     </option>
+    <option name="mySelectedTabIndex" value="1" />
   </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="868000" />
   </component>
   <component name="ToolWindowManager">
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25024414" />
       <window_info id="Structure" order="1" side_tool="true" />
@@ -544,8 +453,8 @@
     </layout-to-restore>
     <recentWindows>
       <value>Terminal</value>
-      <value>Project</value>
       <value>Run</value>
+      <value>Project</value>
       <value>Version Control</value>
       <value>Problems View</value>
       <value>Event Log</value>
@@ -573,30 +482,30 @@
       <screen x="0" y="58" width="2048" height="1094" />
     </state>
     <state x="685" y="352" width="667" height="519" key="#com.intellij.fileTypes.FileTypeChooser/0.58.2048.1094@0.58.2048.1094" timestamp="1638423049159" />
-    <state width="1990" height="313" key="GridCell.Tab.0.bottom" timestamp="1640184436091">
+    <state width="1990" height="313" key="GridCell.Tab.0.bottom" timestamp="1640342003838">
       <screen x="0" y="58" width="2048" height="1094" />
     </state>
-    <state width="1990" height="313" key="GridCell.Tab.0.bottom/0.58.2048.1094@0.58.2048.1094" timestamp="1640184436091" />
-    <state width="1990" height="313" key="GridCell.Tab.0.center" timestamp="1640184436091">
+    <state width="1990" height="313" key="GridCell.Tab.0.bottom/0.58.2048.1094@0.58.2048.1094" timestamp="1640342003838" />
+    <state width="1990" height="313" key="GridCell.Tab.0.center" timestamp="1640342003838">
       <screen x="0" y="58" width="2048" height="1094" />
     </state>
-    <state width="1990" height="313" key="GridCell.Tab.0.center/0.58.2048.1094@0.58.2048.1094" timestamp="1640184436091" />
-    <state width="1990" height="313" key="GridCell.Tab.0.left" timestamp="1640184436091">
+    <state width="1990" height="313" key="GridCell.Tab.0.center/0.58.2048.1094@0.58.2048.1094" timestamp="1640342003838" />
+    <state width="1990" height="313" key="GridCell.Tab.0.left" timestamp="1640342003837">
       <screen x="0" y="58" width="2048" height="1094" />
     </state>
-    <state width="1990" height="313" key="GridCell.Tab.0.left/0.58.2048.1094@0.58.2048.1094" timestamp="1640184436091" />
-    <state width="1990" height="313" key="GridCell.Tab.0.right" timestamp="1640184436091">
+    <state width="1990" height="313" key="GridCell.Tab.0.left/0.58.2048.1094@0.58.2048.1094" timestamp="1640342003837" />
+    <state width="1990" height="313" key="GridCell.Tab.0.right" timestamp="1640342003838">
       <screen x="0" y="58" width="2048" height="1094" />
     </state>
-    <state width="1990" height="313" key="GridCell.Tab.0.right/0.58.2048.1094@0.58.2048.1094" timestamp="1640184436091" />
+    <state width="1990" height="313" key="GridCell.Tab.0.right/0.58.2048.1094@0.58.2048.1094" timestamp="1640342003838" />
     <state width="331" height="622" key="HiddenNamespacesPopup" timestamp="1638594837762">
       <screen x="0" y="58" width="2048" height="1094" />
     </state>
     <state width="331" height="622" key="HiddenNamespacesPopup/0.58.2048.1094@0.58.2048.1094" timestamp="1638594837762" />
-    <state x="0" y="58" width="2048" height="1094" key="SettingsEditor" timestamp="1640256390879">
+    <state x="0" y="58" width="2048" height="1094" key="SettingsEditor" timestamp="1640326714419">
       <screen x="0" y="58" width="2048" height="1094" />
     </state>
-    <state x="0" y="58" width="2048" height="1094" key="SettingsEditor/0.58.2048.1094@0.58.2048.1094" timestamp="1640256390879" />
+    <state x="0" y="58" width="2048" height="1094" key="SettingsEditor/0.58.2048.1094@0.58.2048.1094" timestamp="1640326714419" />
     <state x="850" y="428" width="348" height="361" key="cloudConfig.SelfSettingsDialog" timestamp="1640112333485">
       <screen x="0" y="58" width="2048" height="1094" />
     </state>
@@ -613,56 +522,20 @@
       <screen x="0" y="58" width="2048" height="1094" />
     </state>
     <state x="745" y="290" width="548" height="637" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.58.2048.1094@0.58.2048.1094" timestamp="1638630224277" />
-    <state x="711" y="141" width="853" height="1011" key="find.popup" timestamp="1640182649403">
+    <state x="711" y="141" width="853" height="1011" key="find.popup" timestamp="1640341732593">
       <screen x="0" y="58" width="2048" height="1094" />
     </state>
-    <state x="711" y="141" width="853" height="1011" key="find.popup/0.58.2048.1094@0.58.2048.1094" timestamp="1640182649403" />
+    <state x="711" y="141" width="853" height="1011" key="find.popup/0.58.2048.1094@0.58.2048.1094" timestamp="1640341732593" />
     <state x="604" y="274" key="run.anything.popup" timestamp="1639455735403">
       <screen x="0" y="58" width="2048" height="1094" />
     </state>
     <state x="604" y="274" key="run.anything.popup/0.58.2048.1094@0.58.2048.1094" timestamp="1639455735403" />
-    <state x="0" y="58" width="883" height="1045" key="search.everywhere.popup" timestamp="1640173722322">
+    <state x="0" y="58" width="883" height="1045" key="search.everywhere.popup" timestamp="1640342136310">
       <screen x="0" y="58" width="2048" height="1094" />
     </state>
-    <state x="0" y="58" width="883" height="1045" key="search.everywhere.popup/0.58.2048.1094@0.58.2048.1094" timestamp="1640173722322" />
+    <state x="0" y="58" width="883" height="1045" key="search.everywhere.popup/0.58.2048.1094@0.58.2048.1094" timestamp="1640342136310" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/onboarding/src/layouts/guest-components/TheFooter.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-648" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/router.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="376" column="65" selection-start-line="376" selection-start-column="65" selection-end-line="376" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/utils/mailer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1298">
-          <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/api/v1/paymentRequests/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="7" column="12" lean-forward="true" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/controller/app/paymentRequestController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="1940" column="24" selection-start-line="1940" selection-start-column="24" selection-end-line="1940" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/helpers/emailHelper/charityPartnerEmailHelper.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -919,34 +792,6 @@
     <entry file="file://$PROJECT_DIR$/server/routes/api/v1/legals/index.js" />
     <entry file="file://$PROJECT_DIR$/onboarding/src/store/legals/moduleLegalAction.js" />
     <entry file="file://$PROJECT_DIR$/onboarding/src/store/legals/moduleLegalState.js" />
-    <entry file="file://$PROJECT_DIR$/server/routes/api/v1/history/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="5" column="26" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/models/legal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-10">
-          <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/repositories/legalRepository.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-10">
-          <caret line="63" column="37" selection-start-line="63" selection-start-column="37" selection-end-line="63" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/onboarding/src/store/paymentplans/modulePaymentPlansActions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-10">
-          <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/onboarding/src/store/onboardModule/moduleOnboardAction.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
@@ -956,7 +801,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/onboarding/src/views/onboarding/MerchantOnboard/terms/index.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9">
+        <state relative-caret-position="7512">
           <caret line="313" column="20" selection-start-line="313" selection-start-column="7" selection-end-line="313" selection-end-column="20" />
           <folding>
             <element signature="n#style#0;n#feather-icon#0;n#router-link#0;n#div#0;n#template#0;n#!!top" expanded="true" />
@@ -970,25 +815,102 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/onboarding/src/store/paymentplans/modulePaymentPlansActions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/repositories/legalRepository.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1512">
+          <caret line="63" column="37" selection-start-line="63" selection-start-column="37" selection-end-line="63" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/models/legal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/api/v1/history/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="5" column="26" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/onboarding/src/views/onboarding/LegalsView.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9">
+        <state relative-caret-position="24">
           <caret line="75" column="10" selection-start-line="75" selection-start-column="10" selection-end-line="75" selection-end-column="10" />
           <folding>
             <element signature="n#style#0;n#vs-col#0;n#vs-row#0;n#div#0;n#template#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#vs-col#1;n#vs-row#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="e#650#714#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/onboarding/src/router.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="97" column="35" lean-forward="true" selection-start-line="97" selection-start-column="35" selection-end-line="97" selection-end-column="35" />
+        <state relative-caret-position="195">
+          <caret line="164" column="64" selection-start-line="164" selection-start-column="64" selection-end-line="164" selection-end-column="64" />
           <folding>
             <element signature="e#922#944#0" expanded="true" />
             <element signature="e#1020#1054#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/onboarding/src/views/onboarding/review/Submission.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="9" column="40" lean-forward="true" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#div#1;n#vs-card#0;n#vs-row#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#1;n#vs-card#0;n#vs-row#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#2;n#vs-card#1;n#vs-row#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#2;n#vs-card#1;n#vs-row#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="e#8066#8098#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/router.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="442" column="74" selection-start-line="442" selection-start-column="74" selection-end-line="442" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/views/pages/partners/pages/paymentRequestTemplate/TemplateForm.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="223" column="15" lean-forward="true" selection-start-line="223" selection-start-column="15" selection-end-line="223" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/views/pages/partners/pages/paymentRequestTemplate/PaymentOption.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="637" column="2" selection-start-line="637" selection-start-column="2" selection-end-line="652" selection-end-column="6" />
+          <folding>
+            <element signature="n#vs-row#0;n#template#0;n#vs-collapse-item#0;n#vs-collapse#0;n#vx-card#0;n#template#0;n#!!top" />
+            <element signature="e#19923#20375#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/views/pages/admin/partners/PayLaterProduct.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="168" column="28" lean-forward="true" selection-start-line="168" selection-start-column="28" selection-end-line="168" selection-end-column="28" />
+          <folding>
+            <element signature="n#style#0;n#vs-th#0;n#template#0;n#vs-table#0;n#vs-row#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#vs-collapse-item#0;n#vs-collapse#0;n#vx-card#7;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#vs-th#1;n#template#0;n#vs-table#0;n#vs-row#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#vs-collapse-item#0;n#vs-collapse#0;n#vx-card#7;n#div#0;n#template#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

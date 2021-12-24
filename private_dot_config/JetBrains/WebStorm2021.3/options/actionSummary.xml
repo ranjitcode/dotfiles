@@ -13,7 +13,10 @@
       <i c="75" l="1640193752669" />
     </e>
     <e n="$Undo">
-      <i c="1771" l="1640233358595" />
+      <i c="1842" l="1640343036173" />
+    </e>
+    <e n="About">
+      <i c="1" l="1640265926705" />
     </e>
     <e n="BraceOrQuoteOut">
       <i c="1" l="1640151018134" />
@@ -22,13 +25,13 @@
       <i c="2" l="1638410237945" />
     </e>
     <e n="CheckForUpdate">
-      <i c="8" l="1639403608059" />
+      <i c="9" l="1640265974066" />
     </e>
     <e n="CloseAllEditors">
       <i c="2" l="1639588942782" />
     </e>
     <e n="CloseAllEditorsButActive">
-      <i c="26" l="1640095633430" />
+      <i c="27" l="1640341679022" />
     </e>
     <e n="CloudConfigAction">
       <i c="1" l="1638408716873" />
@@ -44,6 +47,9 @@
     </e>
     <e n="CommentByLineComment">
       <i c="57" l="1640181785590" />
+    </e>
+    <e n="Compare.SameVersion">
+      <i c="2" l="1640327329561" />
     </e>
     <e n="Console.TableResult.AddRow">
       <i c="32" l="1639037948986" />
@@ -79,16 +85,16 @@
       <i c="2" l="1638626497617" />
     </e>
     <e n="EditorBackSpace">
-      <i c="5101" l="1640256353682" />
+      <i c="5223" l="1640343290734" />
     </e>
     <e n="EditorChooseLookupItem">
-      <i c="398" l="1640237562040" />
+      <i c="413" l="1640343180324" />
     </e>
     <e n="EditorCopy">
-      <i c="673" l="1640237792348" />
+      <i c="696" l="1640343074304" />
     </e>
     <e n="EditorCut">
-      <i c="134" l="1640182157669" />
+      <i c="137" l="1640343164252" />
     </e>
     <e n="EditorDelete">
       <i c="2" l="1640151817590" />
@@ -97,22 +103,22 @@
       <i c="1" l="1640100672228" />
     </e>
     <e n="EditorDown">
-      <i c="1895" l="1640236456804" />
+      <i c="1900" l="1640343060422" />
     </e>
     <e n="EditorDuplicate">
       <i c="65" l="1640237604572" />
     </e>
     <e n="EditorEnter">
-      <i c="1061" l="1640237794391" />
+      <i c="1083" l="1640343217595" />
     </e>
     <e n="EditorLeft">
-      <i c="791" l="1640235750639" />
+      <i c="796" l="1640343071081" />
     </e>
     <e n="EditorPaste">
-      <i c="1024" l="1640237794853" />
+      <i c="1058" l="1640343165468" />
     </e>
     <e n="EditorRight">
-      <i c="704" l="1640233470269" />
+      <i c="706" l="1640342559970" />
     </e>
     <e n="EditorStartNewLine">
       <i c="4" l="1639026540085" />
@@ -121,7 +127,7 @@
       <i c="37" l="1640236855903" />
     </e>
     <e n="EditorUp">
-      <i c="1109" l="1640182531006" />
+      <i c="1111" l="1640342253120" />
     </e>
     <e n="EditorUpWithSelection">
       <i c="1" l="1639912721416" />
@@ -133,25 +139,28 @@
       <i c="1" l="1640173485361" />
     </e>
     <e n="Find">
-      <i c="222" l="1640194438956" />
+      <i c="225" l="1640342783660" />
     </e>
     <e n="FindInPath">
-      <i c="185" l="1640182643749" />
+      <i c="187" l="1640341723327" />
     </e>
     <e n="Generate">
       <i c="1" l="1640194114917" />
     </e>
     <e n="Git.Log.Branches.Change.Branch.Filter">
-      <i c="1" l="1638426402044" />
+      <i c="2" l="1640327217482" />
+    </e>
+    <e n="Git.Log.Hide.Branches">
+      <i c="1" l="1640327198027" />
     </e>
     <e n="GotoClass">
       <i c="2" l="1639640651604" />
     </e>
     <e n="GotoDeclaration">
-      <i c="623" l="1640237673988" />
+      <i c="639" l="1640343204707" />
     </e>
     <e n="GotoFile">
-      <i c="53" l="1640173717860" />
+      <i c="55" l="1640342133197" />
     </e>
     <e n="HideAllWindows">
       <i c="5" l="1639587933108" />
@@ -184,7 +193,7 @@
       <i c="30" l="1640182688780" />
     </e>
     <e n="Run">
-      <i c="48" l="1640174259948" />
+      <i c="49" l="1640342000851" />
     </e>
     <e n="RunAnything">
       <i c="1" l="1639455734677" />
@@ -202,7 +211,7 @@
       <i c="1" l="1638957099718" />
     </e>
     <e n="ShowSettings">
-      <i c="17" l="1640256378341" />
+      <i c="18" l="1640326682050" />
     </e>
     <e n="Stop">
       <i c="33" l="1640174257014" />
@@ -241,7 +250,7 @@
       <i c="1" l="1638422600881" />
     </e>
     <e n="com.intellij.find.editorHeaderActions.NextOccurrenceAction">
-      <i c="555" l="1640194442382" />
+      <i c="568" l="1640342789334" />
     </e>
     <e n="com.intellij.find.editorHeaderActions.PrevOccurrenceAction">
       <i c="69" l="1640182668807" />
@@ -277,10 +286,10 @@
       <i c="1" l="1639650007777" />
     </e>
     <e n="com.intellij.openapi.fileEditor.impl.tabActions.CloseTab">
-      <i c="198" l="1640237398788" />
+      <i c="201" l="1640341680476" />
     </e>
     <e n="com.intellij.openapi.project.DumbAwareAction$SimpleDumbAwareAction">
-      <i c="36" l="1640173493915" />
+      <i c="37" l="1640342136117" />
     </e>
     <e n="com.intellij.openapi.ui.DialogWrapper$4">
       <i c="2" l="1640182181477" />
@@ -310,7 +319,7 @@
       <i c="1" l="1638854755489" />
     </e>
     <e n="org.jetbrains.plugins.terminal.AbstractTerminalRunner$2">
-      <i c="32" l="1640194495914" />
+      <i c="33" l="1640326513266" />
     </e>
   </component>
 </application>
