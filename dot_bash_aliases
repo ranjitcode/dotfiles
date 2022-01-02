@@ -101,6 +101,7 @@ alias nioff="npm install --offline";
 alias nrm="npm run typeorm:run"
 
 ## yarn aliases
+alias y="yarn"
 alias yi="yarn install";
 alias ya="yarn add";
 alias yr="yarn remove";
@@ -108,6 +109,16 @@ alias yau="yarn audit";
 alias yrs="yarn run start";
 alias yrd="yarn run start:dev";
 alias yup="yarn upgrade";
+
+## asdf aliases
+alias asdf_update="asdf plugin update --all";
+alias asdf_plugins="asdf plugin list";
+alias asdf_add_plugin="asdf plugin add";
+alias asdf_remove_plugin="asdf plugin remove";
+alias asdf_install_version="asdf install";
+alias asdf_list_version="asdf list";
+alias asdf_global_version_set="asdf global";
+
 
 
 function gi() { curl -sLw n https://www.toptal.com/developers/gitignore/api/$@ > .gitignore;}
