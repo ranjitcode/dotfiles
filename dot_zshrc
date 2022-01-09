@@ -115,3 +115,4 @@ export QT_AUTO_SCREEN_SCALE_FACTOR=0
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+setopt extended_glob
