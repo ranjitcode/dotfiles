@@ -123,6 +123,10 @@ alias asdf_global_version_set="asdf global";
 
 function gi() { curl -sLw n https://www.toptal.com/developers/gitignore/api/$@ > .gitignore;}
 
+git_branch_delete(){
+git branch | grep $@ | xargs git branch -D
+}
+
 ## docker
 
 alias pg-docker-start="docker run --name some-postgres -p 5432:5432 -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres:alpine"
@@ -171,6 +175,7 @@ dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/[
 
 # Bash into running container
 dbash() { docker exec -it $(docker ps -aqf "name=$1") bash; }
+
 
 ## fzf aliases
 fo() {
