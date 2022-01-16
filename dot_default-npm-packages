@@ -5,7 +5,7 @@ yarn
 json-server
 typescript
 nodemon
-lite-server
+serve
 ts-node
 eslint
 prettier
@@ -15,3 +15,8 @@ pnpm
 types-installer
 neovim
 autocannon
+vercel
+webpack-cli
+@sentry/cli
+@storybook/cli
+commitizen
