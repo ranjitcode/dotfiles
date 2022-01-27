@@ -20,3 +20,4 @@ webpack-cli
 @sentry/cli
 @storybook/cli
 commitizen
+json-server
