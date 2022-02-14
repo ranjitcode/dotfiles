@@ -8,9 +8,93 @@
 [init]
 	defaultBranch = master
 [core]
+  # End of lines conversion
+  autocrlf = false
+  # Editor is vi of course
 	editor = vim
+  # Include your global excludefile
+  excludefile = ~/.gitignore_global
+  # Don't paginate output by default
+  pager = cat
+  # Speed up the status command
+  untrackedCache = true
+  # Don't consider trailing space change as a cause for merge conflicts
+ whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+
+[rerere]
+	enabled = 1
+	autoupdate = 1
+[color]
+	ui = auto
+[color "branch"]
+	current = yellow bold
+	local = green bold
+	remote = cyan bold
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[color "status"]
+	added = green bold
+	changed = yellow bold
+	untracked = red bold
 [branch]
   sort = -committerdate
 
 [includeIf "gitdir/i:**/workcompany/**"]
   email = rubiin@workcompany.com
+  
+[delta]
+	features = line-numbers decorations
+	line-numbers = true
+[delta "decorations"]
+	minus-style = red bold normal
+	plus-style = green bold normal
+	minus-emph-style = white bold red
+	minus-non-emph-style = red bold normal
+	plus-emph-style = white bold green
+	plus-non-emph-style = green bold normal
+	file-style = yellow bold none
+	file-decoration-style = yellow box
+	hunk-header-style = magenta bold
+	hunk-header-decoration-style = magenta box
+	minus-empty-line-marker-style = normal normal
+	plus-empty-line-marker-style = normal normal
+	line-numbers-right-format = "{np:^4}│ "
+  
+[apply]
+ # Detect whitespace errors when applying a patch
+  whitespace = fix
+[grep]
+  # Consider most regexes to be ERE
+  extendedRegexp = true
+[help]
+  # Remplace the mistyped command in 0.1 seconds. 20 means two seconds
+  autocorrect = 1
+[alias]
+  aa = add --all
+  b = branch -v
+  bd = branch -d
+  bD = branch -D
+  br = branch
+  ci = commit
+  cim = commit -m
+  cima = commit -am
+  clr = rm -r --cached
+  co = checkout
+  cp = cherry-pick -x
+  d = diff -w
+  dc = diff --cached
+  nb = checkout -b
+  lg = log --graph --date=relative --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ad)%Creset' -20
+  oups = commit --amend --no-edit
+  r = remote -v
+  rh = reset --hard
+  st = status -sb
+  t = tag -l
+  unstage = reset HEAD
+  uncommit = reset --soft HEAD^
+  pushfl = push --force-with-lease
+  pushflnv = push --force-with-lease --no-verify
