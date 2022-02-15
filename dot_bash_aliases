@@ -119,7 +119,7 @@ alias asdf_install_version="asdf install";
 alias asdf_list_version="asdf list";
 alias asdf_global_version_set="asdf global";
 
-
+alias git_rre_delete="rm -rf .git/rr-cache";
 
 function gi() { curl -sLw n https://www.toptal.com/developers/gitignore/api/$@ > .gitignore;}
 
