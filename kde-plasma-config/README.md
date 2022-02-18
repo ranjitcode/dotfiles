@@ -1,1 +1,1 @@
-To use this setting , watch this [video](https://www.youtube.com/watch?v=D97-LDgGA8o) on how to use `Plasma Config Saver`
+To use this setting , instal konsave from `https://github.com/Prayag2/konsave`
