@@ -1,0 +1,1 @@
+return { path = "/home/rubin", documents = {["type"]="leaf",["views"]={}}, directories = {} }

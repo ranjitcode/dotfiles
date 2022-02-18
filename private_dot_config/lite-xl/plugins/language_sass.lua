@@ -1,8 +1,9 @@
--- mod-version:1 -- lite-xl 1.16
+-- mod-version:2 -- lite-xl 2.0
 local syntax = require "core.syntax"
 
 syntax.add {
-  files = { "%.sass$" },
+  name = "Sass",
+  files = { "%.sass$" ,"%.scss$"},
   comment = "//",
   patterns = {
     { pattern = "/[/%*].-\n",             type = "comment"  },

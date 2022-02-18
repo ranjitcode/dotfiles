@@ -1,1 +1,1 @@
-return {recents={[1]="/home/rubin/Desktop/Projects/Nodejs/flipmoney"}, window={[1]=1368,[2]=706,[3]=0,[4]=62,["n"]=4}, window_mode="maximized"}
+return {recents={}, window={[1]=2048,[2]=1057,[3]=0,[4]=95,["n"]=4}, window_mode="maximized", previous_find={}, previous_replace={}}

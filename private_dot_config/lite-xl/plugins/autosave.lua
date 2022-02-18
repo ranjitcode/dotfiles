@@ -1,8 +1,7 @@
--- mod-version:1 -- lite-xl 1.16
+-- mod-version:2 -- lite-xl 2.0
 local core = require "core"
 local config = require "core.config"
 local Doc = require "core.doc"
-local DocView = require "core.docview"
 local command = require "core.command"
 -- this is used to detect the wait time
 local last_keypress = os.time()
@@ -10,18 +9,18 @@ local last_keypress = os.time()
 local looping = false
 local on_text_change = Doc.on_text_change
 -- the approximate amount of time, in seconds, that it takes to trigger an autosave
-config.autosave_timeout = 1
+config.plugins.autosave = { timeout = 1 }
 
 
 local function loop_for_save()
     while looping do
-      if os.difftime(os.time(), last_keypress) >= config.autosave_timeout then
+      if os.difftime(os.time(), last_keypress) >= config.plugins.autosave.timeout then
         command.perform "doc:save"
         -- stop loop
         looping = false
       end
       -- wait the timeout. may cause timeout to be slightly imprescise
-      coroutine.yield(config.autosave_timeout) 
+      coroutine.yield(config.plugins.autosave.timeout)
     end
 end
 
@@ -42,5 +41,5 @@ function Doc:on_text_change(type)
   if self.filename then
     updatepress()
   end
-  return on_text_change(type)
+  return on_text_change(self, type)
 end

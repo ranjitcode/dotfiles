@@ -6,10 +6,11 @@ local core = require "core"
 local keymap = require "core.keymap"
 local config = require "core.config"
 local style = require "core.style"
+
 ------------------------------ Themes ----------------------------------------
 
 -- light theme:
- core.reload_module("colors.dracula")
+-- core.reload_module("colors.summer")
 
 --------------------------- Key bindings -------------------------------------
 
@@ -20,8 +21,8 @@ local style = require "core.style"
 ------------------------------- Fonts ----------------------------------------
 
 -- customize fonts:
---style.font = renderer.font.load(DATADIR .. "/fonts/JetBrains Mono Regular Nerd Font Complete.ttf", 13 * SCALE)
---style.code_font = renderer.font.load(DATADIR .. "/fonts/JetBrains Mono Regular Nerd Font Complete.ttf", 13 * SCALE)
+-- style.font = renderer.font.load(DATADIR .. "/fonts/FiraSans-Regular.ttf", 14 * SCALE)
+-- style.code_font = renderer.font.load(DATADIR .. "/fonts/JetBrainsMono-Regular.ttf", 14 * SCALE)
 --
 -- font names used by lite:
 -- style.font          : user interface
@@ -42,8 +43,8 @@ local style = require "core.style"
 
 -- enable or disable plugin loading setting config entries:
 
--- enable trimwhitespace, otherwise it is disable by default:
--- config.trimwhitespace = true
+-- enable plugins.trimwhitespace, otherwise it is disable by default:
+-- config.plugins.trimwhitespace = true
 --
 -- disable detectindent, otherwise it is enabled by default
--- config.detectindent = false
+-- config.plugins.detectindent = false
