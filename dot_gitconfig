@@ -3,43 +3,61 @@
 	name = Rubin Bhandari
 [credential]
 	helper = cache --timeout=86400
+
 [pull]
-	ff = only
+	rebase = true
+
 [init]
 	defaultBranch = master
 [core]
   # End of lines conversion
   autocrlf = false
-  # Editor is vi of course
+  # Editor is vi of coursea
 	editor = vim
   # Include your global excludefile
   excludefile = ~/.gitignore_global
   # Don't paginate output by default
-  pager = cat
+  pager = diff-so-fancy | less --tabs=4 -RFX
   # Speed up the status command
   untrackedCache = true
   # Don't consider trailing space change as a cause for merge conflicts
- whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+  whitespace=trailing-space,cr-at-eol,tabwidth=4
 
 [rerere]
-	enabled = 1
-	autoupdate = 1
+	enabled = true
+
 [color]
-	ui = auto
-[color "branch"]
-	current = yellow bold
-	local = green bold
-	remote = cyan bold
-[color "diff"]
-	meta = yellow bold
+	branch = auto
+	diff = auto
+	status = auto
+	interactive = auto
+	ui = true
+	pager = true
+
+[color.branch]
+	current = yellow reverse
+	local = yellow
+	remote = green
+
+[color.diff]
+	meta = yellow
 	frag = magenta bold
 	old = red bold
 	new = green bold
 	whitespace = red reverse
-[color "status"]
-	added = green bold
-	changed = yellow bold
-	untracked = red bold
+	commit = yellow bold
+	
+[color.status]
+	added = yellow
+	changed = green
+	untracked = cyan
+
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+
 [branch]
   sort = -committerdate
 
@@ -49,6 +67,7 @@
 [delta]
 	features = line-numbers decorations
 	line-numbers = true
+	
 [delta "decorations"]
 	minus-style = red bold normal
 	plus-style = green bold normal
@@ -63,38 +82,25 @@
 	minus-empty-line-marker-style = normal normal
 	plus-empty-line-marker-style = normal normal
 	line-numbers-right-format = "{np:^4}│ "
-  
-[apply]
- # Detect whitespace errors when applying a patch
-  whitespace = fix
+	
 [grep]
   # Consider most regexes to be ERE
   extendedRegexp = true
+  
 [help]
-  # Remplace the mistyped command in 0.1 seconds. 20 means two seconds
-  autocorrect = 1
+  # Replace the mistyped command in 0.1 seconds. 20 means two seconds
+   autocorrect = 1
+  
 [alias]
-  aa = add --all
-  b = branch -v
-  bd = branch -d
-  bD = branch -D
-  br = branch
-  ci = commit
-  cim = commit -m
-  cima = commit -am
-  clr = rm -r --cached
-  co = checkout
   cp = cherry-pick -x
   d = diff -w
   dc = diff --cached
-  nb = checkout -b
-  lg = log --graph --date=relative --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ad)%Creset' -20
-  oups = commit --amend --no-edit
-  r = remote -v
-  rh = reset --hard
-  st = status -sb
-  t = tag -l
-  unstage = reset HEAD
-  uncommit = reset --soft HEAD^
-  pushfl = push --force-with-lease
-  pushflnv = push --force-with-lease --no-verify
+  w = whatchanged
+  wip = commit --no-verify -m "WIP"
+  undo= reset --soft HEAD^
+  
+[sequence]
+	editor = interactive-rebase-tool
+
+[status]
+	hints = false
