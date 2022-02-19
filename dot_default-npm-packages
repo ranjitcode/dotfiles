@@ -5,15 +5,16 @@ yarn
 json-server
 typescript
 nodemon
+tldr
 serve
 ts-node
 eslint
 prettier
+neovim
 npm-check-updates
 release-it
 pnpm
 types-installer
-neovim
 autocannon
 vercel
 webpack-cli

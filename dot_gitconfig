@@ -139,7 +139,13 @@
 	rld = reflog --pretty=rlf --stat
 
 	# stash
+	ss = stash                        # stash changes
+  	sa = stash apply                  # apply stash (restore changes)
+  	sd = stash drop                   # drop stashes (destory changes)
 	stall = stash --all
+	
+	# list stashes
+	
 	sl  = stash list --pretty=rlc
 	slo = stash list --pretty=rlo
 	slf = stash list --pretty=rlf
@@ -177,12 +183,12 @@
 
 	# commit
 	c = commit
+	ca = commit --amend
+	cm= commit -m
 	cn = commit --no-verify
 	cc = commit -c
-	cm= commit -m
 	cf = commit --fixup
 	cs = commit --squash
-	ca = commit --amend
 	can = commit --amend --no-edit
 
 	# checkout
@@ -274,6 +280,9 @@
 	# initialize repository in current directory
 	#    git this [<git-init-args>...]
 	this = "!f() { git init \"$@\" && git commit --message='Initialize' --allow-empty; }; f"
+	
+	#via http://stackoverflow.com/questions/5188320/how-can-i-get-a-list-of-git-branches-ordered-by-most-recent-commit
+ 	recent-branches = !git for-each-ref --count=15 --sort=-committerdate refs/heads/ --format='%(refname:short)'
 
 	# show authors and and commit counts
 	#    git thanks [<git-log-args>...]
