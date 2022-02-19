@@ -3,11 +3,10 @@ alias fixvlc='mkdir ~/.cache/vlc'
 alias vmc='git diff --name-only --diff-filter=U'
 alias code="code-insiders"
 alias nord="nordvpn"
-alias mk="minikube"
+alias g="git"
 alias lzd="lazydocker"
 alias projects="cd Desktop/Projects/Nodejs"
-alias czh="chezmoi"
-alias cza="cz add"
+alias cz="chezmoi"
 alias czo="code ~/.local/share/chezmoi/"
 alias husky_init="npx husky install && npx husky add .husky/pre-commit "npx lint-staged""
 alias yt="youtube-dl"
