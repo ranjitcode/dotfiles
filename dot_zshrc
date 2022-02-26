@@ -72,7 +72,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions zsh-interactive-cd) 
+plugins=(zsh-autosuggestions git-open) 
 
 autoload -Uz compinit
 
@@ -118,5 +118,8 @@ export QT_AUTO_SCREEN_SCALE_FACTOR=0
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 setopt extended_glob
-
 eval $(thefuck --alias)
+
+# Created by `pipx` on 2022-02-26 03:47:01
+export PATH="$PATH:/home/rubin/.local/bin"
+eval "$(fasd --init auto)"
