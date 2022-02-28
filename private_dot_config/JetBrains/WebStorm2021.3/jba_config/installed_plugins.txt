@@ -1,3 +1,0 @@
-com.github.copilot
-Key Promoter X
-com.intellij.database
