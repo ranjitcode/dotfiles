@@ -6,7 +6,7 @@ echo 'Yay Installation with all its packages'
 
 yay -S brave-bin chezmoi
 yay -S plank-git
-yay -Syyu alacritty diff-so-fancy kcolorchooser the_silver_searcher asdf-vm git-secrets fzf git-extras fzf docker git-interactive-rebase-tool-bin docker-compose python-pip mousepad nano skypeforlinux-stable-bin zoom mojave-gtk-theme-git visual-studio-code-bin adwaita-icon-theme capitaine-cursors gparted htop la-capitaine-icon-theme neovim postman-bin rate-arch-mirrors spectacle ttf-bitstream-vera ttf-dejavu ttf-font-awesome ttf-hack ttf-liberation ttf-ms-fonts ttf-nerd-fonts-symbols-mono ttf-twemoji-color uuid vlc wps-office wps-office-fonts youtube-dl gwenview ktorrent persepolis linux
+yay -Syyu alacritty taskwarrior-tui diff-so-fancy kcolorchooser grex fd tldr bat the_silver_searcher asdf-vm git-secrets fzf git-extras fzf docker git-interactive-rebase-tool-bin docker-compose python-pip mousepad nano skypeforlinux-stable-bin zoom mojave-gtk-theme-git visual-studio-code-bin adwaita-icon-theme capitaine-cursors gparted htop la-capitaine-icon-theme neovim postman-bin rate-arch-mirrors spectacle ttf-bitstream-vera ttf-dejavu ttf-font-awesome ttf-hack ttf-liberation ttf-ms-fonts ttf-nerd-fonts-symbols-mono ttf-twemoji-color uuid vlc wps-office wps-office-fonts youtube-dl gwenview ktorrent persepolis linux
 
 
 echo 'Executing post install steps for docker'

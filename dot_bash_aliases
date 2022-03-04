@@ -26,16 +26,12 @@ alias start-redis="docker run --name some-redis -p 6379:6379 -d redis:alpine"
 alias flush-redis="redis-cli FLUSHALL"
 
 # ls 
+alias ls='lsd'
+alias l='ls -l'
+alias la='ls -a'
+alias lla='ls -la'
+alias lt='ls --tree'
 
-TREE_IGNORE="cache|log|logs|node_modules|vendor"
-
-alias ls="exa --group-directories-first"
-alias la="ls -a"
-alias ll="ls --git -l"
-alias lt="ls --tree -D -L 2 -I ${TREE_IGNORE}"
-alias ltt="ls --tree -D -L 3 -I ${TREE_IGNORE}"
-alias lttt="ls --tree -D -L 4 -I ${TREE_IGNORE}"
-alias ltttt="ls --tree -D -L 5 -I ${TREE_IGNORE}"
 
 alias cat="bat"
 
@@ -124,6 +120,10 @@ function gi() { curl -sLw n https://www.toptal.com/developers/gitignore/api/$@ >
 
 git_branch_delete(){
 git branch | grep $@ | xargs git branch -D
+}
+
+function git_redate() {
+    GIT_COMMITTER_DATE="$1" git commit --amend --no-edit --date "$1"
 }
 
 git_fix_repo(){

@@ -142,7 +142,7 @@
 	ss = stash                        # stash changes
   	sa = stash apply                  # apply stash (restore changes)
   	sd = stash drop                   # drop stashes (destory changes)
-	stall = stash --all
+	ssa = stash -u                    # include untracked files 
 	
 	# list stashes
 	
@@ -160,6 +160,7 @@
 
 	# diff
 	d = diff -c
+	db = "!f() { git diff --name-only --diff-filter=d | xargs bat --diff; }; f"
 	ds = diff --find-renames --stat --cc -c
 	dc = diff --cached -c
 	dl = diff --cached -c HEAD~
@@ -269,6 +270,9 @@
 	re = reset
 	res = reset --soft
 	reh = reset --hard
+	
+	# Shorthand for mergetool
+    	mt = mergetool
 
 	# w-commands
 	which = branch --all --contains
@@ -328,3 +332,6 @@
 
 [status]
 	hints = false
+[merge]
+    # Include summaries of merged commits in newly created merge commit messages
+    log = true
