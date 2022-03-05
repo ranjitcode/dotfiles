@@ -32,46 +32,7 @@ alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
 
-
 alias cat="bat"
-
-sssh(){
-  # try to connect every 0.5 secs (modulo timeouts)
-  while true; do command ssh "$@"; [ $? -ne 255 ] && break || sleep 0.5; done
-}
-
-
-code_update_extensions(){
-for ext in `code --list-extensions`
-  do 
-    code --install-extension "$ext" --force
-  done
-}
-
-ffmpeg_convert(){
-  for i in *.mp4;
-  do ffmpeg -n  -i "$i" -vcodec libx264 -v warning -hide_banner -stats -crf 28 -preset faster -tune film "cc${i}"; 
-  done
-}
-
-convert_dir_vids(){
-Green=$'\e[1;32m';
-Blue=$'\e[1;34m';
-echo "$Blue Started converting videos in dir";
-for d in ./*/ ; do (echo "$Green Current directory: $d \n" && cd "$d" && ffmpeg_convert && rm $(ls -I "cc*" )); done
-echo "finished converting all videos in directory";
-}
-
-
-zsh_fix_history(){
-cd ~
-mv .zsh_history .zsh_history_old
-strings .zsh_history_old > .zsh_history
-fc -R .zsh_history
-}
-yarn_audit_fix(){
-  npm i --package-lock-only && rm yarn.lock && npm audit fix && yarn import && rm package-lock.json
-}
 
 # tmux 
 alias t="tmux"
@@ -116,21 +77,11 @@ alias asdf_global_version_set="asdf global";
 
 alias git_rre_delete="rm -rf .git/rr-cache";
 
-function gi() { curl -sLw n https://www.toptal.com/developers/gitignore/api/$@ > .gitignore;}
+# Lists the ten most used commands.
+alias history-stats="history 0 | awk '{print \$2}' | stats | head"
 
-git_branch_delete(){
-git branch | grep $@ | xargs git branch -D
-}
-
-function git_redate() {
-    GIT_COMMITTER_DATE="$1" git commit --amend --no-edit --date "$1"
-}
-
-git_fix_repo(){
-find .git/objects -type f -empty -delete;
-git prune;
-git fetch --all --prune;
-}
+# Checks whether connection is up.
+alias net="ping google.com | grep -E --only-match --color=never '[0-9\.]+ ms'"
 
 ## docker
 
@@ -190,4 +141,148 @@ fo() {
   if [ -n "$file" ]; then
     [ "$key" = ctrl-o ] && open "$file" || ${EDITOR:-vim} "$file"
   fi
+}
+
+gi() { 
+curl -sLw n https://www.toptal.com/developers/gitignore/api/$@ > .gitignore;
+}
+
+git_branch_delete(){
+git branch | grep $@ | xargs git branch -D
+}
+
+git_redate() {
+    GIT_COMMITTER_DATE="$1" git commit --amend --no-edit --date "$1"
+}
+
+git_fix_repo(){
+find .git/objects -type f -empty -delete;
+git prune;
+git fetch --all --prune;
+}
+
+sssh(){
+  # try to connect every 0.5 secs (modulo timeouts)
+  while true; do command ssh "$@"; [ $? -ne 255 ] && break || sleep 0.5; done
+}
+
+
+code_update_extensions(){
+for ext in `code --list-extensions`
+  do 
+    code --install-extension "$ext" --force
+  done
+}
+
+ffmpeg_convert(){
+  for i in *.mp4;
+  do ffmpeg -n  -i "$i" -vcodec libx264 -v warning -hide_banner -stats -crf 28 -preset faster -tune film "cc${i}"; 
+  done
+}
+
+convert_dir_vids(){
+Green=$'\e[1;32m';
+Blue=$'\e[1;34m';
+echo "$Blue Started converting videos in dir";
+for d in ./*/ ; do (echo "$Green Current directory: $d \n" && cd "$d" && ffmpeg_convert && rm $(ls -I "cc*" )); done
+echo "finished converting all videos in directory";
+}
+
+zsh_fix_history(){
+cd ~
+mv .zsh_history .zsh_history_old
+strings .zsh_history_old > .zsh_history
+fc -R .zsh_history
+}
+
+yarn_audit_fix(){
+  npm i --package-lock-only && rm yarn.lock && npm audit fix && yarn import && rm package-lock.json
+}
+
+# Count code lines in some directory.
+# $ loc py js css
+# # => Lines of code for .py: 3781
+# # => Lines of code for .js: 3354
+# # => Lines of code for .css: 2970
+# # => Total lines of code: 10105
+function loc() {
+  local total
+  local firstletter
+  local ext
+  local lines
+  total=0
+  for ext in $@; do
+    firstletter=$(echo $ext | cut -c1-1)
+    if [[ firstletter != "." ]]; then
+      ext=".$ext"
+    fi
+    lines=`find-exec "*$ext" cat | wc -l`
+    lines=${lines// /}
+    total=$(($total + $lines))
+    echo "Lines of code for ${fg[blue]}$ext${reset_color}: ${fg[green]}$lines${reset_color}"
+  done
+  echo "${fg[blue]}Total${reset_color} lines of code: ${fg[green]}$total${reset_color}"
+}
+
+function _calcram() {
+  local sum
+  sum=0
+  for i in `ps aux | grep -i "$1" | grep -v "grep" | awk '{print $6}'`; do
+    sum=$(($i + $sum))
+  done
+  sum=$(echo "scale=2; $sum / 1024.0" | bc)
+  echo $sum
+}
+
+# Show how much RAM application uses.
+# $ ram safari
+# # => safari uses 154.69 MBs of RAM
+function ram() {
+  local sum
+  local app="$1"
+  if [ -z "$app" ]; then
+    echo "First argument - pattern to grep from processes"
+    return 0
+  fi
+
+  sum=$(_calcram $app)
+  if [[ $sum != "0" ]]; then
+    echo "${fg[blue]}${app}${reset_color} uses ${fg[green]}${sum}${reset_color} MBs of RAM"
+  else
+    echo "No active processes matching pattern '${fg[blue]}${app}${reset_color}'"
+  fi
+}
+
+# Same, but tracks RAM usage in realtime. Will run until you stop it.
+# $ rams safari
+function rams() {
+  local sum
+  local app="$1"
+  if [ -z "$app" ]; then
+    echo "First argument - pattern to grep from processes"
+    return 0
+  fi
+
+  while true; do
+    sum=$(_calcram $app)
+    if [[ $sum != "0" ]]; then
+      echo -en "${fg[blue]}${app}${reset_color} uses ${fg[green]}${sum}${reset_color} MBs of RAM\r"
+    else
+      echo -en "No active processes matching pattern '${fg[blue]}${app}${reset_color}'\r"
+    fi
+    sleep 1
+  done
+}
+
+# $ size dir1 file2.js
+function size() {
+  # du -scBM | sort -n
+  du -shck "$@" | sort -rn | awk '
+      function human(x) {
+          s="kMGTEPYZ";
+          while (x>=1000 && length(s)>1)
+              {x/=1024; s=substr(s,2)}
+          return int(x+0.5) substr(s,1,1)
+      }
+      {gsub(/^[0-9]+/, human($1)); print}'
 }

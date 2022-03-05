@@ -116,10 +116,15 @@ export QT_AUTO_SCREEN_SCALE_FACTOR=0
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 setopt extended_glob
 eval $(thefuck --alias)
 
 # Created by `pipx` on 2022-02-26 03:47:01
 export PATH="$PATH:/home/rubin/.local/bin"
 eval "$(fasd --init auto)"
+eval "$(mcfly init zsh)"
+export MCFLY_KEY_SCHEME=vim
+export MCFLY_INTERFACE_VIEW=BOTTOM
+export MCFLY_FUZZY=2
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+

@@ -172,6 +172,12 @@
 	si = status --ignored
 	sa = status --ignored --untracked-files
 
+	# git-extras
+  	cleanup = !ruby "$HOME/.bin/git-extras/git-extras/git-cleanup.rb"
+    sign-release = !sh "$HOME/.bin/git-extras/git-extras/git-sign-release.sh"
+    setup = !zsh "$HOME/.bin/git-extras/git-extras/git-setup.sh"
+    wth = !zsh "$HOME/.bin/git-extras/git-extras/git-what-the-hell-just-happened.sh"
+
 	# index
 	a = add
 	aa = add --all
