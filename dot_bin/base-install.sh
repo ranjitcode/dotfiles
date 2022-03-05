@@ -22,12 +22,14 @@ asdf update
 asdf plugin add nodejs
 asdf plugin add golang
 asdf plugin add ruby
+asdf plugin add rust
 asdf install nodejs 14.18.2
 asdf install golang 1.17.7
 asdf install ruby 2.6.8
+asdf install rust 1.59.0
 asdf global golang 1.17.7
 asdf global nodejs 14.18.2
-asdf global ruby 2.6.8
+asdf global rust 1.59.0
 
 echo 'Installing zsh with ohmyzsh and other plugins'
 sudo pacman -S zsh
@@ -43,5 +45,3 @@ tar -xzvf ~/.fonts/dot_fonts.tar.gz
 
 sudo fc-cache -vf
 source ~/.zshrc
-
-
