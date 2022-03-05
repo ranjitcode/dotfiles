@@ -3,6 +3,7 @@ alias fixvlc='mkdir ~/.cache/vlc'
 alias vmc='git diff --name-only --diff-filter=U'
 alias code="code-insiders"
 alias nord="nordvpn"
+alias xclip="xclip -selection c"
 alias g="git"
 alias lzd="lazydocker"
 alias projects="cd Desktop/Projects/Nodejs"
@@ -74,6 +75,9 @@ alias asdf_remove_plugin="asdf plugin remove";
 alias asdf_install_version="asdf install";
 alias asdf_list_version="asdf list";
 alias asdf_global_version_set="asdf global";
+
+
+alias yayskip='yay -S --mflags --skipinteg'
 
 alias git_rre_delete="rm -rf .git/rr-cache";
 
