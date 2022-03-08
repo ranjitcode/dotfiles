@@ -87,6 +87,8 @@ alias history-stats="history 0 | awk '{print \$2}' | stats | head"
 # Checks whether connection is up.
 alias net="ping google.com | grep -E --only-match --color=never '[0-9\.]+ ms'"
 
+alias asdf-all="asdf plugin-list | xargs -I{} sh -c 'echo {}; asdf list {}'"
+
 ## docker
 
 alias pg-docker-start="docker run --name some-postgres -p 5432:5432 -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres:alpine"
