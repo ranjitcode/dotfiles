@@ -1,6 +1,7 @@
 [user]
 	email = roobin.bhandari@gmail.com
 	name = Rubin Bhandari
+	signingkey = 593CB7DB2B9D1C45
 [credential]
 	helper = cache --timeout=86400
 
@@ -341,3 +342,9 @@
 [merge]
     # Include summaries of merged commits in newly created merge commit messages
     log = true
+[gpg]
+	program = /usr/bin/gpg2
+[commit]
+	gpgsign = true
+[fetch]
+	prune = true

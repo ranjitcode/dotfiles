@@ -14,13 +14,19 @@ fi
 
 clone() {
 	local plugin="$1"
-	cd "$(tpm_path)" &&
-		GIT_TERMINAL_PROMPT=0 git clone -b "$branch" --single-branch --recursive "$plugin" >/dev/null 2>&1
+	local branch="$2"
+	if [ -n "$branch" ]; then
+		cd "$(tpm_path)" &&
+			GIT_TERMINAL_PROMPT=0 git clone --depth 1 -b "$branch" --single-branch --recursive "$plugin" >/dev/null 2>&1
+	else
+		cd "$(tpm_path)" &&
+			GIT_TERMINAL_PROMPT=0 git clone --depth 1 --single-branch --recursive "$plugin" >/dev/null 2>&1
+	fi
 }
 
 # tries cloning:
 # 1. plugin name directly - works if it's a valid git url
-# 2. expands the plugin name to point to a github repo and tries cloning again
+# 2. expands the plugin name to point to a GitHub repo and tries cloning again
 clone_plugin() {
 	local plugin="$1"
 	local branch="$2"
@@ -31,7 +37,7 @@ clone_plugin() {
 # clone plugin and produce output
 install_plugin() {
 	local plugin="$1"
-	local branch=`[ -z "$2" ] && echo "master" || echo "$2"`
+	local branch="$2"
 	local plugin_name="$(plugin_name_helper "$plugin")"
 
 	if plugin_already_installed "$plugin"; then
@@ -48,8 +54,9 @@ install_plugins() {
 	local plugins="$(tpm_plugins_list_helper)"
 	for plugin in $plugins; do
 		IFS='#' read -ra plugin <<< "$plugin"
-		install_plugin "${plugin[0]}" "${plugin[1]}"
+		install_plugin "${plugin[0]}" "${plugin[1]}"&
 	done
+	wait
 }
 
 verify_tpm_path_permissions() {

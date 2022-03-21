@@ -1,208 +1,259 @@
+-- init.lua
+-- Neovim-specific configuration
+
+require("globals")
+local opt = vim.opt
 local cmd = vim.cmd
 local g = vim.g
+local o = vim.o
 local fn = vim.fn
+local env = vim.env
 local utils = require("utils")
+local termcodes = utils.termcodes
 local nmap = utils.nmap
+local vmap = utils.vmap
+local imap = utils.imap
+local xmap = utils.xmap
+local omap = utils.omap
+local nnoremap = utils.nnoremap
+local inoremap = utils.inoremap
+local vnoremap = utils.vnoremap
+local colors = require("theme").colors
 
-local plugLoad = fn["functions#PlugLoad"]
-local plugBegin = fn["plug#begin"]
-local plugEnd = fn["plug#end"]
+-- create a completion_nvim table on _G which is visible via
+-- v:lua from vimscript
+_G.completion_nvim = {}
 
-vim.opt.termguicolors = true
+function _G.completion_nvim.smart_pumvisible(vis_seq, not_vis_seq)
+  if (fn.pumvisible() == 1) then
+    return termcodes(vis_seq)
+  else
+    return termcodes(not_vis_seq)
+  end
+end
 
-plugLoad()
--- cmd('call functions#PlugLoad()')
-plugBegin("~/.config/nvim/plugged")
+-- General
+----------------------------------------------------------------
+cmd [[abbr funciton function]]
+cmd [[abbr teh the]]
+cmd [[abbr tempalte template]]
+cmd [[abbr fitler filter]]
+cmd [[abbr cosnt const]]
+cmd [[abbr attribtue attribute]]
+cmd [[abbr attribuet attribute]]
 
--- NOTE: the argument passed to Plug has to be wrapped with single-quotes
+opt.backup = false -- don't use backup files
+opt.writebackup = false -- don't backup the file while editing
+opt.swapfile = false -- don't create swap files for new buffers
+opt.updatecount = 0 -- don't write swap files after some number of updates
 
--- a set of lua helpers that are used by other plugins
-cmd [[Plug 'nvim-lua/plenary.nvim']]
-
--- easy commenting
-cmd [[Plug 'tpope/vim-commentary']]
-cmd [[Plug 'JoosepAlviste/nvim-ts-context-commentstring']]
-
--- bracket mappings for moving between buffers, quickfix items, etc.
-cmd [[Plug 'tpope/vim-unimpaired']]
-
--- mappings to easily delete, change and add such surroundings in pairs, such as quotes, parens, etc.
-cmd [[Plug 'tpope/vim-surround']]
-
--- endings for html, xml, etc. - ehances surround
-cmd [[Plug 'tpope/vim-ragtag']]
-
--- substitution and abbreviation helpers
-cmd [[Plug 'tpope/vim-abolish']]
-
--- enables repeating other supported plugins with the . command
-cmd [[Plug 'tpope/vim-repeat']]
-
--- single/multi line code handler: gS - split one line into multiple, gJ - combine multiple lines into one
-cmd [[Plug 'AndrewRadev/splitjoin.vim']]
-
--- detect indent style (tabs vs. spaces)
-cmd [[Plug 'tpope/vim-sleuth']]
-
--- setup editorconfig
-cmd [[Plug 'editorconfig/editorconfig-vim']]
-
--- fugitive
-cmd [[Plug 'tpope/vim-fugitive']]
-cmd [[Plug 'tpope/vim-rhubarb']]
-nmap("<leader>gr", ":Gread<cr>")
-nmap("<leader>gb", ":G blame<cr>")
-
--- general plugins
--- emmet support for vim - easily create markdup wth CSS-like syntax
-cmd [[Plug 'mattn/emmet-vim']]
-
--- match tags in html, similar to paren support
-cmd [[Plug 'gregsexton/MatchTag', { 'for': 'html' }]]
-
--- html5 support
-cmd [[Plug 'othree/html5.vim', { 'for': 'html' }]]
-
--- mustache support
-cmd [[Plug 'mustache/vim-mustache-handlebars']]
-
--- pug / jade support
-cmd [[Plug 'digitaltoad/vim-pug', { 'for': ['jade', 'pug'] }]]
-
--- nunjucks support
-cmd [[Plug 'niftylettuce/vim-jinja']]
-
--- edit quickfix list
-cmd [[Plug 'itchyny/vim-qfedit']]
-
--- liquid support
-cmd [[Plug 'tpope/vim-liquid']]
-
-cmd [[Plug 'othree/yajs.vim', { 'for': [ 'javascript', 'javascript.jsx', 'html' ] }]]
--- Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx', 'html'] }
-cmd [[Plug 'moll/vim-node', { 'for': 'javascript' }]]
-cmd [[Plug 'MaxMEllon/vim-jsx-pretty']]
-g.vim_jsx_pretty_highlight_close_tag = 1
-cmd [[Plug 'leafgarland/typescript-vim', { 'for': ['typescript', 'typescript.tsx'] }]]
-
-cmd [[Plug 'wavded/vim-stylus', { 'for': ['stylus', 'markdown'] }]]
-cmd [[Plug 'groenewege/vim-less', { 'for': 'less' }]]
-cmd [[Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }]]
-cmd [[Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }]]
-cmd [[Plug 'stephenway/postcss.vim', { 'for': 'css' }]]
-cmd [[Plug 'udalov/kotlin-vim']]
-
--- Open markdown files in Marked.app - mapped to <leader>m
-cmd [[Plug 'itspriddle/vim-marked', { 'for': 'markdown', 'on': 'MarkedOpen' }]]
-nmap("<leader>m", ":MarkedOpen!<cr>")
-nmap("<leader>mq", ":MarkedQuit<cr>")
-nmap("<leader>*", "*<c-o>:%s///gn<cr>")
-
-cmd [[Plug 'elzr/vim-json', { 'for': 'json' }]]
-g.vim_json_syntax_conceal = 0
-
-cmd [[Plug 'ekalinin/Dockerfile.vim']]
-cmd [[Plug 'jparise/vim-graphql']]
-
-cmd [[Plug 'hrsh7th/cmp-vsnip']]
-cmd [[Plug 'hrsh7th/vim-vsnip']]
-cmd [[Plug 'hrsh7th/vim-vsnip-integ']]
-local snippet_dir = os.getenv("HOME") .. ".config/nvim/snippets"
-g.vsnip_snippet_dir = snippet_dir
-g.vsnip_filetypes = {
-  javascriptreact = {"javascript"},
-  typescriptreact = {"typescript"},
-  ["typescript.tsx"] = {"typescript"}
+opt.backupdir = {
+  "~/.vim-tmp",
+  "~/.tmp",
+  "~/tmp",
+  "/var/tmp",
+  "/tmp"
 }
 
--- add color highlighting to hex values
-cmd [[Plug 'norcalli/nvim-colorizer.lua']]
+opt.directory = {
+  "~/.vim-tmp",
+  "~/.tmp",
+  "~/tmp",
+  "/var/tmp",
+  "/tmp"
+}
 
--- use devicons for filetypes
-cmd [[Plug 'kyazdani42/nvim-web-devicons']]
+opt.history = 1000 -- store the last 1000 commands entered
+opt.textwidth = 120 -- after configured number of characters, wrap line
 
--- fast lau file drawer
-cmd [[Plug 'kyazdani42/nvim-tree.lua']]
+opt.inccommand = "nosplit" -- show the results of substition as they're happening
+-- but don't open a split
 
--- Show git information in the gutter
-cmd [[Plug 'lewis6991/gitsigns.nvim']]
+opt.backspace = {"indent", "eol,start"} -- make backspace behave in a sane manner
+opt.clipboard = {"unnamed", "unnamedplus"} -- use the system clipboard
+opt.mouse = "a" -- set mouse mode to all modes
 
--- Helpers to configure the built-in Neovim LSP client
-cmd [[Plug 'neovim/nvim-lspconfig']]
+-- searching
+opt.ignorecase = true -- case insensitive searching
+opt.smartcase = true -- case-sensitive if expresson contains a capital letter
+opt.hlsearch = true -- highlight search results
+opt.incsearch = true -- set incremental search, like modern browsers
+opt.lazyredraw = false -- don't redraw while executing macros
+opt.magic = true -- set magic on, for regular expressions
 
--- Helpers to install LSPs and maintain them
-cmd [[Plug 'williamboman/nvim-lsp-installer']]
+if fn.executable("rg") then
+  -- if ripgrep installed, use that as a grepper
+  opt.grepprg = "rg --vimgrep --no-heading"
+  opt.grepformat = "%f:%l:%c:%m,%f:%l:%m"
+end
 
--- neovim completion
-cmd [[Plug 'hrsh7th/cmp-nvim-lsp']]
-cmd [[Plug 'hrsh7th/cmp-nvim-lua']]
-cmd [[Plug 'hrsh7th/cmp-buffer']]
-cmd [[Plug 'hrsh7th/cmp-path']]
-cmd [[Plug 'hrsh7th/nvim-cmp']]
+-- error bells
+opt.errorbells = false
+opt.visualbell = true
+opt.timeoutlen = 500
 
--- treesitter enables an AST-like understanding of files
-cmd [[Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}]]
--- show treesitter nodes
-cmd [[Plug 'nvim-treesitter/playground']]
--- enable more advanced treesitter-aware text objects
-cmd [[Plug 'nvim-treesitter/nvim-treesitter-textobjects']]
--- add rainbow highlighting to parens and brackets
-cmd [[Plug 'p00f/nvim-ts-rainbow']]
+-- Appearance
+---------------------------------------------------------
+o.termguicolors = true
+opt.number = true -- show line numbers
+opt.wrap = true -- turn on line wrapping
+opt.wrapmargin = 8 -- wrap lines when coming within n characters from side
+opt.linebreak = true -- set soft wrapping
+opt.showbreak = "↪"
+opt.autoindent = true -- automatically set indent of new line
+opt.ttyfast = true -- faster redrawing
+table.insert(opt.diffopt, "vertical")
+table.insert(opt.diffopt, "iwhite")
+table.insert(opt.diffopt, "internal")
+table.insert(opt.diffopt, "algorithm:patience")
+table.insert(opt.diffopt, "hiddenoff")
+opt.laststatus = 2 -- show the status line all the time
+opt.scrolloff = 7 -- set 7 lines to the cursors - when moving vertical
+opt.wildmenu = true -- enhanced command line completion
+opt.hidden = true -- current buffer can be put into background
+opt.showcmd = true -- show incomplete commands
+opt.showmode = true -- don't show which mode disabled for PowerLine
+opt.wildmode = {"list", "longest"} -- complete files like a shell
+opt.shell = env.SHELL
+opt.cmdheight = 1 -- command bar height
+opt.title = true -- set terminal title
+opt.showmatch = true -- show matching braces
+opt.mat = 2 -- how many tenths of a second to blink
+opt.updatetime = 300
+opt.signcolumn = "yes"
+opt.shortmess = "atToOFc" -- prompt message options
 
--- show nerd font icons for LSP types in completion menu
-cmd [[Plug 'onsails/lspkind-nvim']]
+-- Tab control
+opt.smarttab = true -- tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
+opt.tabstop = 4 -- the visible width of tabs
+opt.softtabstop = 4 -- edit as if the tabs are 4 characters wide
+opt.shiftwidth = 4 -- number of spaces to use for indent and unindent
+opt.shiftround = true -- round indent to a multiple of 'shiftwidth'
 
--- base16 syntax themes that are neovim/treesitter-aware
-cmd [[Plug 'RRethy/nvim-base16']]
+-- code folding settings
+opt.foldmethod = "expr"
+opt.foldexpr = "nvim_treesitter#foldexpr()"
+opt.foldlevelstart = 99
+opt.foldnestmax = 10 -- deepest fold is 10 levels
+opt.foldenable = false -- don't fold by default
+opt.foldlevel = 1
 
--- status line plugin
-cmd [[Plug 'feline-nvim/feline.nvim']]
+-- toggle invisible characters
+opt.list = true
+opt.listchars = {
+  tab = "→ ",
+  eol = "¬",
+  trail = "⋅",
+  extends = "❯",
+  precedes = "❮"
+}
 
--- automatically complete brackets/parens/quotes
-cmd [[Plug 'windwp/nvim-autopairs']]
+-- Mappings
+g.mapleader = ","
+opt.pastetoggle = "<leader>v"
 
--- Run prettier and other formatters on save
-cmd [[Plug 'mhartington/formatter.nvim']]
+nnoremap("Q", "<nop>")
+imap("jk", "<Esc>")
+nmap("<leader>,", ":w<cr>")
+nmap("<space>", ":set hlsearch! hlsearch?<cr>")
 
--- Style the tabline without taking over how tabs and buffers work in Neovim
-cmd [[Plug 'alvarosevilla95/luatab.nvim']]
+nmap("<leader><space>", [[:%s/\s\+$<cr>]])
+nmap("<leader><space><space>", [[:%s/\n\{2,}/\r\r/g<cr>]])
 
--- enable copilot support for Neovim
-cmd [[Plug 'github/copilot.vim']]
+nmap("<leader>l", ":set list!<cr>")
+inoremap("<C-j>", [[v:lua.completion_nvim.smart_pumvisible('<C-n>', '<C-j>')]], {expr = true})
+inoremap("<C-k>", [[v:lua.completion_nvim.smart_pumvisible('<C-p>', '<C-k>')]], {expr = true})
+vmap("<", "<gv")
+vmap(">", ">gv")
+nmap("<leader>.", "<c-^>")
+vmap(".", ":normal .<cr>")
 
--- improve the default neovim interfaces, such as refactoring
-cmd [[Plug 'stevearc/dressing.nvim']]
+nmap("<C-h>", "<Plug>WinMoveLeft")
+nmap("<C-j>", "<Plug>WinMoveDown")
+nmap("<C-k>", "<Plug>WinMoveUp")
+nmap("<C-l>", "<Plug>WinMoveRight")
 
--- Navigate a code base with a really slick UI
-cmd [[Plug 'nvim-telescope/telescope.nvim']]
+-- helpers for dealing with other people's code
+nmap([[\t]], ":set ts=4 sts=4 sw=4 noet<cr>")
+nmap([[\s]], ":set ts=4 sts=4 sw=4 et<cr>")
 
--- Startup screen for Neovim
-cmd [[Plug 'startup-nvim/startup.nvim']]
+nmap("<leader>z", "<Plug>Zoom")
 
--- fzf
-cmd [[Plug $HOMEBREW_PREFIX . '/opt/fzf']]
-cmd [[Plug 'junegunn/fzf.vim']]
--- Power telescope with FZF
-cmd [[Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }]]
+-- move line mappings
+local opt_h = "˙"
+local opt_j = "∆"
+local opt_k = "˚"
+local opt_l = "¬"
 
-cmd [[Plug 'folke/trouble.nvim']]
+nnoremap(opt_h, ":cprev<cr>zz")
+nnoremap(opt_l, ":cnext<cr>zz")
 
-plugEnd()
+nnoremap(opt_j, ":m .+1<cr>==")
+nnoremap(opt_k, ":m .-2<cr>==")
+inoremap(opt_j, "<Esc>:m .+1<cr>==gi")
+inoremap(opt_k, "<Esc>:m .-2<cr>==gi")
+vnoremap(opt_j, ":m '>+1<cr>gv=gv")
+vnoremap(opt_k, ":m '<-2<cr>gv=gv")
 
--- Once the plugins have been loaded, Lua-based plugins need to be required and started up
--- For plugins with their own configuration file, that file is loaded and is responsible for
--- starting them. Otherwise, the plugin itself is required and its `setup` method is called.
-require("nvim-autopairs").setup()
-require("colorizer").setup()
-require("plugins.fzf")
-require("plugins.telescope")
-require("plugins.gitsigns")
-require("plugins.trouble")
-require("plugins.lspconfig")
-require("plugins.completion")
-require("plugins.treesitter")
-require("plugins.nvimtree")
-require("plugins.formatter")
-require("plugins.tabline")
-require("plugins.feline")
-require("plugins.startup")
+-- TODO: what exactly does this do?
+vnoremap("$(", "<esc>`>a)<esc>`<i(<esc>")
+vnoremap("$[", "<esc>`>a]<esc>`<i[<esc>")
+vnoremap("${", "<esc>`>a}<esc>`<i{<esc>")
+vnoremap([[$']], [[<esc>`>a"<esc>`<i"<esc>]])
+vnoremap("$'", "<esc>`>a'<esc>`<i'<esc>")
+vnoremap([[$\]], "<esc>`>o*/<esc>`<O/*<esc>")
+vnoremap([[$<]], "<esc>`>a><esc>`<i<<esc>")
+
+nmap("<leader>i", ":set cursorline!")
+
+-- scroll the viewport faster
+nnoremap("<C-e>", "3<c-e>")
+nnoremap("<C-y>", "3<c-y>")
+
+-- moving up and down work as you would expect
+nnoremap("j", 'v:count == 0 ? "gj" : "j"', {expr = true})
+nnoremap("k", 'v:count == 0 ? "gk" : "k"', {expr = true})
+nnoremap("^", 'v:count == 0 ? "g^" :  "^"', {expr = true})
+nnoremap("$", 'v:count == 0 ? "g$" : "$"', {expr = true})
+
+-- custom text objects
+-- inner-line
+xmap("il", ":<c-u>normal! g_v^<cr>")
+omap("il", ":<c-u>normal! g_v^<cr>")
+-- around line
+vmap("al", ":<c-u>normal! $v0<cr>")
+omap("al", ":<c-u>normal! $v0<cr>")
+
+-- interesting word mappings
+nmap("<leader>0", "<Plug>ClearInterestingWord")
+nmap("<leader>1", "<Plug>HiInterestingWord1")
+nmap("<leader>2", "<Plug>HiInterestingWord2")
+nmap("<leader>3", "<Plug>HiInterestingWord3")
+nmap("<leader>4", "<Plug>HiInterestingWord4")
+nmap("<leader>5", "<Plug>HiInterestingWord5")
+nmap("<leader>6", "<Plug>HiInterestingWord6")
+
+-- open current buffer in a new tab
+nmap("gTT", ":tab sb<cr>")
+
+require("plugins")
+
+if fn.filereadable(fn.expand("~/.vimrc_background")) then
+  g.base16colorspace = 256
+  cmd [[source ~/.vimrc_background]]
+end
+
+cmd [[syntax on]]
+cmd [[filetype plugin indent on]]
+-- make the highlighting of tabs and other non-text less annoying
+cmd [[highlight SpecialKey ctermfg=19 guifg=#333333]]
+cmd [[highlight NonText ctermfg=19 guifg=#333333]]
+
+-- make comments and HTML attributes italic
+cmd [[highlight Comment cterm=italic term=italic gui=italic]]
+cmd [[highlight htmlArg cterm=italic term=italic gui=italic]]
+cmd [[highlight xmlAttrib cterm=italic term=italic gui=italic]]
+-- highlight Type cterm=italic term=italic gui=italic
+cmd [[highlight Normal ctermbg=none]]
+-- make the StatusLine background match the GalaxyLine styles
+cmd("hi StatusLine guibg=" .. colors.bg)

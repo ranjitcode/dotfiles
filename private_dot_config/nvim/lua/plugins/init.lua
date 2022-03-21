@@ -68,7 +68,7 @@ cmd [[Plug 'mustache/vim-mustache-handlebars']]
 cmd [[Plug 'digitaltoad/vim-pug', { 'for': ['jade', 'pug'] }]]
 
 -- nunjucks support
-cmd [[Plug 'niftylettuce/vim-jinja']]
+-- cmd [[Plug 'niftylettuce/vim-jinja']]
 
 -- edit quickfix list
 cmd [[Plug 'itchyny/vim-qfedit']]
@@ -105,7 +105,7 @@ cmd [[Plug 'jparise/vim-graphql']]
 cmd [[Plug 'hrsh7th/cmp-vsnip']]
 cmd [[Plug 'hrsh7th/vim-vsnip']]
 cmd [[Plug 'hrsh7th/vim-vsnip-integ']]
-local snippet_dir = os.getenv("DOTFILES") .. "/config/nvim/snippets"
+local snippet_dir = os.getenv("HOME") .. "/.config/nvim/snippets"
 g.vsnip_snippet_dir = snippet_dir
 g.vsnip_filetypes = {
   javascriptreact = {"javascript"},
@@ -173,6 +173,7 @@ cmd [[Plug 'stevearc/dressing.nvim']]
 
 -- Navigate a code base with a really slick UI
 cmd [[Plug 'nvim-telescope/telescope.nvim']]
+cmd [[Plug 'nvim-telescope/telescope-rg.nvim']]
 
 -- Startup screen for Neovim
 cmd [[Plug 'startup-nvim/startup.nvim']]

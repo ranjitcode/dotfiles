@@ -3,7 +3,6 @@ alias fixvlc='mkdir ~/.cache/vlc'
 alias vmc='git diff --name-only --diff-filter=U'
 alias code="code-insiders"
 alias nord="nordvpn"
-alias xclip="xclip -selection c"
 alias g="git"
 alias lzd="lazydocker"
 alias projects="cd Desktop/Projects/Nodejs"
@@ -25,6 +24,20 @@ alias uuid="uuidgen -r | xclip -selection clipboard"
 # Redis
 alias start-redis="docker run --name some-redis -p 6379:6379 -d redis:alpine"
 alias flush-redis="redis-cli FLUSHALL"
+
+# Copy / paste
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
+
+alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
+
+# IP addresses
+alias pubip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="sudo ifconfig | grep -Eo 'inet (addr:)?([0-9]*\\.){3}[0-9]*' | grep -Eo '([0-9]*\\.){3}[0-9]*' | grep -v '127.0.0.1'"
+alias ips="sudo ifconfig -a | grep -o 'inet6\\? \\(addr:\\)\\?\\s\\?\\(\\(\\([0-9]\\+\\.\\)\\{3\\}[0-9]\\+\\)\\|[a-fA-F0-9:]\\+\\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
+
+
+
 
 # ls 
 alias ls='lsd'
@@ -117,6 +130,17 @@ alias dki="docker run -i -t -P"
 # Execute interactive container, e.g., $dex base /bin/bash
 alias dex="docker exec -i -t"
 
+
+## FLIP specific
+
+flip_feature_start() {
+ g ssa;
+ g co prod;
+ g pl;
+ g cob $1;
+}
+
+
 # Stop all containers
 dstop() { docker stop $(docker ps -a -q); }
 
@@ -202,7 +226,10 @@ fc -R .zsh_history
 }
 
 yarn_audit_fix(){
-  npm i --package-lock-only && rm yarn.lock && npm audit fix && yarn import && rm package-lock.json
+  npm i --package-lock-only;
+  rm yarn.lock;
+  npm audit fix;
+  yarn import && rm package-lock.json
 }
 
 # Count code lines in some directory.
