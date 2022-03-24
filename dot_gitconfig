@@ -18,12 +18,15 @@
   # Include your global excludefile
   excludefile = ~/.gitignore_global
   # Don't paginate output by default
-  pager = diff-so-fancy | less --tabs=4 -RFX
+  pager = delta
   # Speed up the status command
   untrackedCache = true
   # Don't consider trailing space change as a cause for merge conflicts
   whitespace=trailing-space,cr-at-eol,tabwidth=4
 
+[interactive]
+    diffFilter = delta --color-only
+    
 [rerere]
 	enabled = true
 
@@ -65,25 +68,33 @@
 [includeIf "gitdir/i:**/workcompany/**"]
   email = rubiin@workcompany.com
   
+[include]
+    path = ~/themes.gitconfig  
+  
 [delta]
-	features = line-numbers decorations
-	line-numbers = true
-	
+    features = decorations
+    line-numbers = true
+    navigate = true
+
+
 [delta "decorations"]
-	minus-style = red bold normal
-	plus-style = green bold normal
-	minus-emph-style = white bold red
-	minus-non-emph-style = red bold normal
-	plus-emph-style = white bold green
-	plus-non-emph-style = green bold normal
-	file-style = yellow bold none
-	file-decoration-style = yellow box
-	hunk-header-style = magenta bold
-	hunk-header-decoration-style = magenta box
-	minus-empty-line-marker-style = normal normal
-	plus-empty-line-marker-style = normal normal
-	line-numbers-right-format = "{np:^4}│ "
-	
+      minus-style = red bold 
+      minus-emph-style = red bold 52
+      zero-style = normal
+      plus-style = green bold 
+      plus-emph-style = green bold 22
+      hunk-header-style = bold syntax
+      hunk-header-decoration-style= bold magenta box
+      file-style = bold yellow
+      file-decoration-style = bold yellow ul ol
+      commit-style = bold yellow
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
+    
 [grep]
   # Consider most regexes to be ERE
   extendedRegexp = true
@@ -339,9 +350,6 @@
 
 [status]
 	hints = false
-[merge]
-    # Include summaries of merged commits in newly created merge commit messages
-    log = true
 [gpg]
 	program = /usr/bin/gpg2
 [commit]

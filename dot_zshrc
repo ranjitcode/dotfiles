@@ -72,7 +72,6 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions git-open autoupdate) 
 
 autoload -Uz compinit
 
@@ -81,6 +80,10 @@ for dump in ~/.zcompdump(N.mh+24); do
 done
 
 compinit -C
+
+
+plugins=(zsh-autosuggestions git-open autoupdate fzf-tab) 
+
 source $HOME/.bash_aliases
 source $ZSH/oh-my-zsh.sh
 source $HOME/.asdf/asdf.sh
@@ -127,4 +130,3 @@ export MCFLY_KEY_SCHEME=vim
 export MCFLY_INTERFACE_VIEW=BOTTOM
 export MCFLY_FUZZY=2
 eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-
