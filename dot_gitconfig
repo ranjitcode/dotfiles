@@ -66,10 +66,7 @@
   sort = -committerdate
 
 [includeIf "gitdir/i:**/workcompany/**"]
-  email = rubiin@workcompany.com
-  
-[include]
-    path = ~/themes.gitconfig  
+  email = rubiin@workcompany.com 
   
 [delta]
     features = decorations
