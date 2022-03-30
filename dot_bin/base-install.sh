@@ -4,9 +4,9 @@
 
 echo 'Yay Installation with all its packages'
 
-yay -S brave-bin chezmoi
+yay -S vivaldi chezmoi
 yay -S plank-git
-yay -Syyu keybase alacritty taskwarrior-tui git-delta kcolorchooser grex fd tldr bat the_silver_searcher asdf-vm git-secrets fzf git-extras fzf docker git-interactive-rebase-tool-bin docker-compose python-pip mousepad nano skypeforlinux-stable-bin zoom mojave-gtk-theme-git visual-studio-code-bin adwaita-icon-theme capitaine-cursors gparted htop la-capitaine-icon-theme neovim postman-bin rate-arch-mirrors spectacle ttf-bitstream-vera ttf-dejavu ttf-font-awesome ttf-hack ttf-liberation ttf-ms-fonts ttf-nerd-fonts-symbols-mono ttf-twemoji-color uuid vlc wps-office wps-office-fonts youtube-dl gwenview ktorrent persepolis linux
+yay -Syyu keybase httpie gping noto-fonts-emoji ttf-joypixels gnu-free-fonts ttf-cm-unicode alacritty taskwarrior-tui git-delta kcolorchooser grex fd sd tldr bat the_silver_searcher asdf-vm git-secrets fzf docker git-interactive-rebase-tool-bin docker-compose python-pip mousepad nano skypeforlinux-stable-bin zoom mojave-gtk-theme-git adwaita-icon-theme capitaine-cursors gparted htop la-capitaine-icon-theme neovim insomnia-bin rate-arch-mirrors spectacle ttf-bitstream-vera ttf-dejavu ttf-font-awesome ttf-hack ttf-liberation ttf-ms-fonts ttf-nerd-fonts-symbols-mono ttf-twemoji-color uuid vlc wps-office wps-office-fonts youtube-dl gwenview ktorrent persepolis linux
 
 
 echo 'Executing post install steps for docker'
@@ -44,5 +44,12 @@ echo 'Installing fonts'
 
 tar -xzvf ~/.fonts/dot_fonts.tar.gz
 
+npm config set fetch-retries 3
+npm config set fetch-retry-mintimeout 100000
+npm config set fetch-retry-maxtimeout 600000
+npm config set cache-min 360
+
+
 sudo fc-cache -vf
 source ~/.zshrc
+sudo pacman -Qtdq | sudo pacman -Rns -
