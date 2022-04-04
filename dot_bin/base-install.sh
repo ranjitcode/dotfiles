@@ -6,7 +6,12 @@ echo 'Yay Installation with all its packages'
 
 yay -S vivaldi chezmoi
 yay -S plank-git
-yay -Syyu keybase httpie gping noto-fonts-emoji ttf-joypixels gnu-free-fonts ttf-cm-unicode alacritty taskwarrior-tui git-delta kcolorchooser grex fd sd tldr bat the_silver_searcher asdf-vm git-secrets fzf docker git-interactive-rebase-tool-bin docker-compose python-pip mousepad nano skypeforlinux-stable-bin zoom mojave-gtk-theme-git adwaita-icon-theme capitaine-cursors gparted htop la-capitaine-icon-theme neovim insomnia-bin rate-arch-mirrors spectacle ttf-bitstream-vera ttf-dejavu ttf-font-awesome ttf-hack ttf-liberation ttf-ms-fonts ttf-nerd-fonts-symbols-mono ttf-twemoji-color uuid vlc wps-office wps-office-fonts youtube-dl gwenview ktorrent persepolis linux
+yay -Syyu keybase httpie gping noto-fonts-emoji pamac-aur ttf-joypixels gnu-free-fonts
+ttf-cm-unicode alacritty taskwarrior-tui git-delta kcolorchooser grex fd sd tldr bat
+the_silver_searcher asdf-vm git-secrets fzf docker git-interactive-rebase-tool-bin docker-compose python-pip
+mousepad nano skypeforlinux-stable-bin zoom mojave-gtk-theme-git adwaita-icon-theme capitaine-cursors gparted htop
+la-capitaine-icon-theme neovim insomnia-bin rate-arch-mirrors spectacle ttf-bitstream-vera ttf-dejavu ttf-font-awesome
+ttf-hack ttf-liberation ttf-ms-fonts ttf-nerd-fonts-symbols-mono ttf-twemoji-color uuid vlc wps-office wps-office-fonts youtube-dl gwenview ktorrent persepolis linux
 
 
 echo 'Executing post install steps for docker'
@@ -21,6 +26,7 @@ source ~/.zshrc
 asdf update
 asdf plugin add nodejs
 asdf plugin add golang
+asdf plugin add deno
 asdf plugin add ruby
 asdf plugin add rust
 asdf install nodejs 14.18.2
