@@ -4,6 +4,7 @@ alias vmc='git diff --name-only --diff-filter=U'
 alias code="code-insiders"
 alias nord="nordvpn"
 alias g="git"
+alias tsn="ts-node"
 alias lzd="lazydocker"
 alias projects="cd Desktop/Projects/Nodejs"
 alias cz="chezmoi"
@@ -22,8 +23,12 @@ alias rate-and-update='export TMPFILE="$(mktemp)"; \
 alias uuid="uuidgen -r | xclip -selection clipboard"
 
 # Redis
-alias start-redis="docker run --name some-redis -p 6379:6379 -d redis:alpine"
+alias start-redis="docker run --name some-redis -p 6379:6379 -d redis:alpine --restart=always redis:latest redis-server --appendonly yes --requirepass "secret""
 alias flush-redis="redis-cli FLUSHALL"
+
+# Postgres
+
+alias start-postgres="docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -p 5432:5432 -d postgres:alpine"
 
 # Copy / paste
 alias pbcopy='xclip -selection clipboard'
@@ -199,6 +204,14 @@ sssh(){
   while true; do command ssh "$@"; [ $? -ne 255 ] && break || sleep 0.5; done
 }
 
+
+git_branch_rename(){
+git checkout $1;
+git branch -m $2;
+git push origin -u $2;
+git push origin --delete $1;
+
+}
 
 code_update_extensions(){
 for ext in `code --list-extensions`

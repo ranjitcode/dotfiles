@@ -2,12 +2,11 @@
 @nestjs/cli
 ngrok
 yarn
-json-server
-typescript
 nodemon
 tldr
 serve
 ts-node
+ts-node-dev
 eslint
 prettier
 neovim
@@ -21,4 +20,5 @@ webpack-cli
 @sentry/cli
 @storybook/cli
 commitizen
+nx
 json-server
