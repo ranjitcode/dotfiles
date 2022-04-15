@@ -23,7 +23,7 @@ alias rate-and-update='export TMPFILE="$(mktemp)"; \
 alias uuid="uuidgen -r | xclip -selection clipboard"
 
 # Redis
-alias start-redis="docker run --name some-redis -p 6379:6379 -d redis:alpine --restart=always redis:latest redis-server --appendonly yes --requirepass "secret""
+alias start-redis="docker run --name some-redis -p 6379:6379 -d --restart=always redis:alpine redis-server --appendonly yes --requirepass 'secret'"
 alias flush-redis="redis-cli FLUSHALL"
 
 # Postgres

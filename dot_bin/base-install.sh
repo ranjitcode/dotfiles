@@ -6,7 +6,7 @@ echo 'Yay Installation with all its packages'
 
 yay -S vivaldi chezmoi
 yay -S plank-git
-yay -Syyu keybase httpie gping noto-fonts-emoji pamac-aur ttf-joypixels gnu-free-fonts
+yay -Syyu keybase mkcert httpie gping noto-fonts-emoji pamac-aur ttf-joypixels gnu-free-fonts
 ttf-cm-unicode alacritty taskwarrior-tui git-delta kcolorchooser grex fd sd tldr bat
 the_silver_searcher asdf-vm git-secrets fzf docker git-interactive-rebase-tool-bin docker-compose python-pip
 mousepad nano skypeforlinux-stable-bin zoom mojave-gtk-theme-git adwaita-icon-theme capitaine-cursors gparted htop
