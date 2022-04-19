@@ -241,12 +241,7 @@ strings .zsh_history_old > .zsh_history
 fc -R .zsh_history
 }
 
-yarn_audit_fix(){
-  npm i --package-lock-only;
-  rm yarn.lock;
-  npm audit fix;
-  yarn import && rm package-lock.json
-}
+alias yarn_audit_fix="npm_config_yes=true npx yarn-audit-fix"
 
 # Count code lines in some directory.
 # $ loc py js css

@@ -21,4 +21,5 @@ webpack-cli
 @storybook/cli
 commitizen
 nx
+yarn-audit-fix
 json-server
