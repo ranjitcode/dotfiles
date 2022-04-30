@@ -11,6 +11,7 @@ include-file = ~/.config/bspwm/polybar/system
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 [bar/bar]
+radius = 25 
 monitor =
 monitor-fallback =
 monitor-strict = false
