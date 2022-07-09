@@ -1,25 +1,3 @@
-
-Skip to content
-Search...
-Write a post
-9
-
-
-15
-
-4
-
-9
-
-Cover image for Get emojis working on arch linux with noto-fonts-emoji
-Get emojis working on arch linux with noto-fonts-emoji
-#archlinux #config
-darksmile92 profile image
-Robin Kretzschmar
-Jan 7, 2020 ・Updated on Feb 20, 2020 ・2 min read
-After switching to arch linux as my daily driver I came across a new problem: I couldn't see emojis!
-
-There are some emoji fonts you can install and setup. One of them is noto-fonts-emoji. I decided to write a small script to automate the setup of the font and explain the steps below:
 #!/bin/sh
 set -e
 if [[ $(id -u) -ne 0 ]] ; then echo "Please run as root" ; exit 1 ; fi

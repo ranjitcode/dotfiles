@@ -73,15 +73,6 @@ ZSH_THEME="agnoster"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-autoload -Uz compinit
-
-for dump in ~/.zcompdump(N.mh+24); do
-  compinit
-done
-
-compinit -C
-
-
 plugins=(zsh-autosuggestions git-open autoupdate) 
 
 source $HOME/.bash_aliases
@@ -129,5 +120,4 @@ eval "$(mcfly init zsh)"
 export MCFLY_KEY_SCHEME=vim
 export MCFLY_INTERFACE_VIEW=BOTTOM
 export MCFLY_FUZZY=2
-eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 fpath=($fpath "/home/rubin/.zfunctions")
