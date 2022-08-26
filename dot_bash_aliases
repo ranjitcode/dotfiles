@@ -1,8 +1,11 @@
 alias myzsh='source ~/.zshrc'
 alias fixvlc='mkdir ~/.cache/vlc'
 alias vmc='git diff --name-only --diff-filter=U'
-alias code="code-insiders"
 alias nord="nordvpn"
+alias ytd="yt-dlp"
+alias code="code-insiders"
+alias b="bun"
+alias ari="aria2c"
 alias g="git"
 alias tsn="ts-node"
 alias lzd="lazydocker"
@@ -12,7 +15,7 @@ alias czo="code ~/.local/share/chezmoi/"
 alias husky_init="npx husky install && npx husky add .husky/pre-commit "npx lint-staged""
 alias yt="youtube-dl"
 alias ua-drop-caches='sudo paccache -rk3; yay -Sc --aur --noconfirm'
-alias update-all='yay -Syyu --noconfirm && brew cleanup && brew autoremove && brew update && brew upgrade && asdf plugin update --all && omz update && code_update_extensions'
+alias update-all='yay -Syyu --noconfirm  && asdf plugin update --all && omz update && code_update_extensions'
 alias rate-and-update='export TMPFILE="$(mktemp)"; \
     sudo true; \
     rate-mirrors --save=$TMPFILE arch --max-delay=21600 \
@@ -27,7 +30,6 @@ alias start-redis="docker run --name some-redis -p 6379:6379 -d --restart=always
 alias flush-redis="redis-cli FLUSHALL"
 
 # Postgres
-
 alias start-postgres="docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -p 5432:5432 -d postgres:alpine"
 
 # Copy / paste
@@ -40,11 +42,6 @@ alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date
 alias pubip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="sudo ifconfig | grep -Eo 'inet (addr:)?([0-9]*\\.){3}[0-9]*' | grep -Eo '([0-9]*\\.){3}[0-9]*' | grep -v '127.0.0.1'"
 alias ips="sudo ifconfig -a | grep -o 'inet6\\? \\(addr:\\)\\?\\s\\?\\(\\(\\([0-9]\\+\\.\\)\\{3\\}[0-9]\\+\\)\\|[a-fA-F0-9:]\\+\\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
-
-
-# chezmoi add all
-
-alias cz-add-all=cz add ~/.bashrc ~/.bin ~/.profile ~/.zshrc ~/.bash_aliases ~/.vimrc~/.vimrc_background ~/.gitconfig ~/.gitgnore_global ~/.tool-versions ~/.default-go-pkgs ~/.default-npm-packages ~/.tmux ~/.tmux.conf.local ~/.tmux.conf ~/.fonts ~/.fonts.conf ~/.curlrc ~/.wgetrc ~/.ssh/config ~/kde-plasma-config ~/.Xdefaults ~/.config/nvim ~/.config/alacritty ~/.config/kate ~/.config/lite-xl ~/.config/plank ~/.config/Mousepad ~/.config/.ktorrentrc ~/.config/.dolphinrc ~/.cheatsheets ~/wallpapers ~/.bin ~/.profile;
 
 
 # ls 
@@ -88,6 +85,10 @@ alias yrs="yarn run start";
 alias yrd="yarn run start:dev";
 alias yup="yarn upgrade";
 
+# bun aliases
+alias bi="bun install"
+alias br="bun run"
+
 ## asdf aliases
 alias asdf_update="asdf plugin update --all";
 alias asdf_plugins="asdf plugin list";
@@ -97,6 +98,17 @@ alias asdf_install_version="asdf install";
 alias asdf_list_version="asdf list";
 alias asdf_global_version_set="asdf global";
 
+
+git-standup() {
+    AUTHOR=${AUTHOR:="`git config user.name`"}
+
+    since=yesterday
+    if [[ $(date +%u) == 1 ]] ; then
+        since="2 days ago"
+    fi
+
+    git log --all --since "$since" --oneline --author="$AUTHOR"
+}
 
 alias yayskip='yay -S --mflags --skipinteg'
 

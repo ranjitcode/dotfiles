@@ -83,6 +83,16 @@ export LC_CTYPE=en_US.UTF-8
 export PATH="$HOME/.bin:$PATH"
 
 
+autoload -Uz compinit
+
+for dump in ~/.zcompdump(N.mh+24); do
+  compinit
+done
+
+compinit -C
+
+
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -121,3 +131,15 @@ export MCFLY_KEY_SCHEME=vim
 export MCFLY_INTERFACE_VIEW=BOTTOM
 export MCFLY_FUZZY=2
 fpath=($fpath "/home/rubin/.zfunctions")
+
+# bun completions
+[ -s "/home/rubin/.bun/_bun" ] && source "/home/rubin/.bun/_bun"
+
+# Bun
+export BUN_INSTALL="/home/rubin/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# pnpm
+export PNPM_HOME="/home/rubin/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
