@@ -6,7 +6,7 @@ echo 'Yay Installation with all its packages'
 
 yay -S vivaldi chezmoi
 yay -S plank-git
-yay -Syyu keybase noto-fonts-cjk mkcert httpie gping noto-fonts-emoji mpv pamac-aur ark code jetbrains-toolbox tmux ttf-joypixels gnu-free-fonts lsd thefuck mcfly fasd ttf-cm-unicode alacritty taskwarrior-tui git-delta kcolorchooser grex fd sd tldr bat the_silver_searcher git-secrets fzf podman git-interactive-rebase-tool-bin docker-compose python-pip mousepad nano skypeforlinux-stable-bin zoom mojave-gtk-theme-git adwaita-icon-theme capitaine-cursors gparted htop la-capitaine-icon-theme neovim insomnia-bin rate-mirrors spectacle ttf-bitstream-vera ttf-dejavu ttf-font-awesome ttf-hack ttf-liberation ttf-ms-fonts ttf-nerd-fonts-symbols-mono ttf-twemoji-color uuid vlc wps-office wps-office-fonts youtube-dl gwenview ktorrent persepolis linux
+yay -Syyu keybase noto-fonts-cjk mkcert httpie gping noto-fonts-emoji mpv ark jetbrains-toolbox tmux ttf-joypixels gnu-free-fonts lsd thefuck mcfly fasd ttf-cm-unicode alacritty taskwarrior-tui git-delta kcolorchooser grex fd sd tldr bat the_silver_searcher git-secrets fzf podman git-interactive-rebase-tool-bin docker-compose python-pip mousepad nano zoom mojave-gtk-theme-git adwaita-icon-theme capitaine-cursors gparted htop la-capitaine-icon-theme neovim insomnia-bin rate-mirrors spectacle ttf-bitstream-vera ttf-dejavu ttf-font-awesome ttf-hack ttf-liberation ttf-ms-fonts ttf-twemoji-colorvlc youtube-dl gwenview ktorrent persepolis linux
 
 
 
