@@ -23,3 +23,4 @@ commitizen
 nx
 yarn-audit-fix
 json-server
+redis-cli

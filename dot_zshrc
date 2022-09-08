@@ -143,3 +143,6 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export PNPM_HOME="/home/rubin/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+
+export FLY_HOME="/home/rubin/.fly/bin/"
+export PATH="$FLY_HOME:$PATH"
