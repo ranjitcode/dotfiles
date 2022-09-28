@@ -2,7 +2,7 @@ alias myzsh='source ~/.zshrc'
 alias fixvlc='mkdir ~/.cache/vlc'
 alias vmc='git diff --name-only --diff-filter=U'
 alias nord="nordvpn"
-alias ytd="yt-dlp"
+alias ytd="yt-dlp --write-srt --sub-lang en"
 alias code="code-insiders"
 alias b="bun"
 alias ari="aria2c"
@@ -13,7 +13,7 @@ alias projects="cd Desktop/Projects/Nodejs"
 alias cz="chezmoi"
 alias czo="code ~/.local/share/chezmoi/"
 alias husky_init="npx husky install && npx husky add .husky/pre-commit "npx lint-staged""
-alias yt="youtube-dl"
+alias yt="youtube-dl --write-srt --sub-lang en"
 alias ua-drop-caches='sudo paccache -rk3; yay -Sc --aur --noconfirm'
 alias update-all='yay -Syyu --noconfirm  && asdf plugin update --all && omz update && code_update_extensions'
 alias rate-and-update='export TMPFILE="$(mktemp)"; \
