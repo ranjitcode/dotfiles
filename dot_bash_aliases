@@ -85,6 +85,14 @@ alias yrs="yarn run start";
 alias yrd="yarn run start:dev";
 alias yup="yarn upgrade";
 
+#pnpm aliases
+alias p="pnpm";
+alias pp="pnpm prune"
+alias pi="pnpm i";
+alias pih="pnpm i --shamefully-hoist=true";
+
+
+
 # bun aliases
 alias bi="bun install"
 alias br="bun run"
