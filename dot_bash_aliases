@@ -1,6 +1,7 @@
 alias myzsh='source ~/.zshrc'
 alias fixvlc='mkdir ~/.cache/vlc'
 alias vmc='git diff --name-only --diff-filter=U'
+alias today="npx aaja -y"
 alias nord="nordvpn"
 alias ytd="yt-dlp"
 alias code="code-insiders"
