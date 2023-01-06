@@ -1,11 +1,15 @@
 alias myzsh='source ~/.zshrc'
 alias fixvlc='mkdir ~/.cache/vlc'
 alias vmc='git diff --name-only --diff-filter=U'
-alias today="npx aaja -y"
+alias today="npx aaja"
 alias nord="nordvpn"
 alias ytd="yt-dlp"
+alias grep='grep --color=auto'
+alias df='df -h' # disk free, in Gigabytes, not bytes
+alias du='du -h -c' # calculate disk usage for a folder
 alias code="code-insiders"
 alias b="bun"
+alias clear_npm="rm -rf node_modules;rm -rf pnpm-lock.yaml packaga-lock.json yarn.lock"
 alias ari="aria2c"
 alias g="git"
 alias tsn="ts-node"
