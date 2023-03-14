@@ -23,10 +23,10 @@ asdf plugin add nodejs
 asdf plugin add golang
 asdf plugin add deno
 asdf plugin add ruby
-asdf install nodejs 16.15.1
-asdf install golang 1.17.7
-asdf install ruby 2.6.8
-asdf global golang 1.17.7
+asdf install nodejs 18.15.0
+asdf install golang 1.20.2
+asdf install ruby 3.2.1
+asdf global golang 1.20.2
 asdf global nodejs 18.15.0
 
 npm config set fetch-retries 3
