@@ -94,6 +94,7 @@ alias yup="yarn upgrade";
 alias p="pnpm";
 alias pp="pnpm prune"
 alias pi="pnpm i";
+alias pid="pnpm i -D"
 alias pih="pnpm i --shamefully-hoist=true";
 
 
