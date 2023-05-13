@@ -207,6 +207,18 @@ fo() {
   fi
 }
 
+
+gh_delete_runs() {
+# Get the IDs of all failed runs
+ids=$(gh run list -s failure --limit=200 --json databaseId  -q '.[].databaseId')
+
+# Loop over the IDs and delete each run
+for id in $ids
+do
+  gh run delete $id
+done
+}
+
 gi() { 
 curl -sLw n https://www.toptal.com/developers/gitignore/api/$@ > .gitignore;
 }
@@ -343,6 +355,20 @@ function rams() {
     sleep 1
   done
 }
+
+function git-deploy(){
+git pull;
+git push;
+git checkout stage;
+git pull;
+git merge -X theirs dev;
+git push;
+git checkout main;
+git pull;
+git merge -X theirs stage;
+
+}
+
 
 # $ size dir1 file2.js
 function size() {
