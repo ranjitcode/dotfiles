@@ -6,7 +6,7 @@ echo 'Yay Installation with all its packages'
 
 yay -S vivaldi
 yay -S plank-git chezmoi
-yay -Syyu keybase yt-dlp noto-fonts-cjk mkcert httpie noto-fonts-emoji mpv ark jetbrains-toolbox tmux ttf-joypixels gnu-free-fonts lsd thefuck mcfly fasd ttf-cm-unicode alacritty taskwarrior-tui git-delta kcolorchooser grex fd sd tealdeer bat the_silver_searcher git-secrets fzf podman git-interactive-rebase-tool-bin python-pip mousepad nano zoom mojave-gtk-theme-git adwaita-icon-theme capitaine-cursors gparted htop la-capitaine-icon-theme neovim insomnia-bin rate-mirrors spectacle ttf-bitstream-vera ttf-dejavu ttf-font-awesome ttf-hack ttf-liberation ttf-ms-fonts ttf-twemoji-colorvlc youtube-dl gwenview ktorrent persepolis linux
+yay -Syyu keybase yt-dlp noto-fonts-cjk mkcert la-capitaine-icon-theme-git httpie noto-fonts-emoji mpv ark jetbrains-toolbox tmux ttf-joypixels gnu-free-fonts lsd thefuck mcfly fasd ttf-cm-unicode alacritty taskwarrior-tui git-delta kcolorchooser grex fd sd tealdeer bat the_silver_searcher git-secrets fzf podman git-interactive-rebase-tool-bin python-pip mousepad nano zoom mojave-gtk-theme-git adwaita-icon-theme capitaine-cursors gparted htop la-capitaine-icon-theme neovim insomnia-bin rate-mirrors spectacle ttf-bitstream-vera ttf-dejavu ttf-font-awesome ttf-hack ttf-liberation ttf-ms-fonts ttf-twemoji-colorvlc youtube-dl gwenview ktorrent persepolis linux
 
 
 echo 'Installing fonts'
@@ -14,21 +14,11 @@ echo 'Installing fonts'
 sudo fc-cache -vf
 sudo pacman -Qtdq | sudo pacman -Rns -
 
-echo 'Adding plugins for asdf and installing golang and nodejs'
 
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.0
-source ~/.zshrc
-asdf update
-asdf plugin add nodejs
-asdf plugin add golang
-asdf plugin add deno
-asdf plugin add ruby
-asdf install nodejs 18.12.1
-asdf install golang 1.19.4
-asdf install ruby 3.0.4
-asdf global golang 1.19.4
-asdf global nodejs 18.12.1
-asdf global ruby 3.0.4
+
+echo 'Installing la-capitane-icons'
+cd ~/.icons
+git clone https://github.com/keeferrourke/la-capitaine-icon-theme.git
 
 
 echo 'setting npm defaults'
@@ -52,6 +42,21 @@ sudo usermod -aG docker $USER
 sudo systemctl enable docker.service
 sudo systemctl enable containerd.service
 
+echo 'Adding plugins for asdf and installing golang and nodejs'
+
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.0
+source ~/.zshrc
+asdf update
+asdf plugin add nodejs
+asdf plugin add golang
+asdf plugin add deno
+asdf plugin add ruby
+asdf install nodejs 18.16.0
+asdf install golang 1.20.4
+asdf install ruby 3.2.2
+asdf global golang 1.20.4
+asdf global nodejs 18.16.0
+asdf global ruby 3.2.2
 
 
 echo 'Installing zsh with ohmyzsh and other plugins'
