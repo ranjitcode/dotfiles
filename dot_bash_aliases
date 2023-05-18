@@ -6,6 +6,7 @@ alias nord="nordvpn"
 alias ytd="yt-dlp"
 alias grep='grep --color=auto'
 alias df='df -h' # disk free, in Gigabytes, not bytes
+alias clean_orphan_packages="sudo pacman -Qtdq | sudo pacman -Rns -"
 alias du='du -h -c' # calculate disk usage for a folder
 alias code="code-insiders"
 alias b="bun"
