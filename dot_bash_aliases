@@ -54,7 +54,7 @@ alias localip="sudo ifconfig | grep -Eo 'inet (addr:)?([0-9]*\\.){3}[0-9]*' | gr
 alias ips="sudo ifconfig -a | grep -o 'inet6\\? \\(addr:\\)\\?\\s\\?\\(\\(\\([0-9]\\+\\.\\)\\{3\\}[0-9]\\+\\)\\|[a-fA-F0-9:]\\+\\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 
 
-# ls 
+# ls
 alias ls='lsd'
 alias l='ls -l'
 alias la='ls -a'
@@ -63,7 +63,7 @@ alias lt='ls --tree'
 
 alias cat="bat"
 
-# tmux 
+# tmux
 alias t="tmux"
 alias ta="t a -t"
 alias tls="t ls"
@@ -180,7 +180,7 @@ alias drmf='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
 # Remove all images
 dri() { docker rmi $(docker images -q); }
 
-# Dockerfile build, e.g., $dbu tcnksm/test 
+# Dockerfile build, e.g., $dbu tcnksm/test
 dbu() { docker build -t=$1 .; }
 
 # Show all alias related docker
@@ -212,7 +212,7 @@ do
 done
 }
 
-gi() { 
+gi() {
 curl -sLw n https://www.toptal.com/developers/gitignore/api/$@ > .gitignore;
 }
 
@@ -246,14 +246,14 @@ git push origin --delete $1;
 
 code_update_extensions(){
 for ext in `code --list-extensions`
-  do 
+  do
     code --install-extension "$ext" --force
   done
 }
 
 ffmpeg-convert(){
   for i in *.mp4;
-  do ffmpeg -n  -i "$i" -vcodec libx264 -v warning -hide_banner -stats -crf 28 -preset faster -tune film "cc${i}"; 
+  do ffmpeg -n  -i "$i" -vcodec libx264 -v warning -hide_banner -stats -crf 28 -preset faster -tune film "cc${i}";
   done
 }
 
