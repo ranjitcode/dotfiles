@@ -13,6 +13,7 @@ alias grep='grep --color=auto'
 alias df='df -h' # disk free, in Gigabytes, not bytes
 alias clear-orphan-packages="sudo pacman -Qtdq | sudo pacman -Rns -"
 alias du='du -h -c' # calculate disk usage for a folder
+alias docker-compose-"dc"
 alias code="code-insiders"
 alias b="bun"
 alias clear-npm="rm -rf node_modules;rm -rf pnpm-lock.yaml package-lock.json yarn.lock"
