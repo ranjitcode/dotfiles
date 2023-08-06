@@ -4,6 +4,7 @@ alias vmc='git diff --name-only --diff-filter=U'
 alias today="npx aaja"
 alias npm-clear-cache="npm cache clear --force;yarn cache clean;pnpm store prune"
 alias nord="nordvpn"
+alias dc="docker-compose"
 alias ytd="yt-dlp"
 alias grep='grep --color=auto'
 alias df='df -h' # disk free, in Gigabytes, not bytes
@@ -38,6 +39,7 @@ alias flush-redis="redis-cli FLUSHALL"
 
 # Postgres
 alias start-postgres="docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -p 5432:5432 -d postgres:alpine"
+alias start-redis="docker run --name my-redis -p 6379:6379 -d redis:alpine"
 
 # Copy / paste
 alias pbcopy='xclip -selection clipboard'
