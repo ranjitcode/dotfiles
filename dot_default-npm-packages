@@ -1,14 +1,8 @@
 @vue/cli
 @nestjs/cli
-ngrok
 yarn
 nodemon
-tldr
 serve
-ts-node
-ts-node-dev
-eslint
-prettier
 neovim
 npm-check-updates
 release-it
@@ -17,8 +11,6 @@ types-installer
 autocannon
 vercel
 webpack-cli
-@sentry/cli
-@storybook/cli
 commitizen
 nx
 aaja

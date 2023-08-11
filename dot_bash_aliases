@@ -4,15 +4,16 @@ alias vmc='git diff --name-only --diff-filter=U'
 alias today="npx aaja"
 alias npm-clear-cache="npm cache clear --force;yarn cache clean;pnpm store prune"
 alias nord="nordvpn"
+alias validate-compose="docker-compose config --quiet && printf "OK\n" || printf "ERROR\n""
 alias dc="docker-compose"
 alias ytd="yt-dlp"
 alias grep='grep --color=auto'
 alias df='df -h' # disk free, in Gigabytes, not bytes
-alias clean_orphan_packages="sudo pacman -Qtdq | sudo pacman -Rns -"
+alias clean-orphan-packages="sudo pacman -Qtdq | sudo pacman -Rns -"
 alias du='du -h -c' # calculate disk usage for a folder
 alias code="code-insiders"
 alias b="bun"
-alias clear_npm="rm -rf node_modules;rm -rf pnpm-lock.yaml packaga-lock.json yarn.lock"
+alias clear-npm="rm -rf node_modules;rm -rf pnpm-lock.yaml packaga-lock.json yarn.lock"
 alias ari="aria2c"
 alias g="git"
 alias tsn="ts-node"
@@ -20,7 +21,7 @@ alias lzd="lazydocker"
 alias projects="cd Desktop/Projects/Nodejs"
 alias cz="chezmoi"
 alias czo="code ~/.local/share/chezmoi/"
-alias husky_init="npx husky install && npx husky add .husky/pre-commit "npx lint-staged""
+alias husky-init="npx husky install && npx husky add .husky/pre-commit "npx lint-staged""
 alias yt="youtube-dl"
 alias ua-drop-caches='sudo paccache -rk3; yay -Sc --aur --noconfirm'
 alias update-all='yay -Syyu --noconfirm && npx npm-check --global --update-all --yes && asdf update && asdf plugin update --all && omz update && code_update_extensions'
@@ -130,7 +131,7 @@ git-standup() {
 
 alias yayskip='yay -S --mflags --skipinteg'
 
-alias git_rre_delete="rm -rf .git/rr-cache";
+alias git-rre-delete="rm -rf .git/rr-cache";
 
 # Lists the ten most used commands.
 alias history-stats="history 0 | awk '{print \$2}' | stats | head"
@@ -169,16 +170,6 @@ alias dki="docker run -i -t -P"
 alias dex="docker exec -i -t"
 
 
-## FLIP specific
-
-flip_feature_start() {
- g ssa;
- g co prod;
- g pl;
- g cob $1;
-}
-
-
 # Stop all containers
 dstop() { docker stop $(docker ps -a -q); }
 
@@ -212,7 +203,7 @@ fo() {
 }
 
 
-gh_delete_runs() {
+gh-delete-runs() {
 # Get the IDs of all failed runs
 ids=$(gh run list -s failure --limit=200 --json databaseId  -q '.[].databaseId')
 
@@ -227,15 +218,15 @@ gi() {
 curl -sLw n https://www.toptal.com/developers/gitignore/api/$@ > .gitignore;
 }
 
-git_branch_delete(){
+git-branch-delete(){
 git branch | grep $@ | xargs git branch -D
 }
 
-git_redate() {
+git-redate() {
     GIT_COMMITTER_DATE="$1" git commit --amend --no-edit --date "$1"
 }
 
-git_fix_repo(){
+git-fix-repo(){
 find .git/objects -type f -empty -delete;
 git prune;
 git fetch --all --prune;
@@ -247,7 +238,7 @@ sssh(){
 }
 
 
-git_branch_rename(){
+git-branch-rename(){
 git checkout $1;
 git branch -m $2;
 git push origin -u $2;
@@ -262,13 +253,13 @@ for ext in `code --list-extensions`
   done
 }
 
-ffmpeg_convert(){
+ffmpeg-convert(){
   for i in *.mp4;
   do ffmpeg -n  -i "$i" -vcodec libx264 -v warning -hide_banner -stats -crf 28 -preset faster -tune film "cc${i}"; 
   done
 }
 
-convert_dir_vids(){
+convert-dir-vids(){
 Green=$'\e[1;32m';
 Blue=$'\e[1;34m';
 echo "$Blue Started converting videos in dir";
@@ -276,7 +267,7 @@ for d in ./*/ ; do (echo "$Green Current directory: $d \n" && cd "$d" && ffmpeg_
 echo "finished converting all videos in directory";
 }
 
-zsh_fix_history(){
+zsh-fix-history(){
 cd ~
 mv .zsh_history .zsh_history_old
 strings .zsh_history_old > .zsh_history
@@ -310,7 +301,7 @@ function loc() {
   echo "${fg[blue]}Total${reset_color} lines of code: ${fg[green]}$total${reset_color}"
 }
 
-function _calcram() {
+function calcram() {
   local sum
   sum=0
   for i in `ps aux | grep -i "$1" | grep -v "grep" | awk '{print $6}'`; do
