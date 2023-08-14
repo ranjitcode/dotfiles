@@ -1,10 +1,9 @@
-@vue/cli
 @nestjs/cli
 yarn
 nodemon
 serve
 neovim
-npm-check-updates
+taze
 release-it
 pnpm
 types-installer
