@@ -4,7 +4,7 @@ repo="$1"
 
 if [[ -z "$repo" ]]; then
   echo "Syntax: git setup user/project"
-  echo "Example: git setup paulmillr/ostio"
+  echo "Example: git setup rubiin/.github"
   exit
 fi
 

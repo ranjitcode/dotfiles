@@ -2,21 +2,20 @@ alias myzsh='source ~/.zshrc'
 alias fixvlc='mkdir ~/.cache/vlc'
 alias vmc='git diff --name-only --diff-filter=U'
 alias today="npx aaja"
-alias npm-clear-cache="npm cache clear --force;yarn cache clean;pnpm store prune"
+alias clear-store-npm="npm cache clear --force;yarn cache clean;pnpm store prune"
 alias nord="nordvpn"
 alias validate-compose="docker-compose config --quiet && printf "OK\n" || printf "ERROR\n""
 alias dc="docker-compose"
 alias ytd="yt-dlp"
 alias grep='grep --color=auto'
 alias df='df -h' # disk free, in Gigabytes, not bytes
-alias clean-orphan-packages="sudo pacman -Qtdq | sudo pacman -Rns -"
+alias clear-orphan-packages="sudo pacman -Qtdq | sudo pacman -Rns -"
 alias du='du -h -c' # calculate disk usage for a folder
 alias code="code-insiders"
 alias b="bun"
-alias clear-npm="rm -rf node_modules;rm -rf pnpm-lock.yaml packaga-lock.json yarn.lock"
+alias clear-npm="rm -rf node_modules;rm -rf pnpm-lock.yaml package-lock.json yarn.lock"
 alias ari="aria2c"
 alias g="git"
-alias tsn="ts-node"
 alias lzd="lazydocker"
 alias projects="cd Desktop/Projects/Nodejs"
 alias cz="chezmoi"
@@ -101,8 +100,6 @@ alias pp="pnpm prune"
 alias pi="pnpm i";
 alias pid="pnpm i -D"
 alias pih="pnpm i --shamefully-hoist=true";
-
-
 
 # bun aliases
 alias bi="bun install"
@@ -377,3 +374,5 @@ function size() {
       }
       {gsub(/^[0-9]+/, human($1)); print}'
 }
+
+
