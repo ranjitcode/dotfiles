@@ -1,9 +1,11 @@
 #! /bin/sh
 
 # Sets up pyhon and Installs pythons dependencies
-
-python3 -m pip install --user pipx
-python3 -m pipx ensurepath
-pip install konsave instaloader animdl notebook howdoi virtualenv
+yay -S python-pip python-pipx
+pipx ensurepath
+pipx install konsave
+pipx install instaloader
+pipx install animdl
+pipx install notebook
 echo 'Python Setup Done with all its packages'
 

@@ -73,7 +73,7 @@ ZSH_THEME="agnoster"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-plugins=(zsh-autosuggestions git-open autoupdate) 
+plugins=(zsh-autosuggestions git-open autoupdate)
 
 source $HOME/.bash_aliases
 source $ZSH/oh-my-zsh.sh
@@ -121,7 +121,6 @@ export QT_AUTO_SCREEN_SCALE_FACTOR=0
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 setopt extended_glob
-eval $(thefuck --alias)
 
 # Created by `pipx` on 2022-02-26 03:47:01
 export PATH="$PATH:/home/rubin/.local/bin"
@@ -132,13 +131,6 @@ export MCFLY_INTERFACE_VIEW=BOTTOM
 export MCFLY_FUZZY=2
 fpath=($fpath "/home/rubin/.zfunctions")
 
-# bun completions
-[ -s "/home/rubin/.bun/_bun" ] && source "/home/rubin/.bun/_bun"
-
-# Bun
-export BUN_INSTALL="/home/rubin/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
 # pnpm
 export PNPM_HOME="/home/rubin/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
@@ -146,3 +138,6 @@ export PATH="$PNPM_HOME:$PATH"
 
 export FLY_HOME="/home/rubin/.fly/bin/"
 export PATH="$FLY_HOME:$PATH"
+
+# Created by `pipx` on 2023-11-10 15:31:13
+export PATH="$PATH:/home/devina/.local/bin"
