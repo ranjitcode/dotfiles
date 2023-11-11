@@ -40,12 +40,15 @@ asdf update
 asdf plugin add nodejs
 asdf plugin add golang
 asdf plugin add deno
+asdf plugin add rust
 asdf plugin add ruby
 asdf install nodejs 20.9.0
 asdf install golang 1.21.4
+asdf install rust 1.73.0
 asdf install ruby 3.2.2
 asdf global golang 1.21.4
 asdf global nodejs 20.9.0
+asdf global rust 1.73.0
 asdf global ruby 3.2.2
 
 echo "Installing other packages"
