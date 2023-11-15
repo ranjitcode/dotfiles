@@ -9,6 +9,9 @@ npm-check-updates
 pnpm
 tsx
 types-installer
+@microsoft/inshellisense
+asdfui
+aicommits
 autocannon
 vercel
 webpack-cli

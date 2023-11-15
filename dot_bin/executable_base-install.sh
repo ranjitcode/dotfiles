@@ -20,6 +20,9 @@ sudo systemctl enable docker.service
 sudo systemctl enable containerd.service
 
 
+echo "Installing other packages"
+yay -Syyu keybase yt-dlp mongodb-compass mkcert jq lazydocker-bin stacer plasma-systemmonitor just github-cli lazydocker postman-bin httpie  mpv ark jetbrains-toolbox tmux lsd thefuck alacritty taskwarrior-tui git-delta kcolorchooser grex fd sd tealdeer bat the_silver_searcher git-secrets fzf podman git-interactive-rebase-tool-bin python-pip mousepad nano mojave-gtk-theme-git adwaita-icon-theme capitaine-cursors gparted htop la-capitaine-icon-theme neovim rate-mirrors spectacle vlc youtube-dl gwenview ktorrent persepolis linux
+
 echo 'Installing zsh with ohmyzsh and other plugins'
 sudo pacman -S zsh
 chsh -s $(which zsh)
@@ -51,8 +54,8 @@ asdf global nodejs 20.9.0
 asdf global rust 1.73.0
 asdf global ruby 3.2.2
 
-echo "Installing other packages"
-yay -Syyu keybase yt-dlp mongodb-compass mkcert jq lazydocker-bin stacer plasma-systemmonitor just github-cli lazydocker postman-bin httpie  mpv ark jetbrains-toolbox tmux lsd thefuck alacritty taskwarrior-tui git-delta kcolorchooser grex fd sd tealdeer bat the_silver_searcher git-secrets fzf podman git-interactive-rebase-tool-bin python-pip mousepad nano mojave-gtk-theme-git adwaita-icon-theme capitaine-cursors gparted htop la-capitaine-icon-theme neovim rate-mirrors spectacle vlc youtube-dl gwenview ktorrent persepolis linux
+inshellisense bind
+
 
 echo 'Installing lunarvim'
 LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)

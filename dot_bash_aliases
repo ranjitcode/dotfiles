@@ -20,7 +20,6 @@ alias lzd="lazydocker"
 alias projects="cd Desktop/Projects/Nodejs"
 alias cz="chezmoi"
 alias czo="code ~/.local/share/chezmoi/"
-alias husky-init="npx husky install && npx husky add .husky/pre-commit "npx lint-staged""
 alias yt="youtube-dl"
 alias ua-drop-caches='sudo paccache -rk3; yay -Sc --aur --noconfirm'
 alias update-all='yay -Syyu --noconfirm && npx npm-check --global --update-all --yes && asdf update && asdf plugin update --all && omz update && code_update_extensions'

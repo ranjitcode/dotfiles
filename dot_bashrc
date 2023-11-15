@@ -7,3 +7,21 @@
 
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
+source $HOME/.bash_aliases
+# Created by `pipx` on 2022-02-26 03:47:01
+export PATH="$PATH:/home/devina/.local/bin"
+source $HOME/.asdf/asdf.sh
+eval $(thefuck --alias)
+eval "$(fasd --init auto)"
+eval "$(mcfly init bash)"
+export MCFLY_KEY_SCHEME=vim
+export MCFLY_INTERFACE_VIEW=BOTTOM
+export MCFLY_FUZZY=2
+
+# pnpm
+export PNPM_HOME="/home/devina/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
+
+export FLY_HOME="/home/devina/.fly/bin/"
+export PATH="$FLY_HOME:$PATH"
