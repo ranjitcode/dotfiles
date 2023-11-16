@@ -5,7 +5,6 @@ serve
 neovim
 taze
 release-it
-npm-check-updates
 pnpm
 tsx
 types-installer
