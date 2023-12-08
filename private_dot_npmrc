@@ -1,4 +1,3 @@
-//registry.npmjs.org/:_authToken=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
 auto-install-peers=true
 fetch-retries=4
 fetch-retry-maxtimeout=600000

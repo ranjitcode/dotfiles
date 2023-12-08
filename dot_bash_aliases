@@ -1,6 +1,7 @@
 alias myzsh='source ~/.zshrc'
 alias fixvlc='mkdir ~/.cache/vlc'
 alias vmc='git diff --name-only --diff-filter=U'
+alias tz="npx taze"
 alias today="npx aaja"
 alias clear-store-npm="npm cache clear --force;yarn cache clean;pnpm store prune"
 alias nord="nordvpn"
@@ -22,7 +23,7 @@ alias cz="chezmoi"
 alias czo="code ~/.local/share/chezmoi/"
 alias yt="youtube-dl"
 alias ua-drop-caches='sudo paccache -rk3; yay -Sc --aur --noconfirm'
-alias update-all='yay -Syyu --noconfirm && taze -gw && asdf update && asdf plugin update --all && omz update && code_update_extensions'
+alias update-all='yay -Syyu --noconfirm && taze -gwi && asdf update && asdf plugin update --all && omz update && code_update_extensions'
 alias rate-and-update='export TMPFILE="$(mktemp)"; \
     sudo true; \
     rate-mirrors --save=$TMPFILE arch --max-delay=21600 \

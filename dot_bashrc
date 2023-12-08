@@ -25,3 +25,4 @@ export PATH="$PNPM_HOME:$PATH"
 
 export FLY_HOME="/home/devina/.fly/bin/"
 export PATH="$FLY_HOME:$PATH"
+[ -f ~/.inshellisense/key-bindings.bash ] && source ~/.inshellisense/key-bindings.bash

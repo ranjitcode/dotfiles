@@ -2,15 +2,13 @@
 
 # Installs necessary packages like font and ides
 
-echo "install base packages"
-
+echo "Install base packages"
 yay -S vivaldi
 yay -S plank-git chezmoi
 
 echo 'Installing fonts'
-yay -Syyu noto-fonts-cjk noto-fonts-emoji gnu-free-fonts ttf-joypixels ttf-dejavu ttf-font-awesome ttf-hack ttf-liberation ttf-ms-fonts ttf-twemoji-color ttf-bitstream-vera ttf-cm-unicode fasd mcfly
+yay -Syyu noto-fonts-cjk noto-fonts-emoji gnu-free-fonts ttf-joypixels ttf-dejavu-nerd ttf-font-awesome ttf-hack ttf-liberation-nerd ttf-ms-fonts ttf-twemoji-color ttf-bitstream-vera ttf-cm-unicode fasd mcfly ttf-firacode-nerd ttf-jetbrains-mono-nerd
 sudo fc-cache -vf
-
 
 echo "Installing docker and compose"
 yay -S docker docker-compose
@@ -19,9 +17,8 @@ sudo usermod -aG docker $USER
 sudo systemctl enable docker.service
 sudo systemctl enable containerd.service
 
-
 echo "Installing other packages"
-yay -Syyu keybase yt-dlp mongodb-compass mkcert jq lazydocker-bin stacer plasma-systemmonitor just github-cli lazydocker postman-bin httpie  mpv ark jetbrains-toolbox tmux lsd thefuck alacritty taskwarrior-tui git-delta kcolorchooser grex fd sd tealdeer bat the_silver_searcher git-secrets fzf podman git-interactive-rebase-tool-bin python-pip mousepad nano mojave-gtk-theme-git adwaita-icon-theme capitaine-cursors gparted htop la-capitaine-icon-theme neovim rate-mirrors spectacle vlc youtube-dl gwenview ktorrent persepolis linux
+yay -Syyu keybase yt-dlp mongodb-compass mkcert jq lazydocker-bin stacer plasma-systemmonitor just github-cli postman-bin httpie  mpv ark jetbrains-toolbox tmux lsd thefuck alacritty taskwarrior-tui git-delta kcolorchooser grex fd sd tealdeer bat the_silver_searcher git-secrets fzf podman git-interactive-rebase-tool-bin python-pip mousepad nano mojave-gtk-theme-git adwaita-icon-theme capitaine-cursors gparted htop la-capitaine-icon-theme neovim rate-mirrors spectacle vlc youtube-dl gwenview ktorrent persepolis linux
 
 echo 'Installing zsh with ohmyzsh and other plugins'
 sudo pacman -S zsh
@@ -33,11 +30,8 @@ git clone https://github.com/TamCore/autoupdate-oh-my-zsh-plugins $ZSH_CUSTOM/pl
 git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab
 source ~/.zshrc
 
-
-
 echo 'Adding plugins for asdf and installing golang and nodejs'
-
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.0
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.13.1
 source ~/.zshrc
 asdf update
 asdf plugin add nodejs
@@ -45,7 +39,7 @@ asdf plugin add golang
 asdf plugin add deno
 asdf plugin add rust
 asdf plugin add ruby
-asdf install nodejs 20.9.0
+asdf install nodejs 20.10.0
 asdf install golang 1.21.4
 asdf install rust 1.73.0
 asdf install ruby 3.2.2
@@ -56,11 +50,8 @@ asdf global ruby 3.2.2
 
 inshellisense bind
 
-
 echo 'Installing lunarvim'
 LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
 yay -Rns kate okular
 
 sudo pacman -Qtdq | sudo pacman -Rns -
-
-
