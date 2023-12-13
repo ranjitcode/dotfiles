@@ -91,7 +91,7 @@ font:
   normal:
     #family: "DejaVu Sans Mono for Powerline"
     # family: "Fira Code"
-    family: "Fira Code Nerd Font"
+    family: "DejaVuSansM Nerd Font"
     #family: "Geist"
 
   # The bold font face
@@ -108,7 +108,7 @@ font:
     # style: "Medium Italic"
 
   # Point size of the font
-  size: 7.2
+  size: 7.4
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.

@@ -1,11 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-# Function to fetch the list of available fonts
-get_available_fonts() {
-  local release_url="https://api.github.com/repos/ryanoasis/nerd-fonts/releases/latest"
-  local fonts=$(curl -s "$release_url" | jq -r '.assets[] | select(.name | test("nerd-fonts-.+\\.zip")) | .name' | grep -oP 'nerd-fonts-\K(.*)(?=.zip)')
-  echo "$fonts"
-}
+# Kill the process that is currently listening on the provided port
 
-# Run the function to get available fonts and print the result
-get_available_fonts
+wtfport "$1" | xargs kill -9
