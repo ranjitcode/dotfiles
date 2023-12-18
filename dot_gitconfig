@@ -118,6 +118,7 @@
 		ecl = config --edit
 
 
+    nah = "!f(){ git reset --hard; git clean -df; if [ -d ".git/rebase-apply" ] || [ -d ".git/rebase-merge" ]; then git rebase --abort; fi; };
 
     # "fcb" alias is a shortcut for getting current branch for GitFlow (without prefix)
     # and is strictly related to [gitflow "prefix"] config section (cuts everything after first "/")

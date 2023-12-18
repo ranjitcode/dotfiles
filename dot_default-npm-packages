@@ -5,7 +5,6 @@ serve
 neovim
 taze
 release-it
-pnpm
 tsx
 types-installer
 @microsoft/inshellisense

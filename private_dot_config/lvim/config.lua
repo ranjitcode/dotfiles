@@ -14,7 +14,6 @@ vim.cmd("nnoremap gpi <cmd>lua require('goto-preview').goto_preview_implementati
 vim.cmd("nnoremap gP <cmd>lua require('goto-preview').close_all_win()<CR>")
 lvim.log.level = "warn"
 lvim.format_on_save.enabled = false
-lvim.colorscheme = "vscode"
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 
@@ -161,80 +160,11 @@ lvim.builtin.treesitter.highlight.enable = true
 --   },
 -- }
 
--- Additional Plugins
-lvim.plugins = {
-  { "lunarvim/colorschemes" },
-  { "Mofiqul/vscode.nvim" },
-  {
-    "sindrets/diffview.nvim",
-    event = "BufRead",
-  },
-  {
-    "p00f/nvim-ts-rainbow",
-  },
-  {
-    "Pocco81/auto-save.nvim",
-    config = function()
-      require("auto-save").setup()
-    end,
-  },
-  { "github/copilot.vim" },
-  {
-    "f-person/git-blame.nvim",
-    event = "BufRead",
-    config = function()
-      vim.cmd "highlight default link gitblame SpecialComment"
-      vim.g.gitblame_enabled = 0
-    end,
-  },
-  {
-    "norcalli/nvim-colorizer.lua",
-    config = function()
-      require("colorizer").setup({ "css", "scss", "html", "javascript" }, {
-        RGB = true, -- #RGB hex codes
-        RRGGBB = true, -- #RRGGBB hex codes
-        RRGGBBAA = true, -- #RRGGBBAA hex codes
-        rgb_fn = true, -- CSS rgb() and rgba() functions
-        hsl_fn = true, -- CSS hsl() and hsla() functions
-        css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
-        css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
-      })
-    end,
-  },
-  {
-    "rktjmp/lush.nvim",
-  },
-  {
-    "folke/todo-comments.nvim",
-    event = "BufRead",
-    config = function()
-      require("todo-comments").setup()
-    end,
-  },
-  {
-    "rmagatti/goto-preview",
-    config = function()
-      require('goto-preview').setup {
-        width = 120; -- Width of the floating window
-        height = 25; -- Height of the floating window
-        default_mappings = false; -- Bind default mappings
-        debug = false; -- Print debug information
-        opacity = nil; -- 0-100 opacity level of the floating window where 100 is fully transparent.
-        post_open_hook = nil; -- A function taking two arguments, a buffer and a window to be ran as a hook.
-      }
+-- Additional Pluginse
+reload('user.plugins')
 
-    end
-  },
-  {
-
-    "ggandor/leap.nvim",
-    keys = { "s", "S" },
-    config = function()
-      local leap = require "leap"
-      leap.set_default_keymaps()
-    end,
-  }
-}
+-- Themes and colors
+reload('user.colors')
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- vim.api.nvim_create_autocmd("BufEnter", {
