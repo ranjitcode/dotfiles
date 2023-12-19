@@ -1,24 +1,24 @@
 -- Custom Settings
-reload('rubin.plugins')
+reload('user.plugins')
 
 -- Themes and colors
-reload('rubin.colors')
+reload('user.colors')
 
 -- Statusline
-reload('rubin.statusline')
+reload('user.statusline')
 
 -- Keymaps
-reload('rubin.keymaps')
+reload('user.keymaps')
 
 -- Options
-reload('rubin.options')
+reload('user.options')
 
 -- Statusline
-reload('rubin.statusline')
+reload('user.statusline')
 
 -- Dashboard
-reload('rubin.dashboard')
+reload('user.dashboard')
 
 -- LSP
-reload('rubin.lsp')
+reload('user.lsp')
 

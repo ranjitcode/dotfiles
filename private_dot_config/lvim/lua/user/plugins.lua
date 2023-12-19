@@ -43,7 +43,17 @@ lvim.plugins = {
     end,
   },
   { "tpope/vim-repeat" },
-  { "github/copilot.vim" },
+    {
+      "zbirenbaum/copilot.lua",
+      cmd = "Copilot",
+      event = "InsertEnter",
+      config = function()
+        require("copilot").setup({
+          suggestions = { enabled = false },
+          panel = { enabled = false },
+        })
+      end,
+    },
   {
     "f-person/git-blame.nvim",
     event = "BufRead",
@@ -93,3 +103,13 @@ lvim.plugins = {
     end,
   }
 }
+
+table.insert(lvim.plugins, {
+  "zbirenbaum/copilot-cmp",
+  event = "InsertEnter",
+  dependencies = { "zbirenbaum/copilot.lua" },
+  config = function()
+    local ok, cmp = pcall(require, "copilot_cmp")
+    if ok then cmp.setup({}) end
+  end,
+})

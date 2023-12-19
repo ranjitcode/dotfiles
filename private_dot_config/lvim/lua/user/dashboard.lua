@@ -23,7 +23,7 @@ if vim.fn.has "linux" == 1 or vim.fn.has "mac" == 1 then
   local thingy = io.popen 'echo "$(date +%a) $(date +%d) $(date +%b)" | tr -d "\n"'
   date = thingy:read "*a"
   thingy:close()
-  plugins = plugins:gsub("^%s*(.-)%s*$", "%1")
+  plugins = #require('lazy').plugins()
 else
   plugins = "N/A"
   date = "  whatever "
@@ -70,7 +70,7 @@ local function button(sc, txt, keybind)
     width = 90,
     align_shortcut = "right",
     hl_shortcut = "Number",
-    hl = "Function",
+    hl = "Function"
   }
   if keybind then
     opts.keymap = { "n", sc_, keybind, { noremap = true, silent = true } }
@@ -90,15 +90,15 @@ end
 local buttons = {
   type = "group",
   val = {
-    button("f", " " .. kind.cmp_kind.Folder .. " Find files", ":Telescope find_files<CR>"),
-    button("e", " " .. kind.cmp_kind.File .. " New file", ":ene <BAR> startinsert <CR>"),
+    button("e", " " .. kind.cmp_kind.File .. " New File", ":ene <BAR> startinsert <CR>"),
+    button("f", " " .. kind.cmp_kind.Folder .. " Find Files", ":Telescope find_files<CR>"),
     button("s", " " .. kind.icons.magic .. " Restore", ":lua require('persistence').load()<cr>"),
     button(
       "g",
       " " .. kind.icons.git .. " Git Status",
       ":lua require('lvim.core.terminal')._exec_toggle({cmd = 'lazygit', count = 1, direction = 'float'})<CR>"
     ),
-    button("r", " " .. kind.icons.clock .. " Recents", ":Telescope oldfiles<CR>"),
+    button("r", " " .. kind.icons.clock .. " Recent Files", ":Telescope oldfiles<CR>"),
     button("c", " " .. kind.icons.settings .. " Config", ":e ~/.config/lvim/config.lua<CR>"),
     button("C", " " .. kind.cmp_kind.Color .. " Colorscheme Config", ":e ~/.config/lvim/lua/user/colorscheme.lua<CR>"),
     button("q", " " .. kind.icons.exit .. " Quit", ":q<CR>"),
