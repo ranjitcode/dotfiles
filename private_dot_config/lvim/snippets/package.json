@@ -1,4 +1,4 @@
- 
+
 {
     "name": "nvim-snippets",
     "author": "rubiin",
@@ -14,7 +14,15 @@
           {
                 "language": ["javascript","typescript","javascriptreact","typescriptreact"],
                 "path": "./react.json"
-            }
+            },
+            {
+                "language": "html",
+                "path": "./html.json"
+              },
+              {
+                "language": ["css","scss"],
+                "path": "./css.json"
+              }
         ]
     }
 }
