@@ -1,7 +1,16 @@
-set -g @plugin 'tmux-plugins/tpm'
 
 bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
+
+
+# List all plugins
+
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'xamut/tmux-network-bandwidth'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-continuum'
+
 # -- navigation ----------------------------------------------------------------
+
 
 # if you're running tmux within iTerm2
 #   - and tmux is 1.9 or 1.9a
@@ -178,7 +187,7 @@ tmux_conf_theme_right_separator_sub='\uE0B3'  #   PowerlineSymbols.otf font
 #     - #{username}
 #     - #{username_ssh}
 tmux_conf_theme_status_left=' 👽 #S | ↑#{?uptime_y, #{uptime_y}y,}#{?uptime_d, #{uptime_d}d,}#{?uptime_h, #{uptime_h}h,}#{?uptime_m, #{uptime_m}m,} '
-tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #{?battery_status, #{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} | %R , %d | #{username}#{root} | #{hostname} '
+tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #{?battery_status, #{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} #{network_bandwidth} | %R , %d %b | #{username}#{root} | #{hostname} '
 
 # status left style
 tmux_conf_theme_status_left_fg='#000000,#e4e4e4,#e4e4e4'  # black, white , white
@@ -252,7 +261,7 @@ tmux_conf_battery_vbar_palette='gradient'
 #tmux_conf_battery_status_discharging='↓'    # U+2193
 tmux_conf_battery_status_charging='⚡ '    # U+26A1
 #tmux_conf_battery_status_charging='🔌 '    # U+1F50C
-tmux_conf_battery_status_discharging='🔋 ' # U+1F50B
+tmux_conf_battery_status_discharging='󱟟  ' # U+1F50B
 
 # clock style (when you hit <prefix> + t)
 # you may want to use %I:%M %p in place of %R in tmux_conf_theme_status_right
@@ -319,4 +328,8 @@ bind x kill-pane
 bind X kill-window
 bind C-x confirm-before -p "kill other windows? (y/n)" "kill-window -a"
 bind Q confirm-before -p "kill-session #S? (y/n)" kill-session
+
+set -g @resurrect-capture-pane-contents 'on'
+set -g @continuum-restore 'on'
+
 run '~/.tmux/plugins/tpm/tpm'
