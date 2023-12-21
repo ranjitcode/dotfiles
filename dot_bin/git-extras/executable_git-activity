@@ -113,11 +113,13 @@ yes_or_no "Did you want to push to remote 'origin' ? " && \
 
 cat << EOF
 
+
+
       Generating commits completed...
 
       To push your changes later :
 
-          git remote add origin https://github.com/username/$(basename $(pwd))
+          git remote add                    origin https://github.com/username/$(basename $(pwd))
 
           gh  repo   create
           git push   --force --set-upstream origin $ACTIVITY_BR
