@@ -1,6 +1,6 @@
 
 bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
-
+set-option -sa terminal-overrides ",xterm*:Tc"
 
 # List all plugins
 
@@ -286,7 +286,7 @@ tmux_conf_copy_to_os_clipboard=false
 #set -g history-limit 10000
 
 # start with mouse mode enabled
-set -g mouse on
+set -g mouse off
 
 # force Vi mode
 #   really you should export VISUAL or EDITOR environment variable, see manual
@@ -330,6 +330,5 @@ bind C-x confirm-before -p "kill other windows? (y/n)" "kill-window -a"
 bind Q confirm-before -p "kill-session #S? (y/n)" kill-session
 
 set -g @resurrect-capture-pane-contents 'on'
-set -g @continuum-restore 'on'
 
 run '~/.tmux/plugins/tpm/tpm'
