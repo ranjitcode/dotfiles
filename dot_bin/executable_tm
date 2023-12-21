@@ -2,10 +2,8 @@
 
 # abort if we're already inside a TMUX session
 [ "$TMUX" == "" ] || exit 0
-# startup a "default" session if non currently exists
-# tmux has-session -t _default || tmux new-session -s _default -d
 
-# present menu for user to choose which workspace to open
+# present menu for the user to choose which workspace to open
 PS3="Please choose your session: "
 # shellcheck disable=SC2207
 options=($(tmux list-sessions -F "#S" 2>/dev/null) "New Session" "Kill All")
@@ -14,18 +12,20 @@ echo "------------------"
 echo " "
 select opt in "${options[@]}"
 do
-	case $opt in
-		"New Session")
-			read -rp "Enter new session name: " SESSION_NAME
-			tmux new -s "$SESSION_NAME"
-			break
-			;;
-		"Kill All")
-			pkill -f tmux
-			break;;
-		*)
-			tmux attach-session -t "$opt"
-			break
-			;;
-	esac
+    case $opt in
+        "New Session")
+            read -rp "Enter new session name (default_session if empty): " SESSION_NAME
+			SESSION_NAME=${SESSION_NAME:-default_session_$(date +"%M%S")}
+            tmux new -s "$SESSION_NAME"
+            break
+            ;;
+        "Kill All")
+            pkill -f tmux
+            break;;
+        *)
+            tmux attach-session -t "$opt"
+            break
+            ;;
+    esac
 done
+
