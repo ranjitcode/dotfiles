@@ -68,7 +68,7 @@ ZSH_THEME="agnoster"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-plugins=(zsh-autosuggestions git-open autoupdate)
+plugins=(evalcache zsh-autosuggestions git-open autoupdate)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -76,7 +76,7 @@ source $ZSH/oh-my-zsh.sh
 # all alias source should be done below
 source $HOME/.bash_aliases
 export LC_CTYPE=en_US.UTF-8
-. "$HOME/.asdf/asdf.sh"
+source "$HOME/.asdf/asdf.sh"
 
 # append completions to fpath
 fpath=(${ASDF_DIR}/completions $fpath)
@@ -117,10 +117,9 @@ compinit -C
 # For a full list of active aliases, run `alias`.
 #
 setopt extended_glob
-eval $(thefuck --alias)
-
-eval "$(fasd --init auto)"
-eval "$(mcfly init zsh)"
+_evalcache thefuck --alias
+_evalcache fasd --init auto
+_evalcache mcfly init zsh
 export MCFLY_KEY_SCHEME=vim
 export MCFLY_INTERFACE_VIEW=BOTTOM
 export MCFLY_FUZZY=2
