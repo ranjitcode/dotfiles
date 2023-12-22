@@ -25,7 +25,7 @@ sudo systemctl enable docker.service
 sudo systemctl enable containerd.service
 
 echo "Installing other packages"
-yay -S mcfly keybase yt-dlp mongodb-compass mkcert jq lazydocker-bin stacer plasma-systemmonitor just github-cli postman-bin httpie  mpv ark jetbrains-toolbox tmux lsd thefuck alacritty taskwarrior-tui git-delta kcolorchooser grex fd sd tealdeer bat the_silver_searcher git-secrets fzf podman git-interactive-rebase-tool-bin python-pip mousepad nano mojave-gtk-theme-git adwaita-icon-theme capitaine-cursors gparted htop la-capitaine-icon-theme neovim rate-mirrors spectacle vlc youtube-dl gwenview ktorrent persepolis linux
+yay -S mcfly keybase yt-dlp mongodb-compass zoxide mkcert jq lazydocker-bin stacer plasma-systemmonitor just github-cli postman-bin httpie  mpv ark jetbrains-toolbox tmux lsd thefuck alacritty taskwarrior-tui git-delta kcolorchooser grex fd sd tealdeer bat the_silver_searcher git-secrets fzf podman git-interactive-rebase-tool-bin python-pip mousepad nano mojave-gtk-theme-git adwaita-icon-theme capitaine-cursors gparted htop la-capitaine-icon-theme neovim rate-mirrors spectacle vlc youtube-dl gwenview ktorrent persepolis linux
 
 echo "Installing pnpm"
 curl -fsSL https://get.pnpm.io/install.sh | sh -
