@@ -1,6 +1,6 @@
 # Overview
 
-Contains my dotfiles that I use.
+Contains dotfiles that I use.
 
 # Things I use 
 * Tmux (https://github.com/gpakosz/.tmux)
