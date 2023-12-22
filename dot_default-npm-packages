@@ -1,6 +1,4 @@
 @nestjs/cli
-yarn
-nodemon
 serve
 neovim
 taze
@@ -10,6 +8,7 @@ types-installer
 @microsoft/inshellisense
 asdfui
 aicommits
+nfdl
 autocannon
 vercel
 webpack-cli
