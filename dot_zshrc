@@ -143,8 +143,6 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-export FLY_HOME="/home/devina/.fly/bin/"
-export PATH="$FLY_HOME:$PATH"
 
 [ -f ~/.inshellisense/key-bindings.zsh ] && source ~/.inshellisense/key-bindings.zsh
 ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
