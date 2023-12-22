@@ -1,31 +1,23 @@
-alias myzsh='source ~/.zshrc'
-alias fixvlc='mkdir ~/.cache/vlc'
-alias vmc='git diff --name-only --diff-filter=U'
-alias tz="npx taze"
-alias today="npx aaja"
-alias clear-store-npm="npm cache clear --force;yarn cache clean;pnpm store prune"
-alias nord="nordvpn"
-alias validate-compose="docker-compose config --quiet && printf "OK\n" || printf "ERROR\n""
-alias dc="docker-compose"
-alias practice-vim="docker run -it --rm brandoncc/vim-be-good:stable"
-alias ytd="yt-dlp"
-alias grep='grep --color=auto'
-alias df='df -h' # disk free, in Gigabytes, not bytes
-alias clear-orphan-packages="sudo pacman -Qtdq | sudo pacman -Rns -"
-alias du='du -h -c' # calculate disk usage for a folder
-alias docker-compose-"dc"
-alias code="code-insiders"
-alias b="bun"
-alias clear-npm="rm -rf node_modules;rm -rf pnpm-lock.yaml package-lock.json yarn.lock"
 alias ari="aria2c"
-alias g="git"
-alias lzd="lazydocker"
-alias projects="cd Desktop/Projects/Nodejs"
-alias cz="chezmoi"
+alias b="bun"
 alias czo="code ~/.local/share/chezmoi/"
-alias yt="youtube-dl"
-alias ua-drop-caches='sudo paccache -rk3; yay -Sc --aur --noconfirm'
-alias update-all='yay -Syyu --noconfirm && taze -gwi && asdf update && asdf plugin update --all && omz update && code_update_extensions'
+alias clear-npm="rm -rf node_modules;rm -rf pnpm-lock.yaml package-lock.json yarn.lock"
+alias clear-orphan-packages="sudo pacman -Qtdq | sudo pacman -Rns -"
+alias clear-store-npm="npm cache clear --force;yarn cache clean;pnpm store prune"
+alias code="code-insiders"
+alias cz="chezmoi"
+alias dc="docker-compose"
+alias df='df -h' # disk free, in Gigabytes, not bytes
+alias docker-compose="dc"
+alias du='du -h -c' # calculate disk usage for a folder
+alias fixvlc='mkdir ~/.cache/vlc'
+alias g="git"
+alias grep='grep --color=auto'
+alias lzd="lazydocker"
+alias myzsh='source ~/.zshrc'
+alias nord="nordvpn"
+alias ohmyzsh="mousepad ~/.oh-my-zsh"
+alias practice-vim="docker run -it --rm brandoncc/vim-be-good:stable"
 alias rate-and-update='export TMPFILE="$(mktemp)"; \
     sudo true; \
     rate-mirrors --save=$TMPFILE arch --max-delay=21600 \
@@ -33,7 +25,15 @@ alias rate-and-update='export TMPFILE="$(mktemp)"; \
       && sudo mv $TMPFILE /etc/pacman.d/mirrorlist \
       && ua-drop-caches \
       && yay -Syyu --noconfirm && update-all';
+alias today="npx aaja"
+alias tz="npx taze"
+alias ua-drop-caches='sudo paccache -rk3; yay -Sc --aur --noconfirm'
+alias update-all='yay -Syyu --noconfirm && taze -gwi && asdf update && asdf plugin update --all && omz update && code_update_extensions'
 alias uuid="uuidgen -r | xclip -selection clipboard"
+alias validate-compose="docker-compose config --quiet && printf "OK\n" || printf "ERROR\n""
+alias vmc='git diff --name-only --diff-filter=U'
+alias zshconfig="mousepad ~/.zshrc"
+alias yt="youtube-dl"
 
 # Redis
 alias start-redis="docker run --name some-redis -p 6379:6379 -d --restart=always redis:alpine redis-server --appendonly yes --requirepass 'secret'"
