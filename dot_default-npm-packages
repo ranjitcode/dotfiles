@@ -4,6 +4,7 @@ neovim
 taze
 release-it
 tsx
+yarn
 types-installer
 @microsoft/inshellisense
 asdfui

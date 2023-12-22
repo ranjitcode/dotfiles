@@ -9,6 +9,7 @@ alias cz="chezmoi"
 alias dc="docker-compose"
 alias df='df -h' # disk free, in Gigabytes, not bytes
 alias docker-compose="dc"
+alias htop="btop"
 alias du='du -h -c' # calculate disk usage for a folder
 alias fixvlc='mkdir ~/.cache/vlc'
 alias g="git"

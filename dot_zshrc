@@ -100,8 +100,8 @@ fi;
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
 # else
-#   export EDITOR='mvim'
 # fi
+export EDITOR='vim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -116,12 +116,9 @@ fi;
 setopt extended_glob
 _evalcache thefuck --alias
 _evalcache zoxide init zsh
-_evalcache mcfly init zsh
-export MCFLY_KEY_SCHEME=vim
-export MCFLY_INTERFACE_VIEW=BOTTOM
-export MCFLY_FUZZY=2
 fpath=($fpath "/home/devina/.zfunctions")
 
 
 [ -f ~/.inshellisense/key-bindings.zsh ] && source ~/.inshellisense/key-bindings.zsh
-___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
+
+

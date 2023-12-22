@@ -30,13 +30,15 @@ ask_yes_no_default "Do you want to install nerd fonts?" 0 && yay -S ttf-firacode
 
 sudo fc-cache -vf
 
+curl -fsSL https://get.pnpm.io/install.sh | sh -
+
 echo "Installing Docker and Compose"
 ask_yes_no_default "Do you want to install Docker and Docker Compose?" 0 && yay -S docker docker-compose && \
     sudo groupadd docker && sudo usermod -aG docker $USER && \
     sudo systemctl enable docker.service && sudo systemctl enable containerd.service
 
 echo "Installing other packages"
-ask_yes_no_default "Do you want to install other packages?" 0 && yay -S mcfly keybase yt-dlp mongodb-compass zoxide mkcert jq entr ripgrep lazydocker-bin stacer plasma-systemmonitor just github-cli postman-bin httpie  mpv ark jetbrains-toolbox tmux lsd thefuck alacritty taskwarrior-tui git-delta kcolorchooser grex fd sd tealdeer bat the_silver_searcher git-secrets fzf git-interactive-rebase-tool-bin mousepad nano mojave-gtk-theme-git adwaita-icon-theme capitaine-cursors gparted htop la-capitaine-icon-theme neovim rate-mirrors spectacle vlc youtube-dl gwenview ktorrent persepolis
+ask_yes_no_default "Do you want to install other packages?" 0 && yay -S btop keybase yt-dlp mongodb-compass zoxide mkcert jq entr ripgrep lazydocker-bin stacer plasma-systemmonitor just github-cli postman-bin httpie  mpv ark jetbrains-toolbox tmux lsd thefuck alacritty taskwarrior-tui git-delta kcolorchooser grex fd sd tealdeer bat the_silver_searcher git-secrets fzf git-interactive-rebase-tool-bin mousepad nano mojave-gtk-theme-git adwaita-icon-theme capitaine-cursors gparted htop la-capitaine-icon-theme neovim rate-mirrors spectacle vlc youtube-dl gwenview ktorrent persepolis
 
 echo 'Installing Zsh with Oh My Zsh and other plugins'
 ask_yes_no_default "Do you want to install Zsh with Oh My Zsh and other plugins?" 0 && \
