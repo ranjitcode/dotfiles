@@ -15,9 +15,6 @@ Contains dotfiles that I use.
  ```bash
   	sh -c "$(curl -fsSL https://raw.githubusercontent.com/rubiin/dotfiles/master/dot_bin/executable_base-install.sh)"
 ```
-
-Note: run `npm i -g neovim` follwed by `nvim +PlugInstall` for neovim install
-
 To backup plasma config, install kde5 plasma and then install latte sapcer and `konsave` which is a python package and restore the tar file 
 
 
