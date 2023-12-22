@@ -12,9 +12,9 @@ Contains dotfiles that I use.
 * Plasma Kde5
 
 # Get started
-* Install [chezmoi](https://www.chezmoi.io/docs/install/)
-* Run `chezmoi init https://github.com/rubiin/dotfiles.git`
-* Then run `chezmoi apply`
+ ```bash
+  	sh -c "$(curl -fsSL https://raw.githubusercontent.com/rubiin/dotfiles/master/dot_bin/executable_base-install.sh)"
+```
 
 Note: run `npm i -g neovim` follwed by `nvim +PlugInstall` for neovim install
 
