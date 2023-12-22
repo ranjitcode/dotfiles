@@ -116,9 +116,6 @@ compinit -C
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
-alias zshconfig="mousepad ~/.zshrc"
-alias ohmyzsh="mousepad ~/.oh-my-zsh"
 setopt extended_glob
 eval $(thefuck --alias)
 
