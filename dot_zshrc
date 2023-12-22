@@ -115,7 +115,7 @@ fi;
 #
 setopt extended_glob
 _evalcache thefuck --alias
-_evalcache fasd --init auto
+_evalcache zoxide init zsh
 _evalcache mcfly init zsh
 export MCFLY_KEY_SCHEME=vim
 export MCFLY_INTERFACE_VIEW=BOTTOM
