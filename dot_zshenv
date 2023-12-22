@@ -1,0 +1,22 @@
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+
+# npm path
+export PATH=~/.npm/bin:$PATH
+
+# custom executable path
+export PATH="$HOME/.bin:$PATH"
+
+# Created by `pipx` on 2022-02-26 03:47:01
+export PATH="$PATH:/home/rubiin/.local/bin"
+
+
+# pnpm path
+export PNPM_HOME="/home/devina/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+
