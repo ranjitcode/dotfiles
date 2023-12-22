@@ -1,1 +1,5 @@
-nvim/plugged
+**/autoload/
+**/autoload/**/*
+**/plugged/
+**/plugged/**/*
+**/yankring_history*.txt
