@@ -9,6 +9,7 @@ source $HOME/.bash_aliases
 source $HOME/.asdf/asdf.sh
 eval $(thefuck --alias)
 eval "$(mcfly init bash)"
+eval "$(zoxide init bash)"
 export MCFLY_KEY_SCHEME=vim
 export MCFLY_INTERFACE_VIEW=BOTTOM
 export MCFLY_FUZZY=2
