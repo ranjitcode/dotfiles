@@ -1,5 +1,7 @@
 **/autoload/
 **/autoload/**/*
+**/temp/
+**/temp/**/*
 **/plugged/
 **/plugged/**/*
 **/yankring_history*.txt
