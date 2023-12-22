@@ -71,50 +71,59 @@ alias tls="t ls"
 alias tn="t new -t"
 alias tmux_end="pkill -f tmux";
 
+
+corepack_enable(){
+    corepack enable
+    corepack prepare npm@latest --activate
+    corepack prepare pnpm@latest --activate
+    corepack prepare yarn@latest --activate
+
+}
+
 ## npm aliases
-alias ni="npm install";
-alias nrs="npm run start -s --";
-alias nrb="npm run build -s --";
-alias nrf="npm run format -s --";
-alias nrd="npm run start:dev -s --";
-alias nrt="npm run test -s --";
-alias nrtw="npm run test:watch -s --";
-alias nrv="npm run validate -s --";
-alias rmn="rm -rf node_modules";
-alias flush-npm="rm -rf node_modules && npm i && say NPM is done";
-alias nicache="npm install --prefer-offline";
-alias nioff="npm install --offline";
+alias ni="npm install"
+alias nrs="npm run start -s --"
+alias nrb="npm run build -s --"
+alias nrf="npm run format -s --"
+alias nrd="npm run start:dev -s --"
+alias nrt="npm run test -s --"
+alias nrtw="npm run test:watch -s --"
+alias nrv="npm run validate -s --"
+alias rmn="rm -rf node_modules"
+alias flush-npm="rm -rf node_modules && npm i && say NPM is done"
+alias nicache="npm install --prefer-offline"
+alias nioff="npm install --offline"
 alias nrm="npm run typeorm:run"
 
 ## yarn aliases
 alias y="yarn"
-alias yi="yarn install";
-alias ya="yarn add";
-alias yr="yarn remove";
-alias yau="yarn audit";
-alias yrs="yarn run start";
-alias yrd="yarn run start:dev";
-alias yup="yarn upgrade";
+alias yi="yarn install"
+alias ya="yarn add"
+alias yr="yarn remove"
+alias yau="yarn audit"
+alias yrs="yarn run start"
+alias yrd="yarn run start:dev"
+alias yup="yarn upgrade"
 
 #pnpm aliases
 alias p="pnpm";
 alias pp="pnpm prune"
-alias pi="pnpm i";
+alias pi="pnpm i"
 alias pid="pnpm i -D"
-alias pih="pnpm i --shamefully-hoist=true";
+alias pih="pnpm i --shamefully-hoist=true"
 
 # bun aliases
 alias bi="bun install"
 alias br="bun run"
 
 ## asdf aliases
-alias asdf_update="asdf plugin update --all";
-alias asdf_plugins="asdf plugin list";
-alias asdf_add_plugin="asdf plugin add";
-alias asdf_remove_plugin="asdf plugin remove";
-alias asdf_install_version="asdf install";
+alias asdf_update="asdf plugin update --all"
+alias asdf_plugins="asdf plugin list"
+alias asdf_add_plugin="asdf plugin add"
+alias asdf_remove_plugin="asdf plugin remove"
+alias asdf_install_version="asdf install"
 alias asdf_list_version="asdf list";
-alias asdf_global_version_set="asdf global";
+alias asdf_global_version_set="asdf global"
 
 
 git-standup() {
