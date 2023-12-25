@@ -2,6 +2,8 @@
 
 Contains dotfiles that I use.
 
+![](https://c.tenor.com/5ibxr0zb3HcAAAAC/tenor.gif)
+
 # Things I use 
 * Tmux (https://github.com/gpakosz/.tmux)
 * Alacritty
