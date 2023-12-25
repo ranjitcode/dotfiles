@@ -7,6 +7,8 @@
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="agnoster"
 
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#50493e"
+# sets zsh auto suggesttions text color
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -68,7 +70,7 @@ ZSH_THEME="agnoster"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-plugins=(evalcache zsh-autosuggestions git-open autoupdate)
+plugins=(evalcache zsh-autosuggestions autoupdate)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -101,7 +103,6 @@ fi;
 #   export EDITOR='vim'
 # else
 # fi
-export EDITOR='vim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"

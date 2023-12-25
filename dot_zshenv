@@ -8,9 +8,21 @@ export PATH=~/.npm/bin:$PATH
 # custom executable path
 export PATH="$HOME/.bin:$PATH"
 
-# Created by `pipx` on 2022-02-26 03:47:01
-export PATH="$PATH:$HOME/.local/bin"
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/.local/bin" ]; then
+	PATH="$HOME/.local/bin:$PATH"
+fi
+if [ -d "$HOME/.cargo/bin" ]; then
+	PATH="$HOME/.cargo/bin:$PATH"
+fi
+
 
 export PNPM_HOME="$HOME/.local/share/pnpm"
 
 export PATH="$PATH:$PNPM_HOME/.local/bin"
+export TERMINAL=alacritty
+export EDITOR=vim
+export HISTFILE=~/.zsh_history
+export HISTSIZE=1000
+export SAVEHIST=1000
