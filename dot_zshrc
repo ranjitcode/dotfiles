@@ -77,13 +77,12 @@ source $ZSH/oh-my-zsh.sh
 
 # all alias source should be done below
 source $HOME/.bash_aliases
-export LC_CTYPE=en_US.UTF-8
 source "$HOME/.asdf/asdf.sh"
 
 # append completions to fpath
 fpath=(${ASDF_DIR}/completions $fpath)
 # initialise completions with ZSH's compinit
-autoload -Uz compinit 
+autoload -Uz compinit
 if [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]]; then
 	compinit;
 else
