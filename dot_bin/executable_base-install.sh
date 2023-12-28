@@ -1,22 +1,5 @@
 #!/bin/sh
-
-# Function to ask yes/no question with a default value
-ask_yes_no_default() {
-    local prompt="$1 (Y/n)"
-    local default="${2:-}"
-
-    read -p "$prompt: " -n 1 answer
-    echo
-
-    case "$answer" in
-        [Yy]* ) return 0;;
-        [Nn]* ) return 1;;
-        * ) return "${default:-0}";;
-    esac
-}
-
-# Use "ask_yes_no_default" function with default value "0" for "yes"
-
+source ./helpers.sh
 
 ask_yes_no_default "Do you want to add chaotic aur?" 0 && sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com && \
     sudo pacman-key --lsign-key 3056513887B78AEB && \
@@ -34,9 +17,7 @@ ask_yes_no_default "Do you want to install nerd fonts?" 0 && yay -S ttf-firacode
 
 sudo fc-cache -vf
 
-
 ask_yes_no_default "Do you want to install oh-my-tmux?" 0 && git clone https://github.com/gpakosz/.tmux
-
 
 ask_yes_no_default "Do you want to install pnpm?" 0 && curl -fsSL https://get.pnpm.io/install.sh | sh -
 
@@ -44,7 +25,6 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 vim +'PlugInstall --sync' +qa
-
 
 echo "Installing bat themes"
 mkdir -p "$(bat --config-dir)/themes"
@@ -57,7 +37,6 @@ curl -LO --output-dir ~/.config/alacritty https://github.com/catppuccin/alacritt
 curl -LO --output-dir ~/.config/alacritty https://github.com/catppuccin/alacritty/raw/main/catppuccin-macchiato.toml
 curl -LO --output-dir ~/.config/alacritty https://github.com/catppuccin/alacritty/raw/main/catppuccin-frappe.toml
 curl -LO --output-dir ~/.config/alacritty https://github.com/catppuccin/alacritty/raw/main/catppuccin-latte.toml
-
 
 ask_yes_no_default "Do you want to install Docker and Docker Compose?" 0 && yay -S docker docker-compose && \
     sudo groupadd docker && sudo usermod -aG docker $USER && \
@@ -84,8 +63,6 @@ ask_yes_no_default "Do you want to add plugins for asdf ?" 0 && \
         asdf install "$plugin" "${versions[$plugin]}" && \
         asdf global "$plugin" "${versions[$plugin]}"; \
     done
-
-
 
 ask_yes_no_default "Do you want to install LunarVim?" 0 && \
     LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh) && \
