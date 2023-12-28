@@ -7,7 +7,6 @@ files=(
     .curlrc
     bspwm-dotfiles/
     .gitconfig-takeo
-    tmux.conf.local
     .zsh_history
     wallpapers/
     cheatsheets/
@@ -25,8 +24,8 @@ files=(
     .wgetrc
     theme.config
     .gitconfig
-    .tmux/
     .tmux.conf
+    .tmux.conf.local
     .config/konsave
     .config/persepolis_download_manager
     .config/autostart
@@ -46,5 +45,6 @@ cd
 
 # Loop through the array and add each file or directory
 for item in "${files[@]}"; do
+    echo "adding $item"
     cz add "$item"
 done
