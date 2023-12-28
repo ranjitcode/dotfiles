@@ -40,10 +40,57 @@ y = 0
 
 [font.normal]
 family = "DejaVuSansM Nerd Font"
+style = "Medium"
+
+[font.bold]
+family = "DejaVuSansM Nerd Font"
+style = "Bold"
+
+[font.italic]
+family = "DejaVuSansM Nerd Font"
+style = "Oblique"
+
+[font.bold_italic]
+family = "DejaVuSansM Nerd Font"
+style = "Bold Oblique"
 
 [font.offset]
 x = 0
 y = 0
+
+[mouse]
+hide_when_typing = true
+
+[[mouse.bindings]]
+action = "PasteSelection"
+mouse = "Middle"
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[selection]
+save_to_clipboard = true
+semantic_escape_chars = ",│`|:\"' ()[]{}<>"
+
+[window]
+title = "alacritty"
+decorations = "full"
+dynamic_padding = false
+opacity = 0.98
+startup_mode = "Windowed"
+
+[window.dimensions]
+columns = 140
+lines = 40
+
+[window.padding]
+x = 0
+y = 0
+
+[window.class]
+instance = "Alacritty"
+general= "Alacritty"
 
 [[keyboard.bindings]]
 action = "Paste"
@@ -338,33 +385,3 @@ chars = "\u0002/"
 key = "F"
 mods = "Command"
 
-[mouse]
-hide_when_typing = true
-
-[[mouse.bindings]]
-action = "PasteSelection"
-mouse = "Middle"
-
-
-[scrolling]
-history = 1000
-multiplier = 3
-
-[selection]
-save_to_clipboard = true
-semantic_escape_chars = ",│`|:\"' ()[]{}<>"
-
-[window]
-title = "alacritty"
-decorations = "full"
-dynamic_padding = false
-opacity = 0.98
-startup_mode = "Windowed"
-
-[window.dimensions]
-columns = 140
-lines = 40
-
-[window.padding]
-x = 0
-y = 0
