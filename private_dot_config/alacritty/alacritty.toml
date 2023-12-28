@@ -1,5 +1,9 @@
 import = [
-    "~/.config/alacritty/themes/themes/catppuccin-mocha.toml"
+  # uncomment the flavour you want below:
+  "~/.config/alacritty/catppuccin/catppuccin-mocha.toml"
+  # "~/.config/alacritty/catppuccin/catppuccin-macchiato.toml"
+  # "~/.config/alacritty/catppuccin/catppuccin-frappe.toml"
+  # "~/.config/alacritty/catppuccin/catppuccin-latte.toml"
 ]
 
 live_config_reload = true
@@ -28,14 +32,14 @@ render_timer = false
 TERM = "xterm-256color"
 
 [font]
-size = 10
+size = 7.2
 
 [font.glyph_offset]
 x = 0
 y = 0
 
 [font.normal]
-family = "DejaVu Sans Mono for Powerline"
+family = "DejaVuSansM Nerd Font"
 
 [font.offset]
 x = 0
