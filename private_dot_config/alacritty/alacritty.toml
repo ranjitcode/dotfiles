@@ -39,19 +39,19 @@ x = 0
 y = 0
 
 [font.normal]
-family = "DejaVuSansM Nerd Font"
-style = "Medium"
+family = "MonaspiceNe Nerd Font"
+style = "Regular"
 
 [font.bold]
-family = "DejaVuSansM Nerd Font"
+family = "MonaspiceNe Nerd Font"
 style = "Bold"
 
 [font.italic]
-family = "DejaVuSansM Nerd Font"
-style = "Oblique"
+family = "MonaspiceNe Nerd Font"
+style = "Italic"
 
 [font.bold_italic]
-family = "DejaVuSansM Nerd Font"
+family = "MonaspiceNe Nerd Font"
 style = "Bold Oblique"
 
 [font.offset]
@@ -85,7 +85,7 @@ columns = 140
 lines = 40
 
 [window.padding]
-x = 0
+x = 5
 y = 0
 
 [window.class]
