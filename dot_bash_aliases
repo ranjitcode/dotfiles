@@ -1,6 +1,7 @@
 alias ari="aria2c"
 alias b="bun"
 alias czo="code ~/.local/share/chezmoi/"
+alias clr="clear"
 alias clear-npm="rm -rf node_modules;rm -rf pnpm-lock.yaml package-lock.json yarn.lock"
 alias clear-orphan-packages="sudo pacman -Qtdq | sudo pacman -Rns -"
 alias clear-store-npm="npm cache clear --force;yarn cache clean;pnpm store prune"
