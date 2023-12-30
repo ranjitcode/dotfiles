@@ -21,7 +21,10 @@
 	editor = vim
   # Include your global excludefile
   excludefile = ~/.gitignore_global
-  # Don't paginate output by default
+  # Include your gitattributes file
+  attributesfile = ~/.gitattributes
+
+# Don't paginate output by default
   pager = delta
   # Speed up the status command
   untrackedCache = true
