@@ -22,11 +22,6 @@ ask_yes_no_default "Do you want to install oh-my-tmux?" 0 && git clone https://g
 
 ask_yes_no_default "Do you want to install pnpm?" 0 && curl -fsSL https://get.pnpm.io/install.sh | sh -
 
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-vim +'PlugInstall --sync' +qa
-
 echo "Installing bat themes"
 mkdir -p "$(bat --config-dir)/themes"
 wget -P "$(bat --config-dir)/themes/" https://raw.githubusercontent.com/catppuccin/bat/main/Catppuccin-mocha.tmTheme
