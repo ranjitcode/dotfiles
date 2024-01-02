@@ -1,6 +1,6 @@
 alias ari="aria2c"
 alias b="bun"
-alias czo="code ~/.local/share/chezmoi/"
+alias chezmoiconfig="nvim ~/.local/share/chezmoi/"
 alias clr="clear"
 alias clear-npm="rm -rf node_modules;rm -rf pnpm-lock.yaml package-lock.json yarn.lock"
 alias clear-orphan-packages="sudo pacman -Qtdq | sudo pacman -Rns -"
@@ -18,8 +18,8 @@ alias grep='grep --color=auto'
 alias lzd="lazydocker"
 alias myzsh='source ~/.zshrc'
 alias nord="nordvpn"
-alias nvimo="nvim ~/.config/nvim"
-alias ohmyzsh="nvim ~/.oh-my-zsh"
+alias nvimconfig="nvim ~/.config/nvim"
+alias ohmyzshconfig="nvim ~/.oh-my-zsh"
 alias practice-vim="docker run -it --rm brandoncc/vim-be-good:stable"
 alias rate-and-update='export TMPFILE="$(mktemp)"; \
     sudo true; \
