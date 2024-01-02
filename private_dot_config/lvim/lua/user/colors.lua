@@ -12,7 +12,8 @@ local themes = {
   system76 = "system76",
   vscode = "vscode",
   tomorrow = "tomorrow",
+  catppuccin = "catppuccin"
 }
 
 
-lvim.colorscheme = themes.vscode
+lvim.colorscheme = themes.catppuccin
