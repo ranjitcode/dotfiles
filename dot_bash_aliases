@@ -18,8 +18,8 @@ alias grep='grep --color=auto'
 alias lzd="lazydocker"
 alias myzsh='source ~/.zshrc'
 alias nord="nordvpn"
-alias nvimo="nvim .config/nvim"
-alias ohmyzsh="mousepad ~/.oh-my-zsh"
+alias nvimo="nvim ~/.config/nvim"
+alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias practice-vim="docker run -it --rm brandoncc/vim-be-good:stable"
 alias rate-and-update='export TMPFILE="$(mktemp)"; \
     sudo true; \
@@ -35,7 +35,7 @@ alias update-all='yay -Syyu --noconfirm && taze -gwi && asdf update && asdf plug
 alias uuid="uuidgen -r | xclip -selection clipboard"
 alias validate-compose="docker-compose config --quiet && printf "OK\n" || printf "ERROR\n""
 alias vmc='git diff --name-only --diff-filter=U'
-alias zshconfig="mousepad ~/.zshrc"
+alias zshconfig="nvim ~/.zshrc"
 alias yt="youtube-dl"
 
 # Redis
