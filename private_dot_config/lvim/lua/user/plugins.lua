@@ -2,7 +2,11 @@
 -- Additional Plugins
 lvim.plugins = {
   { "lunarvim/colorschemes" },
-  { "Mofiqul/vscode.nvim" },
+  { "catppuccin/nvim", name = "catppuccin",
+    opts = {
+      flavour = "mocha",
+    },
+  },
   {
     "sindrets/diffview.nvim",
     event = "BufRead",
