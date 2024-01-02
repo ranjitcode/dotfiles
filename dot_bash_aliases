@@ -8,7 +8,7 @@ alias clear-store-npm="npm cache clear --force;yarn cache clean;pnpm store prune
 alias code="code-insiders"
 alias cz="chezmoi"
 alias dc="docker-compose"
-alias df="df -h" # disk free, in Gigabytes, not bytes
+alias df="df -h"    # disk free, in Gigabytes, not bytes
 alias du="du -h -c" # calculate disk usage for a folder
 alias docker-compose="dc"
 alias htop="btop"
@@ -27,12 +27,13 @@ alias rate-and-update='export TMPFILE="$(mktemp)"; \
       && sudo mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist-backup \
       && sudo mv $TMPFILE /etc/pacman.d/mirrorlist \
       && ua-drop-caches \
-      && yay -Syyu --noconfirm && update-all';
+      && yay -Syyu --noconfirm && update-all'
 alias today="npx aaja"
 alias tz="npx taze"
 alias ua-drop-caches='sudo paccache -rk3; yay -Sc --aur --noconfirm'
 alias update-all='yay -Syyu --noconfirm && taze -gwi && asdf update && asdf plugin update --all && omz update && code_update_extensions'
 alias uuid="uuidgen -r | xclip -selection clipboard"
+alias vim="nvim"
 alias validate-compose="docker-compose config --quiet && printf "OK\n" || printf "ERROR\n""
 alias vmc='git diff --name-only --diff-filter=U'
 alias zshconfig="nvim ~/.zshrc"
@@ -57,7 +58,6 @@ alias pubip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="sudo ifconfig | grep -Eo 'inet (addr:)?([0-9]*\\.){3}[0-9]*' | grep -Eo '([0-9]*\\.){3}[0-9]*' | grep -v '127.0.0.1'"
 alias ips="sudo ifconfig -a | grep -o 'inet6\\? \\(addr:\\)\\?\\s\\?\\(\\(\\([0-9]\\+\\.\\)\\{3\\}[0-9]\\+\\)\\|[a-fA-F0-9:]\\+\\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 
-
 # ls
 alias ls='lsd'
 alias l='ls -l'
@@ -72,14 +72,13 @@ alias t="tmux"
 alias ta="t a -t"
 alias tls="t ls"
 alias tn="t new -t"
-alias tmux_end="pkill -f tmux";
+alias tmux_end="pkill -f tmux"
 
-
-corepack_enable(){
-    corepack enable
-    corepack prepare npm@latest --activate
-    corepack prepare pnpm@latest --activate
-    corepack prepare yarn@latest --activate
+corepack_enable() {
+	corepack enable
+	corepack prepare npm@latest --activate
+	corepack prepare pnpm@latest --activate
+	corepack prepare yarn@latest --activate
 
 }
 
@@ -109,7 +108,7 @@ alias yrd="yarn run start:dev"
 alias yup="yarn upgrade"
 
 #pnpm aliases
-alias p="pnpm";
+alias p="pnpm"
 alias pp="pnpm prune"
 alias pi="pnpm i"
 alias pid="pnpm i -D"
@@ -125,24 +124,23 @@ alias asdf_plugins="asdf plugin list"
 alias asdf_add_plugin="asdf plugin add"
 alias asdf_remove_plugin="asdf plugin remove"
 alias asdf_install_version="asdf install"
-alias asdf_list_version="asdf list";
+alias asdf_list_version="asdf list"
 alias asdf_global_version_set="asdf global"
 
-
 git-standup() {
-    AUTHOR=${AUTHOR:="`git config user.name`"}
+	AUTHOR=${AUTHOR:="$(git config user.name)"}
 
-    since=yesterday
-    if [[ $(date +%u) == 1 ]] ; then
-        since="2 days ago"
-    fi
+	since=yesterday
+	if [[ $(date +%u) == 1 ]]; then
+		since="2 days ago"
+	fi
 
-    git log --all --since "$since" --oneline --author="$AUTHOR"
+	git log --all --since "$since" --oneline --author="$AUTHOR"
 }
 
 alias yayskip='yay -S --mflags --skipinteg'
 
-alias git-rre-delete="rm -rf .git/rr-cache";
+alias git-rre-delete="rm -rf .git/rr-cache"
 
 # Lists the ten most used commands.
 alias history-stats="history 0 | awk '{print \$2}' | stats | head"
@@ -180,7 +178,6 @@ alias dki="docker run -i -t -P"
 # Execute interactive container, e.g., $dex base /bin/bash
 alias dex="docker exec -i -t"
 
-
 # Stop all containers
 dstop() { docker stop $(docker ps -a -q); }
 
@@ -197,92 +194,90 @@ dri() { docker rmi $(docker images -q); }
 dbu() { docker build -t=$1 .; }
 
 # Show all alias related docker
-dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort; }
+dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/" | sed "s/['|\']//g" | sort; }
 
 # Bash into running container
 dbash() { docker exec -it $(docker ps -aqf "name=$1") bash; }
 
-
 ## fzf aliases
 fo() {
-  IFS=$'\n' out=("$(fzf-tmux --query="$1" --exit-0 --expect=ctrl-o,ctrl-e)")
-  key=$(head -1 <<< "$out")
-  file=$(head -2 <<< "$out" | tail -1)
-  if [ -n "$file" ]; then
-    [ "$key" = ctrl-o ] && open "$file" || ${EDITOR:-vim} "$file"
-  fi
+	IFS=$'\n' out=("$(fzf-tmux --query="$1" --exit-0 --expect=ctrl-o,ctrl-e)")
+	key=$(head -1 <<<"$out")
+	file=$(head -2 <<<"$out" | tail -1)
+	if [ -n "$file" ]; then
+		[ "$key" = ctrl-o ] && open "$file" || ${EDITOR:-vim} "$file"
+	fi
 }
 
-
 gh-delete-runs() {
-# Get the IDs of all failed runs
-ids=$(gh run list -s failure --limit=200 --json databaseId  -q '.[].databaseId')
+	# Get the IDs of all failed runs
+	ids=$(gh run list -s failure --limit=200 --json databaseId -q '.[].databaseId')
 
-# Loop over the IDs and delete each run
-for id in $ids
-do
-  gh run delete $id
-done
+	# Loop over the IDs and delete each run
+	for id in $ids; do
+		gh run delete $id
+	done
 }
 
 gi() {
-curl -sLw n https://www.toptal.com/developers/gitignore/api/$@ > .gitignore;
+	curl -sLw n https://www.toptal.com/developers/gitignore/api/$@ >.gitignore
 }
 
-git-branch-delete(){
-git branch | grep $@ | xargs git branch -D
+git-branch-delete() {
+	git branch | grep $@ | xargs git branch -D
 }
 
 git-redate() {
-    GIT_COMMITTER_DATE="$1" git commit --amend --no-edit --date "$1"
+	GIT_COMMITTER_DATE="$1" git commit --amend --no-edit --date "$1"
 }
 
-git-fix-repo(){
-find .git/objects -type f -empty -delete;
-git prune;
-git fetch --all --prune;
+git-fix-repo() {
+	find .git/objects -type f -empty -delete
+	git prune
+	git fetch --all --prune
 }
 
-sssh(){
-  # try to connect every 0.5 secs (modulo timeouts)
-  while true; do command ssh "$@"; [ $? -ne 255 ] && break || sleep 0.5; done
+sssh() {
+	# try to connect every 0.5 secs (modulo timeouts)
+	while true; do
+		command ssh "$@"
+		[ $? -ne 255 ] && break || sleep 0.5
+	done
 }
 
-
-git-branch-rename(){
-git checkout $1;
-git branch -m $2;
-git push origin -u $2;
-git push origin --delete $1;
+git-branch-rename() {
+	git checkout $1
+	git branch -m $2
+	git push origin -u $2
+	git push origin --delete $1
 
 }
 
-code_update_extensions(){
-for ext in `code --list-extensions`
-  do
-    code --install-extension "$ext" --force
-  done
+code_update_extensions() {
+	for ext in $(code --list-extensions); do
+		code --install-extension "$ext" --force
+	done
 }
 
-ffmpeg-convert(){
-  for i in *.mp4;
-  do ffmpeg -n  -i "$i" -vcodec libx264 -v warning -hide_banner -stats -crf 28 -preset faster -tune film "cc${i}";
-  done
+ffmpeg-convert() {
+	for i in *.mp4; do
+		ffmpeg -n -i "$i" -vcodec libx264 -v warning -hide_banner -stats -crf 28 -preset faster -tune film "cc${i}"
+	done
 }
 
-convert-dir-vids(){
-Green=$'\e[1;32m';
-Blue=$'\e[1;34m';
-echo "$Blue Started converting videos in dir";
-for d in ./*/ ; do (echo "$Green Current directory: $d \n" && cd "$d" && ffmpeg_convert && rm $(ls -I "cc*" )); done
-echo "finished converting all videos in directory";
+convert-dir-vids() {
+	Green=$'\e[1;32m'
+	Blue=$'\e[1;34m'
+	echo "$Blue Started converting videos in dir"
+	for d in ./*/; do (echo "$Green Current directory: $d \n" && cd "$d" && ffmpeg_convert && rm $(ls -I "cc*")); done
+	echo "finished converting all videos in directory"
 }
 
-zsh-fix-history(){
-cd ~
-mv .zsh_history .zsh_history_old
-strings .zsh_history_old > .zsh_history
-fc -R .zsh_history
+zsh-fix-history() {
+	cd ~
+	mv .zsh_history .zsh_history_old
+	strings .zsh_history_old >.zsh_history
+	fc -R .zsh_history
 }
 
 alias yarn_audit_fix="npm_config_yes=true npx yarn-audit-fix"
@@ -294,91 +289,91 @@ alias yarn_audit_fix="npm_config_yes=true npx yarn-audit-fix"
 # # => Lines of code for .css: 2970
 # # => Total lines of code: 10105
 function loc() {
-  local total
-  local firstletter
-  local ext
-  local lines
-  total=0
-  for ext in $@; do
-    firstletter=$(echo $ext | cut -c1-1)
-    if [[ firstletter != "." ]]; then
-      ext=".$ext"
-    fi
-    lines=`find-exec "*$ext" cat | wc -l`
-    lines=${lines// /}
-    total=$(($total + $lines))
-    echo "Lines of code for ${fg[blue]}$ext${reset_color}: ${fg[green]}$lines${reset_color}"
-  done
-  echo "${fg[blue]}Total${reset_color} lines of code: ${fg[green]}$total${reset_color}"
+	local total
+	local firstletter
+	local ext
+	local lines
+	total=0
+	for ext in $@; do
+		firstletter=$(echo $ext | cut -c1-1)
+		if [[ firstletter != "." ]]; then
+			ext=".$ext"
+		fi
+		lines=$(find-exec "*$ext" cat | wc -l)
+		lines=${lines// /}
+		total=$(($total + $lines))
+		echo "Lines of code for ${fg[blue]}$ext${reset_color}: ${fg[green]}$lines${reset_color}"
+	done
+	echo "${fg[blue]}Total${reset_color} lines of code: ${fg[green]}$total${reset_color}"
 }
 
 function calcram() {
-  local sum
-  sum=0
-  for i in `ps aux | grep -i "$1" | grep -v "grep" | awk '{print $6}'`; do
-    sum=$(($i + $sum))
-  done
-  sum=$(echo "scale=2; $sum / 1024.0" | bc)
-  echo $sum
+	local sum
+	sum=0
+	for i in $(ps aux | grep -i "$1" | grep -v "grep" | awk '{print $6}'); do
+		sum=$(($i + $sum))
+	done
+	sum=$(echo "scale=2; $sum / 1024.0" | bc)
+	echo $sum
 }
 
 # Show how much RAM application uses.
 # $ ram safari
 # # => safari uses 154.69 MBs of RAM
 function ram() {
-  local sum
-  local app="$1"
-  if [ -z "$app" ]; then
-    echo "First argument - pattern to grep from processes"
-    return 0
-  fi
+	local sum
+	local app="$1"
+	if [ -z "$app" ]; then
+		echo "First argument - pattern to grep from processes"
+		return 0
+	fi
 
-  sum=$(calcram $app)
-  if [[ $sum != "0" ]]; then
-    echo "${fg[blue]}${app}${reset_color} uses ${fg[green]}${sum}${reset_color} MBs of RAM"
-  else
-    echo "No active processes matching pattern '${fg[blue]}${app}${reset_color}'"
-  fi
+	sum=$(calcram $app)
+	if [[ $sum != "0" ]]; then
+		echo "${fg[blue]}${app}${reset_color} uses ${fg[green]}${sum}${reset_color} MBs of RAM"
+	else
+		echo "No active processes matching pattern '${fg[blue]}${app}${reset_color}'"
+	fi
 }
 
 # Same, but tracks RAM usage in realtime. Will run until you stop it.
 # $ rams safari
 function rams() {
-  local sum
-  local app="$1"
-  if [ -z "$app" ]; then
-    echo "First argument - pattern to grep from processes"
-    return 0
-  fi
+	local sum
+	local app="$1"
+	if [ -z "$app" ]; then
+		echo "First argument - pattern to grep from processes"
+		return 0
+	fi
 
-  while true; do
-    sum=$(calcram $app)
-    if [[ $sum != "0" ]]; then
-      echo -en "${fg[blue]}${app}${reset_color} uses ${fg[green]}${sum}${reset_color} MBs of RAM\r"
-    else
-      echo -en "No active processes matching pattern '${fg[blue]}${app}${reset_color}'\r"
-    fi
-    sleep 1
-  done
+	while true; do
+		sum=$(calcram $app)
+		if [[ $sum != "0" ]]; then
+			echo -en "${fg[blue]}${app}${reset_color} uses ${fg[green]}${sum}${reset_color} MBs of RAM\r"
+		else
+			echo -en "No active processes matching pattern '${fg[blue]}${app}${reset_color}'\r"
+		fi
+		sleep 1
+	done
 }
 
-function git-deploy(){
-git pull;
-git push;
-git checkout stage;
-git pull;
-git merge -X theirs dev;
-git push;
-git checkout main;
-git pull;
-git merge -X theirs stage;
+function git-deploy() {
+	git pull
+	git push
+	git checkout stage
+	git pull
+	git merge -X theirs dev
+	git push
+	git checkout main
+	git pull
+	git merge -X theirs stage
 
 }
 
 # $ size dir1 file2.js
 function size() {
-  # du -scBM | sort -n
-  du -shck "$@" | sort -rn | awk '
+	# du -scBM | sort -n
+	du -shck "$@" | sort -rn | awk '
       function human(x) {
           s="kMGTEPYZ";
           while (x>=1000 && length(s)>1)
