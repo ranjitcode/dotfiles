@@ -31,6 +31,7 @@ return {
           tabline_prefix = "   ",
           tabline_suffix = "   ",
         },
+        require("telescope").load_extension("harpoon")
       })
     end,
   },
