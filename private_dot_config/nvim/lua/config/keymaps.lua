@@ -8,3 +8,5 @@ vim.keymap.set(
   require("telescope.builtin").resume,
   { noremap = true, silent = true, desc = "Resume" }
 )
+
+-- harpoon keymap
