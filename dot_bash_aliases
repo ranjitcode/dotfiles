@@ -6,6 +6,7 @@ alias clear-npm="rm -rf node_modules;rm -rf pnpm-lock.yaml package-lock.json yar
 alias clear-orphan-packages="sudo pacman -Qtdq | sudo pacman -Rns -"
 alias clear-store-npm="npm cache clear --force;yarn cache clean;pnpm store prune"
 alias code="code-insiders"
+alias crap="fortune" # This will keep you sane when you're about to smash the keyboard again.
 alias cz="chezmoi"
 alias dc="docker-compose"
 alias df="df -h"    # disk free, in Gigabytes, not bytes
