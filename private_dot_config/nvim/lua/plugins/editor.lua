@@ -7,6 +7,8 @@ return {
       require("gitblame").setup({ enabled = true })
     end,
   },
+  { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+  { "nvim-telescope/telescope-ui-select.nvim" },
   {
     "nvim-telescope/telescope-file-browser.nvim",
     keys = {
