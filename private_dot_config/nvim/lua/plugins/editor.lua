@@ -1,5 +1,13 @@
 return {
   {
+    "echasnovski/mini.misc",
+    config = true,
+  --stylua: ignore
+  keys = {
+    { "<leader>vz", function() require("mini.misc").zoom() end, desc = "Toggle Zoom" },
+  },
+  },
+  {
     "f-person/git-blame.nvim",
     event = "BufRead",
     config = function()
