@@ -1,4 +1,4 @@
-local Util = require("lazyvim.util")
+-- disabling this in favor of edgy
 
 if true then
   return {}
