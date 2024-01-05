@@ -1,5 +1,9 @@
 local Util = require("lazyvim.util")
 
+if true then
+  return {}
+end
+
 return {
   {
     "akinsho/toggleterm.nvim",

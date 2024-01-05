@@ -7,14 +7,6 @@ return {
     { "<leader>vz", function() require("mini.misc").zoom() end, desc = "Toggle Zoom" },
   },
   },
-  {
-    "f-person/git-blame.nvim",
-    event = "BufRead",
-    config = function()
-      vim.cmd("highlight default link gitblame SpecialComment")
-      require("gitblame").setup({ enabled = true })
-    end,
-  },
   { "nvim-telescope/telescope-ui-select.nvim" },
   {
     "nvim-telescope/telescope-file-browser.nvim",
