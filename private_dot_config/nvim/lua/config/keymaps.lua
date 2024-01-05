@@ -13,6 +13,10 @@ if Util.has("gitsigns.nvim") then
     desc = "Toggle current line blame",
   })
 
+  --  keymap("n", "<leader>hb", "<cmd>lua require('gitsigns').blame_line{full=true}<CR>", {
+  --  desc = "Toggle current line blame",
+  -- })
+
   local function open_dashboard()
     require("mini.starter").open()
   end
