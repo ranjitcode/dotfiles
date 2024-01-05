@@ -1,38 +1,49 @@
 return {
   {
-    "theprimeagen/harpoon",
+    "ThePrimeagen/harpoon",
+    event = "BufRead",
     branch = "harpoon2",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    config = function()
-      require("harpoon"):setup({
+    dependencies = {
+      { "nvim-lua/plenary.nvim" },
+    },
+    keys = {
+      {
+        "<leader>fm",
+        "<cmd>Telescope harpoon marks<cr>",
+        desc = "Telescope Harpoon Marks",
+      },
+      {
+        "<leader>hh",
+        function()
+          local harpoon = require("harpoon")
+          harpoon.ui:toggle_quick_menu(harpoon:list())
+        end,
+        desc = "Harpoon toggle menu",
+      },
+      {
+        "<leader>ha",
+        function()
+          local harpoon = require("harpoon")
+          harpoon:list():append()
+        end,
+        desc = "Harpoon Add File",
+      },
+    },
+    opts = {},
+    config = function(_, options)
+      local status_ok, harpoon = pcall(require, "harpoon")
+      if not status_ok then
+        return
+      end
 
-        global_settings = {
-          -- sets the marks upon calling `toggle` on the ui, instead of require `:w`.
-          save_on_toggle = false,
+      harpoon.setup(options)
 
-          -- saves the harpoon file upon every change. disabling is unrecommended.
-          save_on_change = true,
+      local tele_status_ok, telescope = pcall(require, "telescope")
+      if not tele_status_ok then
+        return
+      end
 
-          -- sets harpoon to run the command immediately as it's passed to the terminal when calling `sendCommand`.
-          enter_on_sendcmd = false,
-
-          -- closes any tmux windows harpoon that harpoon creates when you close Neovim.
-          tmux_autoclose_windows = false,
-
-          -- filetypes that you want to prevent from adding to the harpoon list menu.
-          excluded_filetypes = { "harpoon" },
-
-          -- set marks specific to each git branch inside git repository
-          -- Each branch will have it's own set of marked files
-          mark_branch = true,
-
-          -- enable tabline with harpoon marks
-          tabline = false,
-          tabline_prefix = "   ",
-          tabline_suffix = "   ",
-        },
-        require("telescope").load_extension("harpoon")
-      })
+      telescope.load_extension("harpoon")
     end,
   },
 }
