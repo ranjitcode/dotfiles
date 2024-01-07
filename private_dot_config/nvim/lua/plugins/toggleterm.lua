@@ -1,8 +1,3 @@
--- disabling this in favor of edgy
-
-if true then
-  return {}
-end
 
 return {
   {

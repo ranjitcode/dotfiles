@@ -1,46 +1,70 @@
 return {
 
-    -- zen mode for distraction free editing
+  -- zen mode for distraction free editing
+  {
+    "wakatime/vim-wakatime",
+  },
+
+  -- ufo code folding
+  {
+    'kevinhwang91/nvim-ufo',
+    requires = 'kevinhwang91/promise-async',
+    opts = {
+      -- Use treesitter as a main provider
+      provider_selector = function()
+        return { "treesitter", "indent" }
+      end,
+    },
+
+    --stylua: ignore
+
+    keys = {
+      { "zr", function() require("ufo").openFoldsExceptKinds() end, desc = "Open Folds Except Kinds", },
+      { "zR", function() require("ufo").openAllFolds() end,         desc = "Open All Folds", },
+      { "zM", function() require("ufo").closeAllFolds() end,        desc = "Close All Folds", },
+      { "zm", function() require("ufo").closeFoldsWith() end,       desc = "Close Folds With", },
+      { "zp", function()
+        local winid = require('ufo').peekFoldedLinesUnderCursor()
+        if not winid then
+          vim.lsp.buf.hover()
+        end
+      end, desc = "Peek Fold", },
+    },
+
+  },
+
   {
     "folke/zen-mode.nvim",
     cmd = { "ZenMode" },
     opts = {
+      plugins = {
+        gitsigns = true,
+        tmux = true,
+        alacritty = { enabled = false, font = "+2" },
+      },
       window = {
-        width = 0.70, -- width will be 70% of the editor width
+        width = 0.85, -- width will be 85% of the editor width
       },
     },
     config = true,
+
+    --stylua: ignore
     keys = {
-      -- add <leader>cz to enter zen mode
       {
-        "<leader>cz",
+        "<leader>zz",
         "<cmd>ZenMode<cr>",
-        desc = "Distraction Free Mode",
+        desc = "Zen Mode",
       },
     },
   },
-
   {
     "echasnovski/mini.misc",
     config = true,
-  --stylua: ignore
-  keys = {
-    { "<leader>vz", function() require("mini.misc").zoom() end, desc = "Toggle Zoom" },
-  },
-  },
-  { "nvim-telescope/telescope-ui-select.nvim" },
-  {
-    "nvim-telescope/telescope-file-browser.nvim",
+
+    --stylua: ignore
     keys = {
-      {
-        "<leader>sB",
-        ":Telescope file_browser path=%:p:h=%:p:h<cr>",
-        desc = "Browse Files",
-      },
+      { "<leader>vz", function() require("mini.misc").zoom() end, desc = "Toggle Zoom" },
     },
-    config = function()
-      require("telescope").load_extension("file_browser")
-    end,
   },
   {
     "hrsh7th/nvim-cmp",
@@ -63,8 +87,8 @@ return {
           if cmp.visible() then
             -- You could replace select_next_item() with confirm({ select = true }) to get VS Code autocompletion behavior
             cmp.confirm({ select = true })
-          -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
-          -- this way you will only jump inside the snippet region
+            -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
+            -- this way you will only jump inside the snippet region
           elseif luasnip.expand_or_jumpable() then
             luasnip.expand_or_jump()
           elseif has_words_before() then
@@ -83,6 +107,38 @@ return {
           end
         end, { "i", "s" }),
       })
+    end,
+  },
+
+
+  -- Telescope related plugins
+  {
+    "nvim-telescope/telescope-fzf-native.nvim",
+    build = "make",
+    config = function()
+      require("telescope").load_extension("fzf")
+    end,
+  },
+  {
+    "nvim-telescope/telescope-file-browser.nvim",
+
+    --stylua: ignore
+    keys = {
+      {
+        "<leader>sB",
+        ":Telescope file_browser path=%:p:h=%:p:h<cr>",
+        desc = "Browse Files",
+      },
+    },
+    config = function()
+      require("telescope").load_extension("file_browser")
+    end,
+  },
+
+  {
+    "nvim-telescope/telescope-ui-select.nvim",
+    config = function()
+      require("telescope").load_extension("ui-select")
     end,
   },
 }
