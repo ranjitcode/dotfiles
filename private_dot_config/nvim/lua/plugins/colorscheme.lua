@@ -1,18 +1,25 @@
 return {
   {
     "gbprod/nord.nvim",
+    lazy = true,
   },
   -- add gruvbox
-  { "ellisonleao/gruvbox.nvim" },
+  {
+    "ellisonleao/gruvbox.nvim",
+    lazy = true,
+  },
 
   -- add nightfox
-  { "EdenEast/nightfox.nvim" },
+  {
+    "EdenEast/nightfox.nvim",
+    lazy = true
+  },
 
   -- add night-owl
-  { "haishanh/night-owl.vim" },
+  { "haishanh/night-owl.vim", lazy = true },
 
   -- add kanagawa
-  { "rebelot/kanagawa.nvim" },
+  { "rebelot/kanagawa.nvim",  lazy = true },
 
   -- add catppuccin
   {

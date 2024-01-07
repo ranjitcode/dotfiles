@@ -1,4 +1,6 @@
 return {
+
+    -- zen mode for distraction free editing
   {
     "folke/zen-mode.nvim",
     cmd = { "ZenMode" },

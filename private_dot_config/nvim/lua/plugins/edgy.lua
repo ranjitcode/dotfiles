@@ -1,5 +1,8 @@
+-- edgy is a plugin that allows you to create a layout of windows that can be
+-- toggled on and off. It's a bit like tmux, but for neovim.
+
+
 return {
-  -- edgy
   {
     "folke/edgy.nvim",
     event = "VeryLazy",
