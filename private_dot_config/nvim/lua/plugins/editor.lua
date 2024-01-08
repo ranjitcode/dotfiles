@@ -7,8 +7,8 @@ return {
 
   -- ufo code folding
   {
-    'kevinhwang91/nvim-ufo',
-    requires = 'kevinhwang91/promise-async',
+    "kevinhwang91/nvim-ufo",
+    dependencies = { "kevinhwang91/promise-async" },
     opts = {
       -- Use treesitter as a main provider
       provider_selector = function()
@@ -30,7 +30,6 @@ return {
         end
       end, desc = "Peek Fold", },
     },
-
   },
 
   {
@@ -109,7 +108,6 @@ return {
       })
     end,
   },
-
 
   -- Telescope related plugins
   {
