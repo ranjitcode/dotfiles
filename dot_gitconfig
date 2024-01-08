@@ -18,7 +18,7 @@
   # End of lines conversion
   autocrlf = false
   # Editor is vi of coursea
-	editor = vim
+	editor = nvim
   # Include your global excludefile
   excludefile = ~/.gitignore_global
   # Include your gitattributes file
