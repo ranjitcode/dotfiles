@@ -1,6 +1,8 @@
-# Overview
+# ~/dotfiles
 
-Contains dotfiles that I use.
+Magical objects that make certain computers extremely use-able for me.
+
+
 
 ![](https://c.tenor.com/5ibxr0zb3HcAAAAC/tenor.gif)
 
