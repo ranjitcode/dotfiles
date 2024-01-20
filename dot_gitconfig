@@ -16,13 +16,11 @@
 	defaultBranch = master
 [core]
   # End of lines conversion
-  autocrlf = false
+	autocrlf = false
   # Editor is vi of coursea
-	editor = NOT_LAZY=1 nvim
+  editor = NOT_LAZY=1 nvim
   # Include your global excludefile
   excludefile = ~/.gitignore_global
-  # Include your gitattributes file
-  attributesfile = ~/.gitattributes
 
 # Don't paginate output by default
   pager = delta
