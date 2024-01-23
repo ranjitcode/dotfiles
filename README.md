@@ -2,9 +2,7 @@
 
 Magical objects that make certain computers extremely use-able for me.
 
-
-
-![](https://c.tenor.com/5ibxr0zb3HcAAAAC/tenor.gif)
+<img src="https://c.tenor.com/5ibxr0zb3HcAAAAC/tenor.gif" height=250/>
 
 # Things I use 
 * Tmux (https://github.com/gpakosz/.tmux)
