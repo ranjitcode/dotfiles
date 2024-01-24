@@ -42,7 +42,7 @@ export PNPM_HOME="$HOME/.local/share/pnpm"
 
 export PATH="$PATH:$PNPM_HOME/.local/bin"
 export TERMINAL=alacritty
-export EDITOR=vim
+export EDITOR=NOT_LAZY=1 nvim
 
 
 # Prefer US English and use UTF-8.
