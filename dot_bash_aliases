@@ -1,4 +1,6 @@
 alias ari="aria2c"
+alias lzg="lazygit"
+alias ari="aria2c"
 alias b="bun"
 alias clr="clear"
 alias clear-npm="rm -rf node_modules;rm -rf pnpm-lock.yaml package-lock.json yarn.lock"
