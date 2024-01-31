@@ -28,11 +28,6 @@ wget -P "$(bat --config-dir)/themes/" https://raw.githubusercontent.com/catppucc
 wget -P "$(bat --config-dir)/themes/" https://raw.githubusercontent.com/catppuccin/bat/main/Catppuccin-frappe.tmTheme
 bat cache --build
 
-echo "Installing alacritty themes"
-curl -LO --output-dir ~/.config/alacritty https://github.com/catppuccin/alacritty/raw/main/catppuccin-mocha.toml
-curl -LO --output-dir ~/.config/alacritty https://github.com/catppuccin/alacritty/raw/main/catppuccin-macchiato.toml
-curl -LO --output-dir ~/.config/alacritty https://github.com/catppuccin/alacritty/raw/main/catppuccin-frappe.toml
-curl -LO --output-dir ~/.config/alacritty https://github.com/catppuccin/alacritty/raw/main/catppuccin-latte.toml
 
 ask_yes_no_default "Do you want to install Docker and Docker Compose?" 0 && yay -S docker docker-compose && \
     sudo groupadd docker && sudo usermod -aG docker $USER && \
@@ -50,7 +45,7 @@ ask_yes_no_default "Do you want to install Zsh with Oh My Zsh and other plugins?
     git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab
 
 ask_yes_no_default "Do you want to add plugins for asdf ?" 0 && \
-    git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.13.1 && \
+    git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.0 && \
     source ~/.zshrc && \
     asdf update && \
     declare -A versions=( ["nodejs"]="20.10.0" ["golang"]="1.21.5" ["rust"]="1.74.1" ["ruby"]="3.2.2" ) && \
