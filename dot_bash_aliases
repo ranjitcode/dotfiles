@@ -54,9 +54,9 @@ alias pbpaste='xclip -selection clipboard -o'
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
 
 # Edit config files
-alias envim="cd ~/.config/nvim; nvim ."
+alias envim="nvim ~/.config/nvim"
 alias ezsh="nvim ~/.zshrc"
-alias ecz="cd ~/.local/share/chezmoi/; nvim ."
+alias ecz="nvim ~/.local/share/chezmoi/"
 
 # IP addresses
 alias pubip="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -78,6 +78,14 @@ alias ta="t a -t"
 alias tls="t ls"
 alias tn="t new -t"
 alias tmux_end="pkill -f tmux"
+
+corepack_enable() {
+	corepack enable
+	corepack prepare npm@latest --activate
+	corepack prepare pnpm@latest --activate
+	corepack prepare yarn@latest --activate
+
+}
 
 ## npm aliases
 alias ni="npm install"
@@ -378,4 +386,12 @@ function size() {
           return int(x+0.5) substr(s,1,1)
       }
       {gsub(/^[0-9]+/, human($1)); print}'
+}
+
+function reinstall-nvim(){
+rm -rf ~/.config/nvim;
+rm -rf  ~/.local/share/nvim;
+git clone git@github.com:rubiin/init.lua .config/nvim;
+nvim;
+
 }
