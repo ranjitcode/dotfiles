@@ -38,3 +38,11 @@ notARepository: 'quit'
 update:
   method: 'never' # brew keeps it up to date
 confirmOnQuit: false
+
+customCommands:
+  - key: "C"
+    command: "git cz c"
+    description: "commit with commitizen"
+    context: "files"
+    loadingText: "opening commitizen commit tool"
+    subprocess: true
