@@ -12,8 +12,8 @@ aicommits
 nfdl
 autocannon
 vercel
-webpack-cli
 commitizen
+cz-conventional-changelog
 nx
 aaja
 json-server
