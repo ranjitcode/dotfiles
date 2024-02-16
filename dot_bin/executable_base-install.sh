@@ -1,6 +1,8 @@
 #!/bin/sh
 
-source ./helpers.sh
+source helpers.sh
+
+tool_versions=$(parse_tools_version)
 
 ask_yes_no_default "Do you want to add chaotic aur?" 0 && sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com && \
     sudo pacman-key --lsign-key 3056513887B78AEB && \
@@ -48,11 +50,10 @@ ask_yes_no_default "Do you want to add plugins for asdf ?" 0 && \
     git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.0 && \
     source ~/.zshrc && \
     asdf update && \
-    declare -A versions=( ["nodejs"]="20.10.0" ["golang"]="1.21.5" ["rust"]="1.74.1" ["ruby"]="3.2.2" ) && \
-    for plugin in "${!versions[@]}"; do \
+    for plugin in "${!tool_versions[@]}"; do \
         asdf plugin add "$plugin" && \
-        asdf install "$plugin" "${versions[$plugin]}" && \
-        asdf global "$plugin" "${versions[$plugin]}"; \
+        asdf install "$plugin" "${tool_versions[$plugin]}" && \
+        asdf global "$plugin" "${tool_versions[$plugin]}"; \
     done
 
 ask_yes_no_default "Do you want to install LunarVim?" 0 && \
