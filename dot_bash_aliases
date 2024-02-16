@@ -19,6 +19,7 @@ alias g="git"
 alias grep='grep --color=auto'
 alias lzd="lazydocker"
 alias myzsh='source ~/.zshrc'
+alias most-used="history | awk '{print $2}' | sort | uniq -c | sort -nr | head -10"
 alias nord="nordvpn"
 alias practice-vim="docker run -it --rm brandoncc/vim-be-good:stable"
 alias rate-and-update='export TMPFILE="$(mktemp)"; \
@@ -388,10 +389,10 @@ function size() {
       {gsub(/^[0-9]+/, human($1)); print}'
 }
 
-function reinstall-nvim(){
-rm -rf ~/.config/nvim;
-rm -rf  ~/.local/share/nvim;
-git clone git@github.com:rubiin/init.lua .config/nvim;
-nvim;
+function reinstall-nvim() {
+	rm -rf ~/.config/nvim
+	rm -rf ~/.local/share/nvim
+	git clone git@github.com:rubiin/init.lua .config/nvim
+	nvim
 
 }
