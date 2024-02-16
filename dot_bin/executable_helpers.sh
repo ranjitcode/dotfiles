@@ -15,7 +15,7 @@ ask_yes_no_default() {
     esac
 }
 
-
+# Function to parse the .tool-versions file
 parse_tools_version() {
     # Define the file path
     local file="$HOME/.tool-versions"
