@@ -5,6 +5,7 @@ taze
 release-it
 tsx
 yarn
+tree-sitter-cli
 types-installer
 @microsoft/inshellisense
 asdfui
