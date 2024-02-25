@@ -9,7 +9,6 @@ alias clear-store-npm="npm cache clear --force;yarn cache clean;pnpm store prune
 alias code="code-insiders"
 alias crap="fortune" # This will keep you sane when you're about to smash the keyboard again.
 alias cz="chezmoi"
-alias cargo_update="cargo install $(cargo install --list | egrep '^[a-z0-9_-]+ v[0-9.]+:$' | cut -f1 -d' ')"
 alias dc="docker-compose"
 alias df="df -h"    # disk free, in Gigabytes, not bytes
 alias du="du -h -c" # calculate disk usage for a folder
