@@ -13,8 +13,8 @@ echo " "
 select opt in "${options[@]}"; do
 	case $opt in
 	"New Session")
-		read -rp "Enter new session name (default_session if empty): " SESSION_NAME
-		SESSION_NAME=${SESSION_NAME:-default_$(date +"%M%S")}
+		read -rp "Enter new session name (random session name if empty): " SESSION_NAME
+		SESSION_NAME=${SESSION_NAME:-$(openssl rand -base64 2)}
 		tmux new -s "$SESSION_NAME"
 		break
 		;;
