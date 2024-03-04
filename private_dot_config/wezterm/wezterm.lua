@@ -10,8 +10,9 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
-config.initial_rows = 30
-config.initial_cols = 130
+config.initial_rows = 41
+config.term = "wezterm"
+config.initial_cols = 160
 
 -- This is where you actually apply your config choices
 
