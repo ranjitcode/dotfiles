@@ -78,24 +78,23 @@ save_to_clipboard = true
 semantic_escape_chars = ",│`|:\"' ()[]{}<>"
 
 [window]
-dynamic_title = true
+title = "alacritty"
 decorations = "full"
 dynamic_padding = false
 opacity = 0.98
 startup_mode = "Windowed"
-dimensions = {
-  columns = 140,
-  lines = 40,
 
-}
-padding = {
-  x = 0,
-  y = 0,
-}
-class = {
-  instance = "Alacritty",
-  general = "Alacritty",
-}
+[window.dimensions]
+columns = 140
+lines = 40
+
+[window.padding]
+x= 0
+y = 0
+
+[window.class]
+general = "Alacritty"
+instance = "Alacritty"
 
 
 [[keyboard.bindings]]
