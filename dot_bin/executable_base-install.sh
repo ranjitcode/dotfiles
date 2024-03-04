@@ -27,6 +27,11 @@ ask_yes_no_default "Do you want to install pnpm?" 0 && curl -fsSL https://get.pn
 echo "Setting alacritty"
 wget https://raw.githubusercontent.com/alacritty/alacritty/master/extra/alacritty.info &&  sudo tic -xe alacritty,alacritty-direct alacritty.info && rm alacritty.info
 
+echo "Setting wezterm"
+tempfile=$(mktemp) \
+  && curl -o $tempfile https://raw.githubusercontent.com/wez/wezterm/main/termwiz/data/wezterm.terminfo \
+  && tic -x -o ~/.terminfo $tempfile \
+  && rm $tempfile
 
 echo "Installing bat themes"
 mkdir -p "$(bat --config-dir)/themes"
