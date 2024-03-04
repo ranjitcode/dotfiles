@@ -20,7 +20,7 @@ config.initial_cols = 160
 -- config.color_scheme = 'Batman'
 
 config.font = wezterm.font_with_fallback({
-	{ family = "JetBrains Mono Nerd Font", weight = "Regular" },
+	{ family = "JetBrains Mono Nerd Font", weight = "Medium" },
 	"nonicons",
 })
 
