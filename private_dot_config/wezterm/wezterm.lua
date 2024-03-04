@@ -40,8 +40,7 @@ config.window_padding = {
 	bottom = 0,
 }
 config.color_scheme = "Catppuccin Mocha"
-
-config.tab_bar_at_bottom = true
+config.enable_tab_bar = false
 config.freetype_load_target = "HorizontalLcd"
 
 -- and finally, return the configuration to wezterm
