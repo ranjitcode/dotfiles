@@ -35,6 +35,7 @@ alias ua-drop-caches='sudo paccache -rk3; yay -Sc --aur --noconfirm'
 alias update-all='yay -Syyu --noconfirm && taze -gwi && asdf update && asdf plugin update --all && omz update && code_update_extensions && cd ~/.config/nvim && git pull'
 alias uuid="uuidgen -r | xclip -selection clipboard"
 alias vim="nvim"
+alias ssh='TERM=xterm-256color ssh'
 alias validate-compose="docker-compose config --quiet && printf "OK\n" || printf "ERROR\n""
 alias vmc='git diff --name-only --diff-filter=U'
 alias zshconfig="nvim ~/.zshrc"
