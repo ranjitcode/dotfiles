@@ -11,6 +11,8 @@ export ZSH="$HOME/.oh-my-zsh"
 
 export BROWSER="vivaldi"
 export EDITOR="nvim"
+export TERM="wezterm"
+
 
 # cleaning up home folder
 export XDG_CONFIG_HOME="$HOME/.config"
